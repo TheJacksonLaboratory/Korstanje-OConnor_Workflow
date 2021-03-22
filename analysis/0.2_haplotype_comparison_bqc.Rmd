@@ -1,0 +1,132 @@
+---
+title: "Haplotype Phasing Before QC"
+author: "Belinda Cornes"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#filepathp = '/Users/corneb/Documents/MyJax/CS/Projects/Simon.John.Tolman/Data/meta.data/'
+#filepaths = '/Users/corneb/Documents/MyJax/CS/Projects/Simon.John.Tolman/haplo.reconst/2020-11-11/129Sj.v265d/all_samples_sorted/'
+#setwd(filepaths)
+
+#libraries
+library(broman)
+library(qtl2)
+
+```
+
+### Loading Project
+```{r load project, eval=TRUE}
+
+gm <- read_cross2("/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/genoprobs/all.samples/qtl2/gm_sorted.json")
+
+#gm <- get(load("gm_DO.RData"))
+gm
+
+apr <- readRDS("/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/genoprobs/all.samples/Jackson_Lab_Korstanje__GigaMUGA_genoprobs_8state_sorted.rds")
+pr <- readRDS("/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/genoprobs/all.samples/Jackson_Lab_Korstanje__GigaMUGA_genoprobs_36state_sorted.rds")
+mice <- ind_ids(gm)
+micelg <- as.data.frame(mice)
+#micelg$miceids <- sapply(strsplit(as.character(micelg$mice),'_',fixed=T),function(x) x[6])
+#micelg <- micelg[order(micelg$miceids),]
+micelg <- micelg[order(micelg$mice),]
+#mice <- micelg$mice
+micedf <- as.data.frame(micelg)
+#mice <- micedf$micelg
+names(micedf) <- c("mice")
+
+#B6 control mice
+control.mice <- c("B6 - 1614A", 
+	              "B6 - 1614", 
+	              "B6 - 1615A", 
+	              "B6 - 1615", 
+	              "B6 - 1616A", 
+	              "B6 - 1616", 
+	              "B6 - 1617", 
+	              "B6 - 1618A", 
+	              "B6 - 1618", 
+	              "A-1620-20A", 
+	              "A-1620-20B", 
+	              "A-1620-20C", 
+	              "A-1620-20", 
+	              "A-1626-20D", 
+	              "A-1626-20"
+	              )
+
+control.mice.2 <- c("B6 - 1614A", 
+	              "B6 - 1614", 
+	              "B6 - 1615A", 
+	              "B6 - 1615", 
+	              "B6 - 1616A", 
+	              "B6 - 1616", 
+	              "B6 - 1617", 
+	              "B6 - 1618A", 
+	              "B6 - 1618", 
+	              "A-1620-20A", 
+	              "A-1620-20B", 
+	              "A-1620-20C", 
+	              "A-1620-20"#, 
+	              #"A-1626-20D", 
+	              #"A-1626-20"
+	              )
+
+```
+
+### Plots for B6 Mice (Not Phased)
+```{r phased b6 plots, eval=TRUE}
+
+for(i in micedf[ micedf$mice %in% control.mice, ]){
+
+	print(i)
+	#mouse.id <- sapply(strsplit(as.character(i),'_',fixed=T),function(x) x[6])
+	mouse.id <- i
+	print(mouse.id)
+
+	gmi <- gm[i, ] 
+	#map <- insert_pseudomarkers(gmi$gmap, step=1)
+	#pr <- calc_genoprob(gmi, gmi$gmap, error_prob=0.002)
+	#ap <- genoprob_to_alleleprob(pr)
+	apr.new <- apr[i,]
+
+	# infer genotypes, as those with maximal marginal probability
+	m <- maxmarg(apr.new, minprob = 0.9)
+
+	# guess phase
+	#ph <- guess_phase(gmi, m)
+
+	# plot phased genotypes
+	plot_onegeno(m, gmi$gmap, main = paste0(i," [genoprobs]"),  shift=TRUE)
+}
+
+```
+
+### Phased Plots for DO Mice
+```{r phased plots, eval=TRUE}
+
+for(i in micedf[ !micedf$mice %in% control.mice.2, ]){
+
+	print(i)
+	#mouse.id <- sapply(strsplit(as.character(i),'_',fixed=T),function(x) x[6])
+	mouse.id <- i
+	print(mouse.id)
+
+	gmi <- gm[i, ] 
+	#map <- insert_pseudomarkers(gmi$gmap, step=1)
+	#pr <- calc_genoprob(gmi, gmi$gmap, error_prob=0.002)
+	pr.new <- pr[i,]
+
+	# infer genotypes, as those with maximal marginal probability
+	m <- maxmarg(pr.new, minprob = 0.3)
+
+	# guess phase
+	ph <- guess_phase(gmi, m)
+
+	# plot phased genotypes
+	plot_onegeno(ph, gmi$gmap, main = paste0(i," [genoprobs]"),  shift=TRUE)
+}
+
+
+```
