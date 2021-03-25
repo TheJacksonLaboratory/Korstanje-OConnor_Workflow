@@ -13,7 +13,7 @@
 
 <meta name="date" content="2021-03-25" />
 
-<title>Korstanje-OConnor Workflow</title>
+<title>Genotype Conccordance [HaploQA vs. R/qtl2]</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,6 +24,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -310,7 +311,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Korstanje-OConnor Workflow</h1>
+<h1 class="title toc-ignore">Genotype Conccordance [HaploQA vs. R/qtl2]</h1>
 <h4 class="author">Belinda Cornes</h4>
 <h4 class="date">2021-03-25</h4>
 
@@ -318,11 +319,9 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#project-at-a-glance-total-samples-474">Project At A Glance [Total Samples: 474]</a></li>
-<li><a href="#haplotype-phasing">Haplotype Phasing</a></li>
-<li><a href="#phenotype-qc">1. Phenotype QC</a></li>
-<li><a href="#genotype-qc">2. Genotype QC</a></li>
-<li><a href="#qtl-analysis">3. QTL Analysis</a></li>
+<li><a href="#loading-project">Loading Project</a></li>
+<li><a href="#concordance-between-raw-genotypes-letters-vs.letters">Concordance between raw genotypes (letters vs. letters)</a></li>
+<li><a href="#concordance-between-similar-mice">Concordance between similar mice</a></li>
 </ul>
 </div>
 
@@ -513,7 +512,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/concordance_randome.samples.Rmd</code>) and HTML (<code>docs/concordance_randome.samples.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -542,7 +541,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/b1371d9196748387f7926ce7013e8a7b6479bbd0/analysis/index.Rmd" target="_blank">b1371d9</a>
+<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/59ed3d2e42ed7f5f6354fe5186c7906bef77ab36/analysis/concordance_randome.samples.Rmd" target="_blank">59ed3d2</a>
 </td>
 <td>
 Belinda Cornes
@@ -551,58 +550,7 @@ Belinda Cornes
 2021-03-25
 </td>
 <td>
-Start workflowr project.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/40817a47a190a83f974e57d8a33009ee55fe1b0c/docs/index.html" target="_blank">40817a4</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-22
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/71541b39e1384317cbab21ec0009f55631bd325e/analysis/index.Rmd" target="_blank">71541b3</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-22
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/6d2430763019a2e850e17ddee67c7bc0c2c2c1eb/analysis/index.Rmd" target="_blank">6d24307</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-17
-</td>
-<td>
-Start workflowr project.
+concordance
 </td>
 </tr>
 </tbody>
@@ -612,94 +560,404 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<div id="project-at-a-glance-total-samples-474" class="section level3">
-<h3>Project At A Glance [Total Samples: 474]</h3>
-<ul>
-<li>Samples: Jackson_Lab_Korstanje_MURGIGV01_20201111
-<ul>
-<li><a href="0.1_samples_batch_20201111.html">Total Samples: 192</a></li>
-</ul></li>
-<li>Samples: Jackson_Lab_Korstanje_MURGIGV01_20210211
-<ul>
-<li><a href="0.1_samples_batch_20210211.html">Total Samples: 282</a></li>
-</ul></li>
-</ul>
+<div id="loading-project" class="section level3">
+<h3>Loading Project</h3>
+<pre><code>Object of class cross2 (crosstype &quot;do&quot;)
+
+Total individuals               474
+No. genotyped individuals       474
+No. phenotyped individuals      474
+No. with both geno &amp; pheno      474
+
+No. phenotypes                    1
+No. covariates                    3
+No. phenotype covariates          0
+
+No. chromosomes                  20
+Total markers                137220
+
+No. markers by chr:
+    1     2     3     4     5     6     7     8     9    10    11    12    13 
+10415 10432  8203  7951  8028  8125  7756  6714  6979  6628  7430  6441  6323 
+   14    15    16    17    18    19     X 
+ 6227  5531  5174  5320  4784  3676  5083 </code></pre>
+<pre><code>Object of class cross2 (crosstype &quot;do&quot;)
+
+Total individuals                19
+No. genotyped individuals        19
+No. phenotyped individuals       19
+No. with both geno &amp; pheno       19
+
+No. phenotypes                    1
+No. covariates                    3
+No. phenotype covariates          0
+
+No. chromosomes                  20
+Total markers                137220
+
+No. markers by chr:
+    1     2     3     4     5     6     7     8     9    10    11    12    13 
+10415 10432  8203  7951  8028  8125  7756  6714  6979  6628  7430  6441  6323 
+   14    15    16    17    18    19     X 
+ 6227  5531  5174  5320  4784  3676  5083 </code></pre>
+<pre><code>[1] TRUE</code></pre>
+<pre><code>Taking input= as a system command (&#39;unzip -cq /Users/corneb/Documents/MyJax/CS/Projects/Oconnor/Neogen//Jackson_Lab_Korstanje_MURGIGV01_20201111/Jackson_Lab_Korstanje_MURGIGV01_20201111_FinalReport.zip&#39;) and a variable has been used in the expression passed to `input=`. Please use fread(cmd=...). There is a security concern if you are creating an app, and the app could have a malicious user, and the app is not running in a secure environment; e.g. the app is running as root. Please read item 5 in the NEWS file for v1.11.6 for more information and for the option to suppress this message.</code></pre>
+<pre><code>Taking input= as a system command (&#39;unzip -cq /Users/corneb/Documents/MyJax/CS/Projects/Oconnor/Neogen//Jackson_Lab_Korstanje_MURGIGV01_20210211/Jackson_Lab_Korstanje_MURGIGV01_20210211_FinalReport.zip&#39;) and a variable has been used in the expression passed to `input=`. Please use fread(cmd=...). There is a security concern if you are creating an app, and the app could have a malicious user, and the app is not running in a secure environment; e.g. the app is running as root. Please read item 5 in the NEWS file for v1.11.6 for more information and for the option to suppress this message.</code></pre>
 </div>
-<div id="haplotype-phasing" class="section level3">
-<h3>Haplotype Phasing</h3>
-<ul>
-<li><a href="0.2_haplotype_comparison_bqc.html">Figures</a></li>
-<li><a href="concordance_randome.samples.html">Concordance</a></li>
-</ul>
+<div id="concordance-between-raw-genotypes-letters-vs.letters" class="section level3">
+<h3>Concordance between raw genotypes (letters vs. letters)</h3>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5026 34091    98   298     3 34643     3 34861     2   312   108 33814 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5026 34091    98   298     3 34643     3 34861     2   312   108 33814 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5018 34097   106   281     1 34631     3 34874     2   304   111 33831 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5018 34097   106   281     1 34631     3 34874     2   304   111 33831 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 5053 34103   103   300     4 34615     3     1 34815     1   354   115 33792 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 5053 34103   103   300     4 34615     3     1 34815     1   354   115 33792 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 5830 33729   120   323     3 34558     4     1 34783     1   378   119 33410 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 5830 33729   120   323     3 34558     4     1 34783     1   378   119 33410 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5031 34074   115   294     2 34649     3 34880     1   307   105 33798 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5031 34074   115   294     2 34649     3 34880     1   307   105 33798 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 4994 34093   108   277     2 34682     3     1 34893     1   279   105 33821 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 4994 34093   108   277     2 34682     3     1 34893     1   279   105 33821 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5057 34070   110   321     4 34619     4 34839     1   330   103 33801 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5057 34070   110   321     4 34619     4 34839     1   330   103 33801 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5058 34071   116   292     3 34633     3 34873     1   306    96 33807 
+
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5058 34071   116   292     3 34633     3 34873     1   306    96 33807 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+22684 60095    69   254    16   102     9    13   112    18   224    71 59592 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+22684 60095    69   254    16   102     9    13   112    18   224    71 59592 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+22378 60358    53   215    16    79     9    16    91    14   190    61 59779 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+22378 60358    53   215    16    79     9    16    91    14   190    61 59779 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+25503 58471    98   305    28   117    20    25   148    30   313   104 58097 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+25503 58471    98   305    28   117    20    25   148    30   313   104 58097 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6545 21250  3992 17061    16 26069    17     7 26399    10 16943  3899 21051 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6545 21250  3992 17061    16 26069    17     7 26399    10 16943  3899 21051 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6307 21268  3993 17069    16 26133    17     7 26455    10 16991  3915 21078 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6307 21268  3993 17069    16 26133    17     7 26455    10 16991  3915 21078 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6233 21162  4030 17745    13 25768    12     8 25752    10 17497  4179 20850 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6233 21162  4030 17745    13 25768    12     8 25752    10 17497  4179 20850 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6476 21492  3880 17075    12 26101     7     9 26222    11 16823  3959 21192 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6476 21492  3880 17075    12 26101     7     9 26222    11 16823  3959 21192 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6037 21588  3970 16827    11 26347    17    21 26499     5 16774  3980 21183 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6037 21588  3970 16827    11 26347    17    21 26499     5 16774  3980 21183 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 5690 21897  3988 17086    16 25900    15     9 26036    12 16978  3965 21667 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 5690 21897  3988 17086    16 25900    15     9 26036    12 16978  3965 21667 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 7675 21820  3985 16871    10 25218    16    15 25471     9 16882  3977 21310 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 7675 21820  3985 16871    10 25218    16    15 25471     9 16882  3977 21310 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6857 21237  3987 17352     6 25643    17    16 25863     8 17131  4066 21076 
+
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6857 21237  3987 17352     6 25643    17    16 25863     8 17131  4066 21076 </code></pre>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+<th style="text-align:center;">
+concordance [letters]
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+B6 - 1616A
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+B6 - 1616
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+B6 - 1618A
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+B6 - 1618
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+A-1620-20A
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+A-1620-20B
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+A-1620-20C
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+A-1620-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+A-1626-20D
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+A-1626-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+X-8503-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+X-5185-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+X-5186-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+X-8612-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+X-8315-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+5257
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+X-2199-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+X-5172-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cms; ">
+X-2207-20
+</td>
+<td style="text-align:center;width: 5cms; ">
+100%
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="phenotype-qc" class="section level3">
-<h3>1. Phenotype QC</h3>
-<ul>
-<li>Phenotypes
-<ul>
-<li>no phenotypes</li>
-</ul></li>
-</ul>
-</div>
-<div id="genotype-qc" class="section level3">
-<h3>2. Genotype QC</h3>
-<ul>
-<li>Step 1: Sample QC
-<ul>
-<li><a href="2.1_sample_bqc.html">Without Controls</a></li>
-<li><a href="2.1_sample_bqc_wcont.html">With Controls</a></li>
-</ul></li>
-<li>Step 2: SNP QC (Monomorphic, Genotype Error &amp; Missing Data)
-<ul>
-<li><a href="2.2.1_snp_qc.html">Without Controls</a></li>
-<li><a href="2.2.1_snp_qc_wcont.html">With Controls</a></li>
-</ul></li>
-<li>Step 3: Effect of Data Cleaning
-<ul>
-<li><a href="2.3.1_afterqc.html">Without Controls</a></li>
-<li><a href="2.3.1_afterqc_wcont.html">With Controls</a></li>
-</ul></li>
-<li>Step 4: Preparing Files for QTL Analysis
-<ul>
-<li><a href="2.4.1_preparing_files_qtl2.html">Without Controls</a></li>
-<li><a href="2.4.1_preparing_files_qtl2_wcont.html">With Controls</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="qtl-analysis" class="section level3">
-<h3>3. QTL Analysis</h3>
-<ul>
-<li>Step 1a: DO Report
-<ul>
-<li><a href="3.1.2_do_diversity_report.html">Without Controls</a></li>
-<li><a href="3.1.2_do_diversity_report_wcont.html">With Controls</a></li>
-</ul></li>
-<li>Step 1b: Recombination Block Size &amp; Founder Proportions
-<ul>
-<li><a href="3.1_recomb_size_founder_prop.html">Without Controls</a></li>
-<li><a href="3.1_recomb_size_founder_prop_wcont.html">With Controls</a></li>
-</ul></li>
-<li>Step 2: GCTA Heritability
-<ul>
-<li>no phenotypes for GCTA analysis</li>
-</ul></li>
-<li>Step 3: QTL Mapping (<code>R/qtl2</code>)
-<ul>
-<li>no phenotypes for <code>R/qtl2</code> analysis</li>
-</ul></li>
-<li>Step 4: QTL Permutation (<code>R/qtl2</code>)
-<ul>
-<li>no phenotypes for <code>R/qtl2</code> analysis</li>
-</ul></li>
-<li>Step 5: QTL Best Linear Unbiased Prediction (BLUP) (<code>R/qtl2</code>)
-<ul>
-<li>no phenotypes for <code>R/qtl2</code> analysis</li>
-</ul></li>
-<li>Step 6: Results from <code>R/qtl2</code> analysis
-<ul>
-<li>no phenotypes for <code>R/qtl2</code> analysis</li>
-</ul></li>
-</ul>
+<div id="concordance-between-similar-mice" class="section level3">
+<h3>Concordance between similar mice</h3>
+<pre><code> [1] &quot;B6 - 1616A&quot; &quot;B6 - 1616&quot;  &quot;X-5185-20&quot;  &quot;X-5186-20&quot;  &quot;A-1620-20A&quot;
+ [6] &quot;A-1620-20B&quot; &quot;A-1620-20C&quot; &quot;A-1620-20&quot;  &quot;A-1626-20D&quot; &quot;X-8503-20&quot; 
+[11] &quot;A-1626-20&quot; </code></pre>
+<pre><code>[1] &quot;A-1626-20D&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+22684 60095    69   254    16   102     9    13   112    18   224    71 59592 </code></pre>
+<pre><code>[1] &quot;X-8503-20&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+22378 60358    53   215    16    79     9    16    91    14   190    61 59779 </code></pre>
+<pre><code>[1] &quot;B6 - 1616A&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+22378 60358    53   215    16    79     9    16    91    14   190    61 59779 </code></pre>
+<pre><code>  concordance             sample.ids
+1     85.1053 X-8503-20 &amp; A-1626-20D</code></pre>
+<pre><code>  concordance            sample.ids
+1    86.01135 X-8503-20 &amp; A-1626-20</code></pre>
+<pre><code>[1] &quot;B6 - 1616A&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5026 34091    98   298     3 34643     3 34861     2   312   108 33814 </code></pre>
+<pre><code>[1] &quot;B6 - 1616&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5018 34097   106   281     1 34631     3 34874     2   304   111 33831 </code></pre>
+<pre><code>[1] &quot;A-1620-20A&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5031 34074   115   294     2 34649     3 34880     1   307   105 33798 </code></pre>
+<pre><code>[1] &quot;A-1620-20B&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 4994 34093   108   277     2 34682     3     1 34893     1   279   105 33821 </code></pre>
+<pre><code>[1] &quot;A-1620-20C&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5057 34070   110   321     4 34619     4 34839     1   330   103 33801 </code></pre>
+<pre><code>[1] &quot;A-1620-20&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GG    TA    TC    TG    TT 
+ 5058 34071   116   292     3 34633     3 34873     1   306    96 33807 </code></pre>
+<pre><code>  concordance              sample.ids
+1    99.44227 B6 - 1616A &amp; A-1620-20A</code></pre>
+<pre><code>  concordance             sample.ids
+1    99.45972 B6 - 1616 &amp; A-1620-20A</code></pre>
+<pre><code>  concordance              sample.ids
+1    99.45274 B6 - 1616A &amp; A-1620-20B</code></pre>
+<pre><code>  concordance             sample.ids
+1    99.50719 B6 - 1616 &amp; A-1620-20B</code></pre>
+<pre><code>  concordance              sample.ids
+1    99.38294 B6 - 1616A &amp; A-1620-20C</code></pre>
+<pre><code>  concordance             sample.ids
+1    99.38224 B6 - 1616 &amp; A-1620-20C</code></pre>
+<pre><code>  concordance             sample.ids
+1    99.37805 B6 - 1616A &amp; A-1620-20</code></pre>
+<pre><code>  concordance            sample.ids
+1    99.40108 B6 - 1616 &amp; A-1620-20</code></pre>
+<pre><code>[1] &quot;X-5185-20&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6545 21250  3992 17061    16 26069    17     7 26399    10 16943  3899 21051 </code></pre>
+<pre><code>[1] &quot;X-5186-20&quot;</code></pre>
+<pre><code>
+   --    AA    AC    AG    AT    CC    CG    GC    GG    TA    TC    TG    TT 
+ 6307 21268  3993 17069    16 26133    17     7 26455    10 16991  3915 21078 </code></pre>
+<pre><code>  concordance            sample.ids
+1    98.58508 X-5185-20 &amp; X-5186-20</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -707,7 +965,6 @@ Start workflowr project.
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>R version 3.6.2 (2019-12-12)
 Platform: x86_64-apple-darwin15.6.0 (64-bit)
 Running under: macOS Catalina 10.15.7
@@ -723,15 +980,26 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] workflowr_1.6.2
+ [1] qtl2_0.22         tibble_3.0.1      readxl_1.3.1      cluster_2.1.0    
+ [5] dplyr_0.8.5       optparse_1.6.6    rhdf5_2.28.1      mclust_5.4.6     
+ [9] tidyr_1.0.2       data.table_1.12.8 knitr_1.28        kableExtra_1.1.0 
+[13] workflowr_1.6.2  
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.4.6    rprojroot_1.3-2 digest_0.6.25   later_1.0.0    
- [5] R6_2.4.1        backports_1.1.7 git2r_0.26.1    magrittr_1.5   
- [9] evaluate_0.14   stringi_1.4.6   rlang_0.4.6     fs_1.4.1       
-[13] promises_1.1.0  whisker_0.4     rmarkdown_2.1   tools_3.6.2    
-[17] stringr_1.4.0   glue_1.4.1      httpuv_1.5.2    xfun_0.13      
-[21] yaml_2.2.1      compiler_3.6.2  htmltools_0.4.0 knitr_1.28     </code></pre>
+ [1] tidyselect_1.0.0  xfun_0.13         purrr_0.3.4       colorspace_1.4-1 
+ [5] vctrs_0.3.1       htmltools_0.4.0   getopt_1.20.3     viridisLite_0.3.0
+ [9] yaml_2.2.1        blob_1.2.1        rlang_0.4.6       later_1.0.0      
+[13] pillar_1.4.4      DBI_1.1.0         glue_1.4.1        bit64_0.9-7      
+[17] lifecycle_0.2.0   stringr_1.4.0     munsell_0.5.0     cellranger_1.1.0 
+[21] rvest_0.3.5       memoise_1.1.0     evaluate_0.14     httpuv_1.5.2     
+[25] parallel_3.6.2    Rcpp_1.0.4.6      readr_1.3.1       promises_1.1.0   
+[29] scales_1.1.1      backports_1.1.7   jsonlite_1.6.1    webshot_0.5.2    
+[33] bit_1.1-15.2      fs_1.4.1          hms_0.5.3         digest_0.6.25    
+[37] stringi_1.4.6     rprojroot_1.3-2   tools_3.6.2       magrittr_1.5     
+[41] RSQLite_2.2.0     crayon_1.3.4      whisker_0.4       pkgconfig_2.0.3  
+[45] ellipsis_0.3.1    xml2_1.3.1        assertthat_0.2.1  rmarkdown_2.1    
+[49] httr_1.4.1        rstudioapi_0.11   Rhdf5lib_1.6.3    R6_2.4.1         
+[53] git2r_0.26.1      compiler_3.6.2   </code></pre>
 </div>
 </div>
 
