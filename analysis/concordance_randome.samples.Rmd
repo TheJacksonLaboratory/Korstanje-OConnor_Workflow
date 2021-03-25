@@ -1,12 +1,12 @@
 ---
-title: "Genotype Conccordance [HaploQA vs. R/qtl2]"
+title: "Genotype Concordance [HaploQA vs. R/qtl2]"
 author: "Belinda Cornes"
 date: "`r Sys.Date()`"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE,warning=FALSE)
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE)
 
 library("kableExtra")
 library("knitr")
@@ -222,7 +222,9 @@ concordance_letters <- list()
 for(i in concord.mice){
 	#sample.id <- paste0("^",i,"[.]")
 	sample.match <- geno.letters[,grep(paste0("^",i,"[.]"),colnames(geno.letters))]
+    print(colnames(sample.match[c(1)]))
 	print(table(sample.match[c(1)]))
+    print(colnames(sample.match[c(2)]))
 	print(table(sample.match[c(2)]))
 	sample.match$match <- ifelse(sample.match[c(1)] == sample.match[c(2)], 1, 0)
 	concordance.sum <- sum(sample.match$match)
