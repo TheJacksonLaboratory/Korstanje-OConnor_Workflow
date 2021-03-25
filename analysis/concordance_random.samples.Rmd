@@ -1,0 +1,514 @@
+---
+title: "Genotype Concordance [HaploQA vs. R/qtl2]"
+author: "Belinda Cornes"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE)
+
+library("kableExtra")
+library("knitr")
+options(stringsAsFactors = FALSE)
+library(data.table) 
+library(tidyr)     
+library(mclust)     
+library(rhdf5)      
+library(optparse)
+library(dplyr)
+library(cluster)
+library(readxl)
+library(tibble)
+library(qtl2)
+library(ggplot2)
+library(purrr)
+
+```
+
+### Loading Project
+```{r extracting letter & number genos for select samples, eval=TRUE}
+
+#selected mice to check concordance
+concord.mice <- c("B6 - 1616A", 
+                "B6 - 1616", 
+                "B6 - 1618A", 
+                "B6 - 1618", 
+                "A-1620-20A", 
+                "A-1620-20B", 
+                "A-1620-20C", 
+                "A-1620-20", 
+                "A-1626-20D", 
+                "A-1626-20",
+                "X-8503-20",
+                "X-5185-20",
+                "X-5186-20",
+                "X-8612-20",
+                "X-8315-20",
+                "5257",
+                "X-2199-20",
+                "X-5172-20",
+                "X-2207-20"
+                )
+
+filepaths = "/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/genoprobs/qced.samples/"
+
+############################
+
+##extracting number genotypes from r/qtl2 data for selected samples
+gmf <- read_cross2("/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/genoprobs/all.samples/qtl2/gm_sorted.json")
+gmf
+
+gm <- gmf[ind_ids(gmf) %in%concord.mice,]
+gm
+
+rqtl.genos.numbers <- t(as.data.frame(do.call(cbind,gm$geno)))
+rqtl.genos.numbers <- as.data.frame(rqtl.genos.numbers)
+
+sample_file <- dir(path = filepaths, pattern = "^DODB_*", full.names = TRUE)
+samples.all <- read.csv(sample_file)
+samples <- samples.all[samples.all$Original.Mouse.ID %in%concord.mice,]
+all.equal(as.character(ind_ids(gm)), as.character(samples$Unique.Sample.ID))
+
+############################
+
+##extracting letter genotypes from raw data for selected samples
+#combining genotype files:
+main.path = "/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/Neogen/"
+path.dirs <- dir(path = main.path, pattern = "^Jackson_Lab_Korstanje_MURGIGV01_*", full.names = TRUE)
+
+geno_files <- list()
+for (i in (1:length(path.dirs))){
+	
+	##final report level data
+	#filepathg = '/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/Neogen/Jackson_Lab_Korstanje_MURGIGV01_20210211/'
+	#filepaths = '/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/genoprobs/qced.samples/'
+	#filepathp = '/projects/compsci/corneb_cs/workflowr/Thaiss/Thaiss_workflowr_2/data/'
+
+	report_file <- dir(path = path.dirs[i], pattern = "_FinalReport.zip$", full.names = TRUE)
+	sample_file <- dir(path = filepaths, pattern = "^DODB_*", full.names = TRUE)
+	#pheno_file <- dir(path = filepathp, pattern = "Uni_of_Penn_Thaiss_pheno.3.csv", full.names = TRUE)
+
+	report_file_hdr <- unlist(strsplit(report_file, split = "/"))
+	report_file_hdr <- report_file_hdr[length(report_file_hdr)]
+
+	header <- read.table(unz(report_file, sub(pattern = "zip$", replacement = "txt", report_file_hdr)), 
+    	                  sep = "\t", skip = 1, nrows = 2)
+	report <- fread(paste("unzip -cq", report_file),
+    	             skip = 9, showProgress = TRUE, sep = "\t")
+	#samples <- fread(paste0("unzip -cq ",  sample_file))
+	colnames(report) <- gsub(" |-", "_", colnames(report))
+
+	geno <- report %>%
+    	select(Sample_ID, SNP_Name, Allele1___Forward, Allele2___Forward) %>%
+    	mutate(Sample_ID = factor(Sample_ID, levels = unique(report$Sample_ID))) %>%
+    	unite(genotype, c("Allele1___Forward", "Allele2___Forward"), sep = "") %>%
+    	spread(Sample_ID, genotype)
+
+    geno_files[[i]] <- geno
+
+}
+
+all_genos <- Reduce(function(x, y) merge(x, y,by=c("SNP_Name"),all=TRUE),geno_files)
+rownames(all_genos) <- all_genos$SNP_Name
+all_genos_edit <- all_genos[c(2:length(all_genos))]
+
+all_genos_t <- as.data.frame(t(all_genos_edit))
+all_genos_t$sample.ids <- rownames(all_genos_t)
+
+rqtl.genos.t <- all_genos_t[all_genos_t$sample.ids %in%concord.mice,]
+rqtl.genos <- all_genos_edit
+
+############################
+
+##Pulling in haploQA snp level data for selected samples
+
+main.path.2 = "/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/haploQA/"
+files <- dir(path = main.path.2, pattern = "_snp_report.txt$", full.names = TRUE)
+
+haploqa_files <- list()
+for (i in (1:length(files))){
+
+	file <- read.table(files[i], header=T, sep="\t")
+	#sample.id <- unique(file$original_sample_id)
+	rownames(file) <- file$snp_id
+	file$genotype <- paste0(file$allele1_fwd, file$allele2_fwd)
+	names(file)[10] <-c(unique(as.character(file$original_sample_id)))
+	file.new <- file[c(3,10)]
+
+	haploqa_files[[i]] <- file.new
+
+}
+
+all_haploqa_files <- Reduce(function(x, y) merge(x, y,by=c("snp_id"),all=TRUE),haploqa_files)
+rownames(all_haploqa_files) <- all_haploqa_files$snp_id
+all_haploqa_files_edit <- all_haploqa_files[c(2:length(all_haploqa_files))]
+
+haploqa.genos.t <- as.data.frame(t(all_haploqa_files_edit))
+haploqa.genos.t$sample.ids <- rownames(haploqa.genos.t)
+haploqa.genos <- all_haploqa_files_edit
+
+```
+
+```{r concordance numbers conversion, eval=TRUE, include=FALSE}
+############################
+
+## converting haploQA data to numbers for selected samples
+
+#new_data <- haploqa.genos
+#new_data[new_data == "AA"] <- "A"
+#new_data[new_data == "CC"] <- "C"
+#new_data[new_data == "GG"] <- "G"
+#new_data[new_data == "TT"] <- "T"
+#new_data[new_data == "--"] <- "N"
+##new_data[nchar(new_data) == 2] <- "H"
+#new_data[new_data == "CA"] <- "H"
+#new_data[new_data == "CG"] <- "H"
+#new_data[new_data == "CT"] <- "H"
+#new_data[new_data == "AC"] <- "H"
+#new_data[new_data == "GC"] <- "H"
+#new_data[new_data == "TC"] <- "H"
+#new_data[new_data == "AG"] <- "H"
+#new_data[new_data == "AT"] <- "H"
+#new_data[new_data == "GA"] <- "H"
+#new_data[new_data == "TA"] <- "H"
+#new_data[new_data == "GT"] <- "H"
+#new_data[new_data == "TG"] <- "H"
+#stopifnot(unique(as.vector(new_data)) %in% c("A", "C", "G", "T", "H", "N"))
+
+#dn <- dimnames(new_data)
+#data <- data.frame(new_data, stringsAsFactors = F)
+#data <- lapply(data, factor, levels = c("A", "C", "G", "T", "H", "N"))
+#data <- lapply(data, as.numeric)
+#data <- matrix(unlist(data), nrow = length(data[[1]]), ncol = length(data))
+## Record the location of the het calls.
+#het <- which(data == 5)
+## Set them to NA temporarily.
+#data[het] <- NA
+## Set '6' to NA, indicating no-call.
+#data[data == 6] <- NA
+## For each marker, set the lowest allele to 1 and the highest to 3.
+#colrng <- apply(data, 2, range, na.rm = T)
+#colrng[is.infinite(as.numeric(colrng))] <- NA
+## Set the '1' allele.
+#one <- matrix(colrng[1,], nrow = nrow(data), ncol = ncol(data), byrow = T)
+#data[data == one] <- 1
+#rm(one) 
+## NOTE: At this point, the '2' values are 'C' alleles, not het calls.
+## If there is only one allele, set it to NA in the column range matrix.
+#one.allele <- apply(colrng, 2, unique)
+#one.allele <- which(sapply(one.allele, length) == 1)
+#colrng[,one.allele] <- NA
+## Set the '3' allele.
+#three <- matrix(colrng[2,], nrow = nrow(data), ncol = ncol(data), byrow = T)
+#data[data == three] <- 3
+#rm(three)
+## Set het calls = 2.
+#data[het] <- 2
+#dimnames(data) <- dn
+#haploqa.genos.numbers <- as.data.frame(data)
+#haploqa.genos.numbers[is.na(haploqa.genos.numbers)] <- 0
+
+```
+
+### Concordance (SNP-level genotypes)
+```{r concordance letters, eval=TRUE}
+
+#merging two data frames together: genos & haploqa on snp.id
+
+all_genos.new <- all_genos[,colnames(all_genos) %in%concord.mice]
+all_genos.new$SNP_Name <- rownames(all_genos.new)
+geno.letters <- merge(all_genos.new,all_haploqa_files, by.x=c("SNP_Name"), by.y=c("snp_id"), all=T)
+
+concord.mice.2 = set_names(colnames(geno.letters[2:length(geno.letters)]))
+
+concordance_letters_hm = function(x, y) {
+
+    #sample.match <- ifelse(geno.letters[["B6 - 1616A"]] == geno.letters[["B6 - 1616"]], 1, 0)
+    sample.match <- ifelse(geno.letters[[x]] == geno.letters[[y]], 1, 0)
+    concordance.id1 <- x
+    concordance.id2 <- y
+    concordance.sum <- sum(sample.match)
+    concordance.percentage <- (concordance.sum/nrow(geno.letters))*100
+    concordance.letters <- cbind(concordance.id1,concordance.id2,concordance.percentage)
+    write.table(concordance.letters,paste0("/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/concordance/concordance.letters_",x,"_vs_",y,".txt"), quote=F, sep="\t")
+
+}
+
+all.pairs <- map(concord.mice.2, ~map(concord.mice.2, concordance_letters_hm, y = .x))
+
+main.path.3 = "/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/concordance/"
+files <- dir(path = main.path.3, pattern = ".txt$", full.names = TRUE)
+
+concordance_letters <- list()
+for (i in (1:length(files))){
+    #sample.id <- paste0("^",i,"[.]")
+    file <- read.table(files[i], header=T, sep="\t")
+    concordance_letters[[i]] <- file
+}
+
+concordance <- as.data.frame(do.call(rbind, concordance_letters))
+
+#removing those lines where comparing with same platform
+concordance.subset.1 <- subset(concordance,  sapply(strsplit(concordance$concordance.id1,'.',fixed=T),function(x) x[2]) != sapply(strsplit(concordance$concordance.id2,'.',fixed=T),function(x) x[2]))
+concordance.subset.2 <- subset(concordance.subset.1,  sapply(strsplit(concordance.subset.1$concordance.id1,'.',fixed=T),function(x) x[2]) != 'y')
+concordance.subset.2 <- as.data.frame(concordance.subset.2)
+
+#Removing .x and .y
+concordance.subset.2$concordance.id1 <- gsub(".x", "", concordance.subset.2$concordance.id1)
+concordance.subset.2$concordance.id2 <- gsub(".y", "", concordance.subset.2$concordance.id2)
+
+#Rmoving same pairs
+
+#names(concordance) <- c("concordance [snp-level genotypes]")
+#concordance$Neogen_Sample_ID <- rownames(concordance)
+#concordance$Neogen_Sample_ID_2 <- rownames(concordance)
+
+##Keeping pairs of same IDs
+concordance.pairs <- subset(concordance.subset.2,  concordance.subset.2$concordance.id1 == concordance.subset.2$concordance.id2)
+names(concordance.pairs) <- c("R/qtl2 Data","haploQA Data","Concordance Percentage")
+concordance.pairs$"Concordance Percentage" <- paste0(concordance.pairs$"Concordance Percentage","%")
+
+rownames(concordance.pairs) <- NULL
+
+concordance.pairs[] %>%
+  kable(escape = F,align = c("ccccccccccccccccc"),linesep ="\\hline") %>%
+  kable_styling("striped", full_width = T) %>%
+  column_spec(1:2, width = "5cms") 
+
+
+##Image of all sample IDs compared to each other (from two different paltforms)
+image = (p <- ggplot(concordance.subset.2, aes(concordance.id1, concordance.id2)) + 
+geom_tile(aes(fill = concordance.percentage)) + 
+#geom_text(aes(fill = concordance.percentage, label = concordance.percentage), size=0.1) +
+scale_fill_gradient2(low = "blue", high = "red") +
+xlab("R/qtl2 Data") +
+ylab("haploQA Data") +
+ggtitle("Concordance between samples [R/qtl2 vs. haploQA data]") + 
+theme(axis.ticks = element_line(size = 0.01),
+      axis.text.x =  element_text(angle=90),
+      axis.title.x = element_text(vjust=-2),
+      axis.title.y = element_text(vjust=2.3),
+      #axis.text.y =  element_text(size=8),
+      plot.title = element_text(vjust=2),
+      legend.position = "right",
+      plot.margin = unit(c(1,1,1,1), "cm")))
+
+image
+
+
+##Image of all sample IDs compared to each other (R/qtl2)
+concordance.subset.1 <- subset(concordance,  sapply(strsplit(concordance$concordance.id1,'.',fixed=T),function(x) x[2]) == sapply(strsplit(concordance$concordance.id2,'.',fixed=T),function(x) x[2]))
+concordance.subset.2 <- subset(concordance.subset.1,  sapply(strsplit(concordance.subset.1$concordance.id1,'.',fixed=T),function(x) x[2]) != 'y')
+concordance.subset.2 <- as.data.frame(concordance.subset.2)
+
+#Removing .x and .y
+concordance.subset.2$concordance.id1 <- gsub(".x", "", concordance.subset.2$concordance.id1)
+concordance.subset.2$concordance.id2 <- gsub(".x", "", concordance.subset.2$concordance.id2)
+
+image = (p <- ggplot(concordance.subset.2, aes(concordance.id1, concordance.id2)) + 
+geom_tile(aes(fill = concordance.percentage)) + 
+#geom_text(aes(fill = concordance.percentage, label = concordance.percentage), size=0.1) +
+scale_fill_gradient2(low = "blue", high = "red") +
+xlab("Individual 1") +
+ylab("Individual 2") +
+ggtitle("Concordance between samples [R/qtl2 data]") + 
+theme(axis.ticks = element_line(size = 0.01),
+      axis.text.x =  element_text(angle=90),
+      axis.title.x = element_text(vjust=-2),
+      axis.title.y = element_text(vjust=2.3),
+      #axis.text.y =  element_text(size=8),
+      plot.title = element_text(vjust=2),
+      legend.position = "right",
+      plot.margin = unit(c(1,1,1,1), "cm")))
+
+image
+
+##Image of all sample IDs compared to each other (haploQA)
+concordance.subset.2 <- subset(concordance.subset.1,  sapply(strsplit(concordance.subset.1$concordance.id1,'.',fixed=T),function(x) x[2]) != 'x')
+concordance.subset.2 <- as.data.frame(concordance.subset.2)
+
+#Removing .x and .y
+concordance.subset.2$concordance.id1 <- gsub(".y", "", concordance.subset.2$concordance.id1)
+concordance.subset.2$concordance.id2 <- gsub(".y", "", concordance.subset.2$concordance.id2)
+
+image = (p <- ggplot(concordance.subset.2, aes(concordance.id1, concordance.id2)) + 
+geom_tile(aes(fill = concordance.percentage)) + 
+#geom_text(aes(fill = concordance.percentage, label = concordance.percentage), size=0.1) +
+scale_fill_gradient2(low = "blue", high = "red") +
+xlab("Individual 1") +
+ylab("Individual 2") +
+ggtitle("Concordance between samples [haploQA data]") + 
+theme(axis.ticks = element_line(size = 0.01),
+      axis.text.x =  element_text(angle=90),
+      axis.title.x = element_text(vjust=-2),
+      axis.title.y = element_text(vjust=2.3),
+      #axis.text.y =  element_text(size=8),
+      plot.title = element_text(vjust=2),
+      legend.position = "right",
+      plot.margin = unit(c(1,1,1,1), "cm")))
+
+image
+
+```
+
+### Concordance (phased haplotypes genotypes)
+```{r concordance numbers, eval=TRUE, include=TRUE}
+
+
+#merging two data frames together: genos & haploqa on snp.id
+##concordance between gm$geno (numbers) to haploqa (numbers --> need to change letters to numbers)
+
+#rqtl.genos.numbers$SNP_Name <- rownames(rqtl.genos.numbers)
+#rqtl.genos.numbers <- rqtl.genos.numbers[order(rqtl.genos.numbers$SNP_Name),]
+#haploqa.genos.numbers$snp_id <- rownames(haploqa.genos.numbers)
+#geno.numbers <- merge(rqtl.genos.numbers,haploqa.genos.numbers, by.x=c("SNP_Name"), by.y=c("snp_id"), all.x=T)
+#rownames(geno.numbers) <- geno.numbers$SNP_Name
+
+#concordance_numbers <- list()
+#for(i in concord.mice){
+#	#sample.id <- paste0("^",i,"[.]")
+#	sample.match <- as.data.frame(geno.numbers[,grep(paste0("^",i,"[.]"),colnames(geno.numbers))])
+#	print(table(sample.match[c(1)]))
+#	print(table(sample.match[c(2)]))
+#	sample.match$match <- ifelse(sample.match[c(1)] == sample.match[c(2)], 1, 0)
+#	concordance.sum <- sum(sample.match$match)
+#	concordance.percentage <- (concordance.sum/nrow(sample.match))*100
+#	concordance_numbers[[i]] <- paste0(concordance.percentage,"%")
+#}
+
+#concordance.no <- as.data.frame(do.call(rbind, concordance_numbers))
+#names(concordance.no) <- c("concordance [numbers]")
+#concordance.no$Neogen_Sample_ID <- rownames(concordance)
+
+#rownames(concordance.no) <- NULL
+
+#concordance.no[c(2,1)] %>%
+#  kable(escape = F,align = c("ccccccccccccccccc"),linesep ="\\hline") %>%
+#  kable_styling("striped", full_width = T) %>%
+#  column_spec(1:2, width = "5cms") 
+
+```
+
+```{r simlar ids, eval=TRUE, include=FALSE}
+### Concordance between similar mice
+
+#pairs:
+#A-1626-20/A-1626-20D & X-8503-20
+#A-1620-20/A-1620-20C/A-1620-20B/A-1620-20A & B6 - 1616
+#X-5186-20 & X-5185-20
+
+#duplicate.samples <- c("B6 - 1616A", 
+#                "B6 - 1616", 
+#                "A-1620-20A", 
+#                "A-1620-20B", 
+#                "A-1620-20C", 
+#                "A-1620-20", 
+#                "A-1626-20D", 
+#                "A-1626-20",
+#                "X-8503-20",
+#                "X-5185-20",
+#                "X-5186-20"
+#                )
+
+#rqtl.genos.dups <- rqtl.genos[,colnames(rqtl.genos) %in%duplicate.samples]
+
+#names(rqtl.genos.dups)
+#"B6 - 1616A" "B6 - 1616"  "X-5185-20"  "X-5186-20"  "A-1620-20A" "A-1620-20B" "A-1620-20C" "A-1620-20"  "A-1626-20D" "X-8503-20"  "A-1626-20" 
+
+#A-1626-20/A-1626-20D & X-8503-20
+#print(colnames(rqtl.genos.dups[c(9)]))
+#print(table(rqtl.genos.dups[c(9)]))
+#print(colnames(rqtl.genos.dups[c(10)]))
+#print(table(rqtl.genos.dups[c(11)]))
+#print(colnames(rqtl.genos.dups[c(1)]))
+#print(table(rqtl.genos.dups[c(11)]))
+#rqtl.genos.dups$match.1 <- ifelse(rqtl.genos.dups[c(10)] == rqtl.genos.dups[c(9)], 1, 0)
+#rqtl.genos.dups$match.2 <- ifelse(rqtl.genos.dups[c(10)] == rqtl.genos.dups[c(11)], 1, 0)
+#concordance.sum.1 <- sum(rqtl.genos.dups$match.1)
+#concordance.sum.2 <- sum(rqtl.genos.dups$match.2)
+#concordance.percentage.1 <- as.data.frame((concordance.sum.1/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.1) <- c("concordance")
+#concordance.percentage.1$sample.ids <- paste0(colnames(rqtl.genos.dups[c(10)]), " & ", colnames(rqtl.genos.dups[c(9)]))
+#concordance.percentage.1
+#concordance.percentage.2 <- as.data.frame((concordance.sum.2/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.2) <- c("concordance")
+#concordance.percentage.2$sample.ids <- paste0(colnames(rqtl.genos.dups[c(10)]), " & ", colnames(rqtl.genos.dups[c(11)]))
+#concordance.percentage.2
+
+#A-1620-20/A-1620-20C/A-1620-20B/A-1620-20A & B6 - 1616
+#print(colnames(rqtl.genos.dups[c(1)]))
+#print(table(rqtl.genos.dups[c(1)]))
+#print(colnames(rqtl.genos.dups[c(2)]))
+#print(table(rqtl.genos.dups[c(2)]))
+#print(colnames(rqtl.genos.dups[c(5)]))
+#print(table(rqtl.genos.dups[c(5)]))
+#print(colnames(rqtl.genos.dups[c(6)]))
+#print(table(rqtl.genos.dups[c(6)]))
+#print(colnames(rqtl.genos.dups[c(7)]))
+#print(table(rqtl.genos.dups[c(7)]))
+#print(colnames(rqtl.genos.dups[c(8)]))
+#print(table(rqtl.genos.dups[c(8)]))
+#rqtl.genos.dups$match.1 <- ifelse(rqtl.genos.dups[c(1)] == rqtl.genos.dups[c(5)], 1, 0)
+#rqtl.genos.dups$match.2 <- ifelse(rqtl.genos.dups[c(2)] == rqtl.genos.dups[c(5)], 1, 0)
+#rqtl.genos.dups$match.3 <- ifelse(rqtl.genos.dups[c(1)] == rqtl.genos.dups[c(6)], 1, 0)
+#rqtl.genos.dups$match.4 <- ifelse(rqtl.genos.dups[c(2)] == rqtl.genos.dups[c(6)], 1, 0)
+#rqtl.genos.dups$match.5 <- ifelse(rqtl.genos.dups[c(1)] == rqtl.genos.dups[c(7)], 1, 0)
+#rqtl.genos.dups$match.6 <- ifelse(rqtl.genos.dups[c(2)] == rqtl.genos.dups[c(7)], 1, 0)
+#rqtl.genos.dups$match.7 <- ifelse(rqtl.genos.dups[c(1)] == rqtl.genos.dups[c(8)], 1, 0)
+#rqtl.genos.dups$match.8 <- ifelse(rqtl.genos.dups[c(2)] == rqtl.genos.dups[c(8)], 1, 0)
+#concordance.sum.1 <- sum(rqtl.genos.dups$match.1)
+#concordance.sum.2 <- sum(rqtl.genos.dups$match.2)
+#concordance.sum.3 <- sum(rqtl.genos.dups$match.3)
+#concordance.sum.4 <- sum(rqtl.genos.dups$match.4)
+#concordance.sum.5 <- sum(rqtl.genos.dups$match.5)
+#concordance.sum.6 <- sum(rqtl.genos.dups$match.6)
+#concordance.sum.7 <- sum(rqtl.genos.dups$match.7)
+#concordance.sum.8 <- sum(rqtl.genos.dups$match.8)
+#concordance.percentage.1 <- as.data.frame((concordance.sum.1/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.1) <- c("concordance")
+#concordance.percentage.1$sample.ids <- paste0(colnames(rqtl.genos.dups[c(1)]), " & ", colnames(rqtl.genos.dups[c(5)]))
+#concordance.percentage.1
+#concordance.percentage.2 <- as.data.frame((concordance.sum.2/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.2) <- c("concordance")
+#concordance.percentage.2$sample.ids <- paste0(colnames(rqtl.genos.dups[c(2)]), " & ", colnames(rqtl.genos.dups[c(5)]))
+#concordance.percentage.2
+#concordance.percentage.3 <- as.data.frame((concordance.sum.3/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.3) <- c("concordance")
+#concordance.percentage.3$sample.ids <- paste0(colnames(rqtl.genos.dups[c(1)]), " & ", colnames(rqtl.genos.dups[c(6)]))
+#concordance.percentage.3
+#concordance.percentage.4 <- as.data.frame((concordance.sum.4/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.4) <- c("concordance")
+#concordance.percentage.4$sample.ids <- paste0(colnames(rqtl.genos.dups[c(2)]), " & ", colnames(rqtl.genos.dups[c(6)]))
+#concordance.percentage.4
+#concordance.percentage.5 <- as.data.frame((concordance.sum.5/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.5) <- c("concordance")
+#concordance.percentage.5$sample.ids <- paste0(colnames(rqtl.genos.dups[c(1)]), " & ", colnames(rqtl.genos.dups[c(7)]))
+#concordance.percentage.5
+#concordance.percentage.6 <- as.data.frame((concordance.sum.6/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.6) <- c("concordance")
+#concordance.percentage.6$sample.ids <- paste0(colnames(rqtl.genos.dups[c(2)]), " & ", colnames(rqtl.genos.dups[c(7)]))
+#concordance.percentage.6
+#concordance.percentage.7 <- as.data.frame((concordance.sum.7/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.7) <- c("concordance")
+#concordance.percentage.7$sample.ids <- paste0(colnames(rqtl.genos.dups[c(1)]), " & ", colnames(rqtl.genos.dups[c(8)]))
+#concordance.percentage.7
+#concordance.percentage.8 <- as.data.frame((concordance.sum.8/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.8) <- c("concordance")
+#concordance.percentage.8$sample.ids <- paste0(colnames(rqtl.genos.dups[c(2)]), " & ", colnames(rqtl.genos.dups[c(8)]))
+#concordance.percentage.8
+
+
+#X-5186-20 & X-5185-20
+#print(colnames(rqtl.genos.dups[c(3)]))
+#print(table(rqtl.genos.dups[c(3)]))
+#print(colnames(rqtl.genos.dups[c(4)]))
+#print(table(rqtl.genos.dups[c(4)]))
+#rqtl.genos.dups$match.1 <- ifelse(rqtl.genos.dups[c(3)] == rqtl.genos.dups[c(4)], 1, 0)
+#concordance.sum.1 <- sum(rqtl.genos.dups$match.1)
+#concordance.percentage.1 <- as.data.frame((concordance.sum.1/nrow(rqtl.genos.dups))*100)
+#names(concordance.percentage.1) <- c("concordance")
+#concordance.percentage.1$sample.ids <- paste0(colnames(rqtl.genos.dups[c(3)]), " & ", colnames(rqtl.genos.dups[c(4)]))
+#concordance.percentage.1
+
+```
