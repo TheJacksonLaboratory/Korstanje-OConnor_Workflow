@@ -19,7 +19,7 @@ editor_options:
 
 ### Haplotype Phasing
 * [Figures](0.2_haplotype_comparison_bqc.html)
-* [Concordance](concordance_random.samples.html)
+* [Concordance](0.3_concordance_random_samples_bqc.html)
 
 
 ### 1. Phenotype QC
