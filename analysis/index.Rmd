@@ -40,11 +40,7 @@ editor_options:
 
 ### 3. QTL Analysis
 * Step 1a: DO Report
-	+ [Without Controls](3.1.2_do_diversity_report.html)
-	+ [With Controls](3.1.2_do_diversity_report_wcont.html)
 * Step 1b: Recombination Block Size & Founder Proportions
-	+ [Without Controls](3.1_recomb_size_founder_prop.html)
-	+ [With Controls](3.1_recomb_size_founder_prop_wcont.html)
 * Step 2: GCTA Heritability
 	+ no phenotypes for GCTA analysis
 * Step 3: QTL Mapping (`R/qtl2`)
