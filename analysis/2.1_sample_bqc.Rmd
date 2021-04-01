@@ -220,7 +220,7 @@ sex <- samples$Sex
 #BAF = yint / (xint + yint)
 #LRR = log2((xint + yint) / (xint_ave+yint_ave))
 
-point_colors <- as.character( brocolors("web")[c("green", "purple","red")] )
+point_colors <- as.character( brocolors("web")[c("red","green", "purple")] )
 percent_missing <- n_missing(gm, summary="proportion")*100
 labels <- paste0(names(chrx_int), " (", round(percent_missing), "%)")
 iplot( chrx_int,  chry_int, group=sex, indID=labels,
@@ -657,6 +657,8 @@ qc_info <- merge(qc_info,
 
 #missing sex
 #qc_info$sex.match <- ifelse(qc_info$sexp == qc_info$sex, TRUE, FALSE)
+samples <- samples[order(samples$Original.Mouse.ID),]
+all.equal(as.character(qc_info$id), as.character(samples$Unique.Sample.ID))
 qc_info$sex.match <- ifelse(samples$Inferred.Sex == substring(samples$Sex, 1, 1), TRUE, FALSE)
 
 
@@ -752,7 +754,7 @@ bad$Neogen_Sample_ID <- as.character(bad.sample$id)
 bad$high_miss <- ifelse(bad.sample$percent_missing >= 10, 'XX', '')
 bad$diff_sex <- ifelse(bad.sample$sex.match ==FALSE | is.na(bad.sample$sex.match) == TRUE, 'XX', '')
 bad$high_xo <- ifelse(bad.sample$Number_crossovers <= 200 | bad.sample$Number_crossovers >=1000, 'XX', '')
-bad$DO.Generation <- ifelse(bad.sample$generation ==1, 'XX', '')
+bad$DO.Generation <- ifelse(bad.sample$generation ==30, 'XX', '')
 bad$high_geno.errors <- ifelse(bad.sample$genotype_erros >= 1, 'XX', '')
 bad$duplicate_ID <- ifelse(bad.sample$duplicated == TRUE, 'XX', '')
 bad[is.na(bad)] <- ""
@@ -766,7 +768,7 @@ badind <- subset(bad,
          bad$diff_sex == 'XX'|  
          bad$high_xo == 'XX'|
          bad$high_geno.errors == 'XX'|
-         #bad$DO_generation == 'XX'|
+         bad$DO.Generation == 'XX'|
          bad$duplicate_ID == 'XX')
 
 
@@ -795,7 +797,7 @@ badind[] %>%
                   cell_spec(high_geno.errors, color = 'pink',background = 'pink'),
                   ''),
      DO.Generation = ifelse(DO.Generation == 'XX',
-                  cell_spec(DO.Generation, color = 'light blue',background = 'ligh blue'),
+                  cell_spec(DO.Generation, color = 'lightgreen',background = 'lightgreen'),
                   ''),
      duplicate_ID = ifelse(duplicate_ID == 'XX',
                   cell_spec(duplicate_ID, color = 'orange',background = 'orange'),
@@ -803,7 +805,7 @@ badind[] %>%
      ) %>%
    kable(escape = F,align = c("ccccccccc"),linesep ="\\hline") %>%
    kable_styling("striped", full_width = F) %>%
-   column_spec(1:5, width = "3cm") 
+   column_spec(1:6, width = "3cm") 
 
 ```
 

@@ -35,11 +35,7 @@ editor_options:
 	+ [Without Controls](2.2.1_snp_qc.html)
 	+ [With Controls](2.2.1_snp_qc_wcont.html)
 * Step 3: Effect of Data Cleaning
-	+ [Without Controls](2.3.1_afterqc.html)
-	+ [With Controls](2.3.1_afterqc_wcont.html)
 * Step 4: Preparing Files for QTL Analysis
-	+ [Without Controls](2.4.1_preparing_files_qtl2.html)
-	+ [With Controls](2.4.1_preparing_files_qtl2_wcont.html)
 
 
 ### 3. QTL Analysis
