@@ -10,7 +10,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-### Project At A Glance [Total Samples: 474]
+### Project At A Glance [Total Samples: 570]
 * Samples: Jackson_Lab_Korstanje_MURGIGV01_20201111
 	+ [Total Samples: 192](0.1_samples_batch_20201111.html)
 * Samples: Jackson_Lab_Korstanje_MURGIGV01_20201118
@@ -25,7 +25,7 @@ editor_options:
 	+ [Concordance](0.3_concordance_random_samples_bqc.html)
 * 3 batches
 	+ [Figures](0.2_haplotype_comparison_bqc_3batches.html)
-	+ [Concordance](0.3_concordance_random_samples_bqc_3batches.html)
+	+ Concordance
 
 
 ### 1. Phenotype QC
