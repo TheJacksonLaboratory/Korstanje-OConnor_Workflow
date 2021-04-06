@@ -1,0 +1,7640 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Belinda Cornes" />
+
+<meta name="date" content="2021-04-06" />
+
+<title>Samples [Batch: MURGIGV01_20201118]</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Korstanje-OConnor Workflow</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Samples [Batch: MURGIGV01_20201118]</h1>
+<h4 class="author">Belinda Cornes</h4>
+<h4 class="date">2021-04-06</h4>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#genotype-summary-by-sample">Genotype Summary by Sample</a></li>
+<li><a href="#gender-summary-by-sample">Gender Summary by Sample</a></li>
+<li><a href="#phenotype-summary-by-sample">Phenotype Summary by Sample</a></li>
+<li><a href="#all-problematic-samples">All Problematic Samples</a></li>
+</ul>
+</div>
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2021-04-06
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>Korstanje-OConnor_Workflow/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210317code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210317)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20210317code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20210317)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomTheJacksonLaboratoryKorstanjeOConnorWorkflowtreef12c1f3928f1d3b54c8cd12477fac8a88cd3b75dtargetblankf12c1f3a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/tree/f12c1f3928f1d3b54c8cd12477fac8a88cd3b75d" target="_blank">f12c1f3</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomTheJacksonLaboratoryKorstanjeOConnorWorkflowtreef12c1f3928f1d3b54c8cd12477fac8a88cd3b75dtargetblankf12c1f3a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/tree/f12c1f3928f1d3b54c8cd12477fac8a88cd3b75d" target="_blank">f12c1f3</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    analysis/.DS_Store
+
+Untracked files:
+    Untracked:  data/bad_markers_all_3batches.RData
+    Untracked:  data/bad_markers_all_wcont_3batches.RData
+    Untracked:  data/e_3batches.RData
+    Untracked:  data/e_g_snpg_samqc_3batches.RData
+    Untracked:  data/e_g_snpg_samqc_wcont_3batches.RData
+    Untracked:  data/e_wcont_3batches.RData
+    Untracked:  data/errors_ind_3batches.RData
+    Untracked:  data/errors_ind_wcont_3batches.RData
+    Untracked:  data/genotype_errors_marker_3batches.RData
+    Untracked:  data/genotype_errors_marker_wcont_3batches.RData
+    Untracked:  data/genotype_freq_marker_3batches.RData
+    Untracked:  data/genotype_freq_marker_wcont_3batches.RData
+    Untracked:  data/gm_allqc_3batches.RData
+    Untracked:  data/gm_allqc_wcont_3batches.RData
+    Untracked:  data/gm_samqc_3batches.RData
+    Untracked:  data/gm_samqc_wcont_3batches.RData
+    Untracked:  data/m_3batches.RData
+    Untracked:  data/m_wcont_3batches.RData
+    Untracked:  data/nxo_3batches.RData
+    Untracked:  data/nxo_wcont_3batches.RData
+    Untracked:  data/percent_missing_id_3batches.RData
+    Untracked:  data/percent_missing_id_wcont_3batches.RData
+    Untracked:  data/percent_missing_marker_3batches.RData
+    Untracked:  data/percent_missing_marker_wcont_3batches.RData
+    Untracked:  data/qc_info_bad_sample_3batches.RData
+    Untracked:  data/qc_info_bad_sample_wcont_3batches.RData
+    Untracked:  data/snpg_3batches.RData
+    Untracked:  data/snpg_wcont_3batches.RData
+    Untracked:  data/summary.cg_3batches.RData
+    Untracked:  data/summary.cg_wcont_3batches.RData
+    Untracked:  output/Percent_genotype_errors_obs_vs_predicted_3batches.pdf
+    Untracked:  output/Percent_genotype_errors_obs_vs_predicted_wcont_3batches.pdf
+    Untracked:  output/Percent_missing_genotype_data_3batches.pdf
+    Untracked:  output/Percent_missing_genotype_data_per_marker_3batches.pdf
+    Untracked:  output/Percent_missing_genotype_data_per_marker_wcont_3batches.pdf
+    Untracked:  output/Percent_missing_genotype_data_wcont_3batches.pdf
+    Untracked:  output/genotype_error_marker_3batches.pdf
+    Untracked:  output/genotype_error_marker_wcont_3batches.pdf
+    Untracked:  output/genotype_frequency_marker_3batches.pdf
+    Untracked:  output/genotype_frequency_marker_wcont_3batches.pdf
+    Untracked:  output/number_crossover_3batches.pdf
+    Untracked:  output/number_crossover_wcont_3batches.pdf
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/0.1_samples_batch_20201118.Rmd</code>) and HTML (<code>docs/0.1_samples_batch_20201118.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/f12c1f3928f1d3b54c8cd12477fac8a88cd3b75d/analysis/0.1_samples_batch_20201118.Rmd" target="_blank">f12c1f3</a>
+</td>
+<td>
+Belinda Cornes
+</td>
+<td>
+2021-04-06
+</td>
+<td>
+qc for 3 batches
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div id="genotype-summary-by-sample" class="section level3">
+<h3>Genotype Summary by Sample</h3>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+<th style="text-align:center;">
+Missing
+</th>
+<th style="text-align:center;">
+AA
+</th>
+<th style="text-align:center;">
+AC
+</th>
+<th style="text-align:center;">
+AG
+</th>
+<th style="text-align:center;">
+AT
+</th>
+<th style="text-align:center;">
+CC
+</th>
+<th style="text-align:center;">
+CG
+</th>
+<th style="text-align:center;">
+GC
+</th>
+<th style="text-align:center;">
+GG
+</th>
+<th style="text-align:center;">
+TA
+</th>
+<th style="text-align:center;">
+TC
+</th>
+<th style="text-align:center;">
+TG
+</th>
+<th style="text-align:center;">
+TT
+</th>
+<th style="text-align:center;">
+Total_Genotyped
+</th>
+<th style="text-align:center;">
+Percent_Genotyped
+</th>
+<th style="text-align:center;">
+MURGIGV01_SNP.Count
+</th>
+<th style="text-align:center;">
+cr
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+5447
+</td>
+<td style="text-align:center;">
+6207
+</td>
+<td style="text-align:center;width: 5cms; ">
+20875
+</td>
+<td style="text-align:center;width: 5cms; ">
+4106
+</td>
+<td style="text-align:center;width: 5cms; ">
+17871
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+25767
+</td>
+<td style="text-align:center;width: 5cms; ">
+24
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+25945
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+17382
+</td>
+<td style="text-align:center;width: 5cms; ">
+4091
+</td>
+<td style="text-align:center;width: 5cms; ">
+20946
+</td>
+<td style="text-align:center;width: 5cms; ">
+137052
+</td>
+<td style="text-align:center;">
+95.67%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9566729
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B6 - 1618A
+</td>
+<td style="text-align:center;">
+5014
+</td>
+<td style="text-align:center;width: 5cms; ">
+34089
+</td>
+<td style="text-align:center;width: 5cms; ">
+108
+</td>
+<td style="text-align:center;width: 5cms; ">
+279
+</td>
+<td style="text-align:center;width: 5cms; ">
+2
+</td>
+<td style="text-align:center;width: 5cms; ">
+34662
+</td>
+<td style="text-align:center;width: 5cms; ">
+3
+</td>
+<td style="text-align:center;width: 5cms; ">
+0
+</td>
+<td style="text-align:center;width: 5cms; ">
+34874
+</td>
+<td style="text-align:center;width: 5cms; ">
+1
+</td>
+<td style="text-align:center;width: 5cms; ">
+291
+</td>
+<td style="text-align:center;width: 5cms; ">
+99
+</td>
+<td style="text-align:center;width: 5cms; ">
+33837
+</td>
+<td style="text-align:center;width: 5cms; ">
+138245
+</td>
+<td style="text-align:center;">
+96.50%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9650005
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5470-20
+</td>
+<td style="text-align:center;">
+6002
+</td>
+<td style="text-align:center;width: 5cms; ">
+21053
+</td>
+<td style="text-align:center;width: 5cms; ">
+4176
+</td>
+<td style="text-align:center;width: 5cms; ">
+17707
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+25845
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+26051
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+17436
+</td>
+<td style="text-align:center;width: 5cms; ">
+4145
+</td>
+<td style="text-align:center;width: 5cms; ">
+20800
+</td>
+<td style="text-align:center;width: 5cms; ">
+137257
+</td>
+<td style="text-align:center;">
+95.81%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9581039
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5482-20
+</td>
+<td style="text-align:center;">
+5985
+</td>
+<td style="text-align:center;width: 5cms; ">
+21888
+</td>
+<td style="text-align:center;width: 5cms; ">
+3860
+</td>
+<td style="text-align:center;width: 5cms; ">
+16900
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+26120
+</td>
+<td style="text-align:center;width: 5cms; ">
+23
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+26250
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+16502
+</td>
+<td style="text-align:center;width: 5cms; ">
+3889
+</td>
+<td style="text-align:center;width: 5cms; ">
+21801
+</td>
+<td style="text-align:center;width: 5cms; ">
+137274
+</td>
+<td style="text-align:center;">
+95.82%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9582225
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5493-20
+</td>
+<td style="text-align:center;">
+5763
+</td>
+<td style="text-align:center;width: 5cms; ">
+21439
+</td>
+<td style="text-align:center;width: 5cms; ">
+4132
+</td>
+<td style="text-align:center;width: 5cms; ">
+17412
+</td>
+<td style="text-align:center;width: 5cms; ">
+20
+</td>
+<td style="text-align:center;width: 5cms; ">
+25877
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+26079
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+17233
+</td>
+<td style="text-align:center;width: 5cms; ">
+4062
+</td>
+<td style="text-align:center;width: 5cms; ">
+21209
+</td>
+<td style="text-align:center;width: 5cms; ">
+137496
+</td>
+<td style="text-align:center;">
+95.98%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9597722
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5504-20
+</td>
+<td style="text-align:center;">
+5786
+</td>
+<td style="text-align:center;width: 5cms; ">
+20881
+</td>
+<td style="text-align:center;width: 5cms; ">
+4177
+</td>
+<td style="text-align:center;width: 5cms; ">
+17692
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+25978
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26322
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+17483
+</td>
+<td style="text-align:center;width: 5cms; ">
+4114
+</td>
+<td style="text-align:center;width: 5cms; ">
+20790
+</td>
+<td style="text-align:center;width: 5cms; ">
+137473
+</td>
+<td style="text-align:center;">
+95.96%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9596116
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B6 - 1618B
+</td>
+<td style="text-align:center;">
+4983
+</td>
+<td style="text-align:center;width: 5cms; ">
+34088
+</td>
+<td style="text-align:center;width: 5cms; ">
+110
+</td>
+<td style="text-align:center;width: 5cms; ">
+263
+</td>
+<td style="text-align:center;width: 5cms; ">
+2
+</td>
+<td style="text-align:center;width: 5cms; ">
+34695
+</td>
+<td style="text-align:center;width: 5cms; ">
+4
+</td>
+<td style="text-align:center;width: 5cms; ">
+0
+</td>
+<td style="text-align:center;width: 5cms; ">
+34894
+</td>
+<td style="text-align:center;width: 5cms; ">
+1
+</td>
+<td style="text-align:center;width: 5cms; ">
+276
+</td>
+<td style="text-align:center;width: 5cms; ">
+106
+</td>
+<td style="text-align:center;width: 5cms; ">
+33837
+</td>
+<td style="text-align:center;width: 5cms; ">
+138276
+</td>
+<td style="text-align:center;">
+96.52%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9652168
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5527-20
+</td>
+<td style="text-align:center;">
+5883
+</td>
+<td style="text-align:center;width: 5cms; ">
+21398
+</td>
+<td style="text-align:center;width: 5cms; ">
+4003
+</td>
+<td style="text-align:center;width: 5cms; ">
+17136
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+26028
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26297
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+17272
+</td>
+<td style="text-align:center;width: 5cms; ">
+4062
+</td>
+<td style="text-align:center;width: 5cms; ">
+21130
+</td>
+<td style="text-align:center;width: 5cms; ">
+137376
+</td>
+<td style="text-align:center;">
+95.89%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9589345
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+X-5448-20
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+17710
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+17008
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+4489
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+19061
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+14
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+22495
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+8
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+9
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+22480
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+18771
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+4461
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+16742
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+125549
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+87.64%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.8763777
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5459-20
+</td>
+<td style="text-align:center;">
+6071
+</td>
+<td style="text-align:center;width: 5cms; ">
+21660
+</td>
+<td style="text-align:center;width: 5cms; ">
+3978
+</td>
+<td style="text-align:center;width: 5cms; ">
+16860
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26289
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26460
+</td>
+<td style="text-align:center;width: 5cms; ">
+5
+</td>
+<td style="text-align:center;width: 5cms; ">
+16710
+</td>
+<td style="text-align:center;width: 5cms; ">
+3883
+</td>
+<td style="text-align:center;width: 5cms; ">
+21309
+</td>
+<td style="text-align:center;width: 5cms; ">
+137188
+</td>
+<td style="text-align:center;">
+95.76%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9576222
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+5195
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+17840
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+20388
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3938
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+16292
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+6
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+22153
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+7
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+5
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+22404
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+10
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+16168
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3934
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+20114
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+125419
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+87.55%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.8754703
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5483-20
+</td>
+<td style="text-align:center;">
+5997
+</td>
+<td style="text-align:center;width: 5cms; ">
+21217
+</td>
+<td style="text-align:center;width: 5cms; ">
+4054
+</td>
+<td style="text-align:center;width: 5cms; ">
+17434
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26028
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26279
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+17220
+</td>
+<td style="text-align:center;width: 5cms; ">
+3954
+</td>
+<td style="text-align:center;width: 5cms; ">
+21035
+</td>
+<td style="text-align:center;width: 5cms; ">
+137262
+</td>
+<td style="text-align:center;">
+95.81%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9581388
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5494-20
+</td>
+<td style="text-align:center;">
+6005
+</td>
+<td style="text-align:center;width: 5cms; ">
+21060
+</td>
+<td style="text-align:center;width: 5cms; ">
+4105
+</td>
+<td style="text-align:center;width: 5cms; ">
+17575
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+25908
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26106
+</td>
+<td style="text-align:center;width: 5cms; ">
+18
+</td>
+<td style="text-align:center;width: 5cms; ">
+17212
+</td>
+<td style="text-align:center;width: 5cms; ">
+4159
+</td>
+<td style="text-align:center;width: 5cms; ">
+21067
+</td>
+<td style="text-align:center;width: 5cms; ">
+137254
+</td>
+<td style="text-align:center;">
+95.81%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9580829
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5505-20
+</td>
+<td style="text-align:center;">
+5651
+</td>
+<td style="text-align:center;width: 5cms; ">
+21077
+</td>
+<td style="text-align:center;width: 5cms; ">
+4167
+</td>
+<td style="text-align:center;width: 5cms; ">
+17831
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+25705
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+25919
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+17617
+</td>
+<td style="text-align:center;width: 5cms; ">
+4174
+</td>
+<td style="text-align:center;width: 5cms; ">
+21074
+</td>
+<td style="text-align:center;width: 5cms; ">
+137608
+</td>
+<td style="text-align:center;">
+96.06%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9605540
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5516-20
+</td>
+<td style="text-align:center;">
+5780
+</td>
+<td style="text-align:center;width: 5cms; ">
+21955
+</td>
+<td style="text-align:center;width: 5cms; ">
+3983
+</td>
+<td style="text-align:center;width: 5cms; ">
+16548
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+26403
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+6
+</td>
+<td style="text-align:center;width: 5cms; ">
+26619
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+16467
+</td>
+<td style="text-align:center;width: 5cms; ">
+3915
+</td>
+<td style="text-align:center;width: 5cms; ">
+21556
+</td>
+<td style="text-align:center;width: 5cms; ">
+137479
+</td>
+<td style="text-align:center;">
+95.97%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9596535
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5529-20
+</td>
+<td style="text-align:center;">
+6274
+</td>
+<td style="text-align:center;width: 5cms; ">
+21107
+</td>
+<td style="text-align:center;width: 5cms; ">
+4270
+</td>
+<td style="text-align:center;width: 5cms; ">
+17696
+</td>
+<td style="text-align:center;width: 5cms; ">
+21
+</td>
+<td style="text-align:center;width: 5cms; ">
+25389
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+25739
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+17721
+</td>
+<td style="text-align:center;width: 5cms; ">
+4122
+</td>
+<td style="text-align:center;width: 5cms; ">
+20885
+</td>
+<td style="text-align:center;width: 5cms; ">
+136985
+</td>
+<td style="text-align:center;">
+95.62%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9562052
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5449-20
+</td>
+<td style="text-align:center;">
+6288
+</td>
+<td style="text-align:center;width: 5cms; ">
+20328
+</td>
+<td style="text-align:center;width: 5cms; ">
+4437
+</td>
+<td style="text-align:center;width: 5cms; ">
+18743
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+25154
+</td>
+<td style="text-align:center;width: 5cms; ">
+22
+</td>
+<td style="text-align:center;width: 5cms; ">
+20
+</td>
+<td style="text-align:center;width: 5cms; ">
+25285
+</td>
+<td style="text-align:center;width: 5cms; ">
+24
+</td>
+<td style="text-align:center;width: 5cms; ">
+18334
+</td>
+<td style="text-align:center;width: 5cms; ">
+4392
+</td>
+<td style="text-align:center;width: 5cms; ">
+20218
+</td>
+<td style="text-align:center;width: 5cms; ">
+136971
+</td>
+<td style="text-align:center;">
+95.61%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9561075
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5460
+</td>
+<td style="text-align:center;">
+6046
+</td>
+<td style="text-align:center;width: 5cms; ">
+21850
+</td>
+<td style="text-align:center;width: 5cms; ">
+3874
+</td>
+<td style="text-align:center;width: 5cms; ">
+16501
+</td>
+<td style="text-align:center;width: 5cms; ">
+21
+</td>
+<td style="text-align:center;width: 5cms; ">
+26379
+</td>
+<td style="text-align:center;width: 5cms; ">
+23
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26540
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+16273
+</td>
+<td style="text-align:center;width: 5cms; ">
+3948
+</td>
+<td style="text-align:center;width: 5cms; ">
+21777
+</td>
+<td style="text-align:center;width: 5cms; ">
+137213
+</td>
+<td style="text-align:center;">
+95.78%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9577967
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5472-20
+</td>
+<td style="text-align:center;">
+6006
+</td>
+<td style="text-align:center;width: 5cms; ">
+21675
+</td>
+<td style="text-align:center;width: 5cms; ">
+3936
+</td>
+<td style="text-align:center;width: 5cms; ">
+16855
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26292
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26545
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+16540
+</td>
+<td style="text-align:center;width: 5cms; ">
+3831
+</td>
+<td style="text-align:center;width: 5cms; ">
+21529
+</td>
+<td style="text-align:center;width: 5cms; ">
+137253
+</td>
+<td style="text-align:center;">
+95.81%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9580759
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5484-20
+</td>
+<td style="text-align:center;">
+6059
+</td>
+<td style="text-align:center;width: 5cms; ">
+21461
+</td>
+<td style="text-align:center;width: 5cms; ">
+3974
+</td>
+<td style="text-align:center;width: 5cms; ">
+17179
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+26419
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26289
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+16670
+</td>
+<td style="text-align:center;width: 5cms; ">
+3924
+</td>
+<td style="text-align:center;width: 5cms; ">
+21234
+</td>
+<td style="text-align:center;width: 5cms; ">
+137200
+</td>
+<td style="text-align:center;">
+95.77%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9577060
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5495-20
+</td>
+<td style="text-align:center;">
+5732
+</td>
+<td style="text-align:center;width: 5cms; ">
+21587
+</td>
+<td style="text-align:center;width: 5cms; ">
+4002
+</td>
+<td style="text-align:center;width: 5cms; ">
+16931
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+26304
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26490
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+16921
+</td>
+<td style="text-align:center;width: 5cms; ">
+3903
+</td>
+<td style="text-align:center;width: 5cms; ">
+21338
+</td>
+<td style="text-align:center;width: 5cms; ">
+137527
+</td>
+<td style="text-align:center;">
+96.00%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9599886
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5506-20
+</td>
+<td style="text-align:center;">
+5515
+</td>
+<td style="text-align:center;width: 5cms; ">
+21609
+</td>
+<td style="text-align:center;width: 5cms; ">
+4074
+</td>
+<td style="text-align:center;width: 5cms; ">
+17238
+</td>
+<td style="text-align:center;width: 5cms; ">
+6
+</td>
+<td style="text-align:center;width: 5cms; ">
+25914
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+26202
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+17255
+</td>
+<td style="text-align:center;width: 5cms; ">
+4088
+</td>
+<td style="text-align:center;width: 5cms; ">
+21327
+</td>
+<td style="text-align:center;width: 5cms; ">
+137744
+</td>
+<td style="text-align:center;">
+96.15%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9615033
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5517-20
+</td>
+<td style="text-align:center;">
+7005
+</td>
+<td style="text-align:center;width: 5cms; ">
+21496
+</td>
+<td style="text-align:center;width: 5cms; ">
+3979
+</td>
+<td style="text-align:center;width: 5cms; ">
+16873
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+25809
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26167
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+16886
+</td>
+<td style="text-align:center;width: 5cms; ">
+3933
+</td>
+<td style="text-align:center;width: 5cms; ">
+21065
+</td>
+<td style="text-align:center;width: 5cms; ">
+136254
+</td>
+<td style="text-align:center;">
+95.11%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9511025
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5530-20
+</td>
+<td style="text-align:center;">
+5819
+</td>
+<td style="text-align:center;width: 5cms; ">
+20976
+</td>
+<td style="text-align:center;width: 5cms; ">
+4262
+</td>
+<td style="text-align:center;width: 5cms; ">
+17892
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+25711
+</td>
+<td style="text-align:center;width: 5cms; ">
+21
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+25831
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+17671
+</td>
+<td style="text-align:center;width: 5cms; ">
+4210
+</td>
+<td style="text-align:center;width: 5cms; ">
+20835
+</td>
+<td style="text-align:center;width: 5cms; ">
+137440
+</td>
+<td style="text-align:center;">
+95.94%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9593813
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5450-20
+</td>
+<td style="text-align:center;">
+6191
+</td>
+<td style="text-align:center;width: 5cms; ">
+20908
+</td>
+<td style="text-align:center;width: 5cms; ">
+4182
+</td>
+<td style="text-align:center;width: 5cms; ">
+17976
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+25706
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+25705
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+17613
+</td>
+<td style="text-align:center;width: 5cms; ">
+4270
+</td>
+<td style="text-align:center;width: 5cms; ">
+20674
+</td>
+<td style="text-align:center;width: 5cms; ">
+137068
+</td>
+<td style="text-align:center;">
+95.68%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9567846
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5461
+</td>
+<td style="text-align:center;">
+6171
+</td>
+<td style="text-align:center;width: 5cms; ">
+20796
+</td>
+<td style="text-align:center;width: 5cms; ">
+4269
+</td>
+<td style="text-align:center;width: 5cms; ">
+17841
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+25665
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+25966
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+17752
+</td>
+<td style="text-align:center;width: 5cms; ">
+4242
+</td>
+<td style="text-align:center;width: 5cms; ">
+20501
+</td>
+<td style="text-align:center;width: 5cms; ">
+137088
+</td>
+<td style="text-align:center;">
+95.69%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9569242
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5473-20
+</td>
+<td style="text-align:center;">
+5903
+</td>
+<td style="text-align:center;width: 5cms; ">
+21649
+</td>
+<td style="text-align:center;width: 5cms; ">
+3981
+</td>
+<td style="text-align:center;width: 5cms; ">
+17237
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+25991
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+4
+</td>
+<td style="text-align:center;width: 5cms; ">
+26000
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+16997
+</td>
+<td style="text-align:center;width: 5cms; ">
+4054
+</td>
+<td style="text-align:center;width: 5cms; ">
+21416
+</td>
+<td style="text-align:center;width: 5cms; ">
+137356
+</td>
+<td style="text-align:center;">
+95.88%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9587949
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5485-20
+</td>
+<td style="text-align:center;">
+6113
+</td>
+<td style="text-align:center;width: 5cms; ">
+21647
+</td>
+<td style="text-align:center;width: 5cms; ">
+3892
+</td>
+<td style="text-align:center;width: 5cms; ">
+16958
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26205
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+26314
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+16730
+</td>
+<td style="text-align:center;width: 5cms; ">
+3945
+</td>
+<td style="text-align:center;width: 5cms; ">
+21413
+</td>
+<td style="text-align:center;width: 5cms; ">
+137146
+</td>
+<td style="text-align:center;">
+95.73%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9573290
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5496-20
+</td>
+<td style="text-align:center;">
+5679
+</td>
+<td style="text-align:center;width: 5cms; ">
+21032
+</td>
+<td style="text-align:center;width: 5cms; ">
+4301
+</td>
+<td style="text-align:center;width: 5cms; ">
+17927
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+25685
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+25891
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+17689
+</td>
+<td style="text-align:center;width: 5cms; ">
+4249
+</td>
+<td style="text-align:center;width: 5cms; ">
+20766
+</td>
+<td style="text-align:center;width: 5cms; ">
+137580
+</td>
+<td style="text-align:center;">
+96.04%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9603585
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+X-5507-20
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+26020
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+58149
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+132
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+511
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+25
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+110
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+15
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+27
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+110
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+32
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+494
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+113
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+57521
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+117239
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+81.84%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.8183709
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5518-20
+</td>
+<td style="text-align:center;">
+6206
+</td>
+<td style="text-align:center;width: 5cms; ">
+20742
+</td>
+<td style="text-align:center;width: 5cms; ">
+4151
+</td>
+<td style="text-align:center;width: 5cms; ">
+18120
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+25527
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+25786
+</td>
+<td style="text-align:center;width: 5cms; ">
+4
+</td>
+<td style="text-align:center;width: 5cms; ">
+17903
+</td>
+<td style="text-align:center;width: 5cms; ">
+4232
+</td>
+<td style="text-align:center;width: 5cms; ">
+20545
+</td>
+<td style="text-align:center;width: 5cms; ">
+137053
+</td>
+<td style="text-align:center;">
+95.67%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9566799
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5531-20
+</td>
+<td style="text-align:center;">
+6138
+</td>
+<td style="text-align:center;width: 5cms; ">
+21340
+</td>
+<td style="text-align:center;width: 5cms; ">
+4058
+</td>
+<td style="text-align:center;width: 5cms; ">
+17316
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+25945
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26124
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+17080
+</td>
+<td style="text-align:center;width: 5cms; ">
+4094
+</td>
+<td style="text-align:center;width: 5cms; ">
+21109
+</td>
+<td style="text-align:center;width: 5cms; ">
+137121
+</td>
+<td style="text-align:center;">
+95.72%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9571545
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5451-20
+</td>
+<td style="text-align:center;">
+6313
+</td>
+<td style="text-align:center;width: 5cms; ">
+20966
+</td>
+<td style="text-align:center;width: 5cms; ">
+4120
+</td>
+<td style="text-align:center;width: 5cms; ">
+17427
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+25964
+</td>
+<td style="text-align:center;width: 5cms; ">
+6
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26283
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+17341
+</td>
+<td style="text-align:center;width: 5cms; ">
+4050
+</td>
+<td style="text-align:center;width: 5cms; ">
+20762
+</td>
+<td style="text-align:center;width: 5cms; ">
+136946
+</td>
+<td style="text-align:center;">
+95.59%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9559330
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5462-20
+</td>
+<td style="text-align:center;">
+5978
+</td>
+<td style="text-align:center;width: 5cms; ">
+21183
+</td>
+<td style="text-align:center;width: 5cms; ">
+4094
+</td>
+<td style="text-align:center;width: 5cms; ">
+17472
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+25888
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+5
+</td>
+<td style="text-align:center;width: 5cms; ">
+26171
+</td>
+<td style="text-align:center;width: 5cms; ">
+5
+</td>
+<td style="text-align:center;width: 5cms; ">
+17361
+</td>
+<td style="text-align:center;width: 5cms; ">
+4075
+</td>
+<td style="text-align:center;width: 5cms; ">
+21003
+</td>
+<td style="text-align:center;width: 5cms; ">
+137281
+</td>
+<td style="text-align:center;">
+95.83%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9582714
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5474-20
+</td>
+<td style="text-align:center;">
+5952
+</td>
+<td style="text-align:center;width: 5cms; ">
+21335
+</td>
+<td style="text-align:center;width: 5cms; ">
+4072
+</td>
+<td style="text-align:center;width: 5cms; ">
+17232
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+26257
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+26280
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+16909
+</td>
+<td style="text-align:center;width: 5cms; ">
+4049
+</td>
+<td style="text-align:center;width: 5cms; ">
+21113
+</td>
+<td style="text-align:center;width: 5cms; ">
+137307
+</td>
+<td style="text-align:center;">
+95.85%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9584529
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5486-20
+</td>
+<td style="text-align:center;">
+5900
+</td>
+<td style="text-align:center;width: 5cms; ">
+21787
+</td>
+<td style="text-align:center;width: 5cms; ">
+3933
+</td>
+<td style="text-align:center;width: 5cms; ">
+16532
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+26607
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+26688
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+16478
+</td>
+<td style="text-align:center;width: 5cms; ">
+3883
+</td>
+<td style="text-align:center;width: 5cms; ">
+21411
+</td>
+<td style="text-align:center;width: 5cms; ">
+137359
+</td>
+<td style="text-align:center;">
+95.88%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9588159
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5497-20
+</td>
+<td style="text-align:center;">
+5707
+</td>
+<td style="text-align:center;width: 5cms; ">
+21286
+</td>
+<td style="text-align:center;width: 5cms; ">
+3992
+</td>
+<td style="text-align:center;width: 5cms; ">
+17129
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26398
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26654
+</td>
+<td style="text-align:center;width: 5cms; ">
+4
+</td>
+<td style="text-align:center;width: 5cms; ">
+17132
+</td>
+<td style="text-align:center;width: 5cms; ">
+3914
+</td>
+<td style="text-align:center;width: 5cms; ">
+21013
+</td>
+<td style="text-align:center;width: 5cms; ">
+137552
+</td>
+<td style="text-align:center;">
+96.02%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9601631
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5508-20
+</td>
+<td style="text-align:center;">
+5652
+</td>
+<td style="text-align:center;width: 5cms; ">
+21340
+</td>
+<td style="text-align:center;width: 5cms; ">
+4055
+</td>
+<td style="text-align:center;width: 5cms; ">
+17500
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+25924
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26271
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+17178
+</td>
+<td style="text-align:center;width: 5cms; ">
+4022
+</td>
+<td style="text-align:center;width: 5cms; ">
+21273
+</td>
+<td style="text-align:center;width: 5cms; ">
+137607
+</td>
+<td style="text-align:center;">
+96.05%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9605470
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5519-20
+</td>
+<td style="text-align:center;">
+5671
+</td>
+<td style="text-align:center;width: 5cms; ">
+21941
+</td>
+<td style="text-align:center;width: 5cms; ">
+3868
+</td>
+<td style="text-align:center;width: 5cms; ">
+16625
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26411
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26615
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+16505
+</td>
+<td style="text-align:center;width: 5cms; ">
+3928
+</td>
+<td style="text-align:center;width: 5cms; ">
+21653
+</td>
+<td style="text-align:center;width: 5cms; ">
+137588
+</td>
+<td style="text-align:center;">
+96.04%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9604144
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5532-20
+</td>
+<td style="text-align:center;">
+5740
+</td>
+<td style="text-align:center;width: 5cms; ">
+21617
+</td>
+<td style="text-align:center;width: 5cms; ">
+4039
+</td>
+<td style="text-align:center;width: 5cms; ">
+17074
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26143
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26291
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+16885
+</td>
+<td style="text-align:center;width: 5cms; ">
+4086
+</td>
+<td style="text-align:center;width: 5cms; ">
+21338
+</td>
+<td style="text-align:center;width: 5cms; ">
+137519
+</td>
+<td style="text-align:center;">
+95.99%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9599327
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5452
+</td>
+<td style="text-align:center;">
+6410
+</td>
+<td style="text-align:center;width: 5cms; ">
+20093
+</td>
+<td style="text-align:center;width: 5cms; ">
+4346
+</td>
+<td style="text-align:center;width: 5cms; ">
+18709
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+25535
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+5
+</td>
+<td style="text-align:center;width: 5cms; ">
+25547
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+18246
+</td>
+<td style="text-align:center;width: 5cms; ">
+4338
+</td>
+<td style="text-align:center;width: 5cms; ">
+19999
+</td>
+<td style="text-align:center;width: 5cms; ">
+136849
+</td>
+<td style="text-align:center;">
+95.53%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9552559
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5463-20
+</td>
+<td style="text-align:center;">
+6166
+</td>
+<td style="text-align:center;width: 5cms; ">
+21768
+</td>
+<td style="text-align:center;width: 5cms; ">
+3946
+</td>
+<td style="text-align:center;width: 5cms; ">
+16632
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26416
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+26603
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+16527
+</td>
+<td style="text-align:center;width: 5cms; ">
+3910
+</td>
+<td style="text-align:center;width: 5cms; ">
+21246
+</td>
+<td style="text-align:center;width: 5cms; ">
+137093
+</td>
+<td style="text-align:center;">
+95.70%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9569591
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5475-20
+</td>
+<td style="text-align:center;">
+5838
+</td>
+<td style="text-align:center;width: 5cms; ">
+21369
+</td>
+<td style="text-align:center;width: 5cms; ">
+4124
+</td>
+<td style="text-align:center;width: 5cms; ">
+17386
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+25987
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26192
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+17192
+</td>
+<td style="text-align:center;width: 5cms; ">
+4052
+</td>
+<td style="text-align:center;width: 5cms; ">
+21069
+</td>
+<td style="text-align:center;width: 5cms; ">
+137421
+</td>
+<td style="text-align:center;">
+95.92%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9592486
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5487-20
+</td>
+<td style="text-align:center;">
+6112
+</td>
+<td style="text-align:center;width: 5cms; ">
+21654
+</td>
+<td style="text-align:center;width: 5cms; ">
+3934
+</td>
+<td style="text-align:center;width: 5cms; ">
+16854
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+26450
+</td>
+<td style="text-align:center;width: 5cms; ">
+18
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26298
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+16611
+</td>
+<td style="text-align:center;width: 5cms; ">
+4060
+</td>
+<td style="text-align:center;width: 5cms; ">
+21235
+</td>
+<td style="text-align:center;width: 5cms; ">
+137147
+</td>
+<td style="text-align:center;">
+95.73%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9573360
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5498-20
+</td>
+<td style="text-align:center;">
+5882
+</td>
+<td style="text-align:center;width: 5cms; ">
+20796
+</td>
+<td style="text-align:center;width: 5cms; ">
+4269
+</td>
+<td style="text-align:center;width: 5cms; ">
+17700
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+25950
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+26194
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+17411
+</td>
+<td style="text-align:center;width: 5cms; ">
+4155
+</td>
+<td style="text-align:center;width: 5cms; ">
+20855
+</td>
+<td style="text-align:center;width: 5cms; ">
+137377
+</td>
+<td style="text-align:center;">
+95.89%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9589415
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+X-5509-20
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+57101
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+15662
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3836
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+15128
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+8619
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+13
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+12
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+8591
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+14945
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3728
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+15602
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+86158
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+60.14%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.6014142
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5520-20
+</td>
+<td style="text-align:center;">
+6328
+</td>
+<td style="text-align:center;width: 5cms; ">
+21867
+</td>
+<td style="text-align:center;width: 5cms; ">
+3851
+</td>
+<td style="text-align:center;width: 5cms; ">
+16502
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26145
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+5
+</td>
+<td style="text-align:center;width: 5cms; ">
+26440
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+16514
+</td>
+<td style="text-align:center;width: 5cms; ">
+3879
+</td>
+<td style="text-align:center;width: 5cms; ">
+21702
+</td>
+<td style="text-align:center;width: 5cms; ">
+136931
+</td>
+<td style="text-align:center;">
+95.58%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9558283
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5533-20
+</td>
+<td style="text-align:center;">
+5915
+</td>
+<td style="text-align:center;width: 5cms; ">
+20949
+</td>
+<td style="text-align:center;width: 5cms; ">
+4095
+</td>
+<td style="text-align:center;width: 5cms; ">
+17476
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26189
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+3
+</td>
+<td style="text-align:center;width: 5cms; ">
+26418
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+17138
+</td>
+<td style="text-align:center;width: 5cms; ">
+3992
+</td>
+<td style="text-align:center;width: 5cms; ">
+21045
+</td>
+<td style="text-align:center;width: 5cms; ">
+137344
+</td>
+<td style="text-align:center;">
+95.87%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9587111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5453
+</td>
+<td style="text-align:center;">
+5809
+</td>
+<td style="text-align:center;width: 5cms; ">
+21271
+</td>
+<td style="text-align:center;width: 5cms; ">
+4087
+</td>
+<td style="text-align:center;width: 5cms; ">
+17543
+</td>
+<td style="text-align:center;width: 5cms; ">
+20
+</td>
+<td style="text-align:center;width: 5cms; ">
+25800
+</td>
+<td style="text-align:center;width: 5cms; ">
+26
+</td>
+<td style="text-align:center;width: 5cms; ">
+20
+</td>
+<td style="text-align:center;width: 5cms; ">
+26108
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+17427
+</td>
+<td style="text-align:center;width: 5cms; ">
+4094
+</td>
+<td style="text-align:center;width: 5cms; ">
+21040
+</td>
+<td style="text-align:center;width: 5cms; ">
+137450
+</td>
+<td style="text-align:center;">
+95.95%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9594511
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5464
+</td>
+<td style="text-align:center;">
+6165
+</td>
+<td style="text-align:center;width: 5cms; ">
+21157
+</td>
+<td style="text-align:center;width: 5cms; ">
+4046
+</td>
+<td style="text-align:center;width: 5cms; ">
+17309
+</td>
+<td style="text-align:center;width: 5cms; ">
+19
+</td>
+<td style="text-align:center;width: 5cms; ">
+26180
+</td>
+<td style="text-align:center;width: 5cms; ">
+25
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+26277
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+16917
+</td>
+<td style="text-align:center;width: 5cms; ">
+4112
+</td>
+<td style="text-align:center;width: 5cms; ">
+21027
+</td>
+<td style="text-align:center;width: 5cms; ">
+137094
+</td>
+<td style="text-align:center;">
+95.70%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9569661
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5476-20
+</td>
+<td style="text-align:center;">
+6357
+</td>
+<td style="text-align:center;width: 5cms; ">
+20971
+</td>
+<td style="text-align:center;width: 5cms; ">
+4030
+</td>
+<td style="text-align:center;width: 5cms; ">
+17727
+</td>
+<td style="text-align:center;width: 5cms; ">
+18
+</td>
+<td style="text-align:center;width: 5cms; ">
+25966
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+25822
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+17441
+</td>
+<td style="text-align:center;width: 5cms; ">
+4110
+</td>
+<td style="text-align:center;width: 5cms; ">
+20787
+</td>
+<td style="text-align:center;width: 5cms; ">
+136902
+</td>
+<td style="text-align:center;">
+95.56%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9556258
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5488-20
+</td>
+<td style="text-align:center;">
+6931
+</td>
+<td style="text-align:center;width: 5cms; ">
+21915
+</td>
+<td style="text-align:center;width: 5cms; ">
+3821
+</td>
+<td style="text-align:center;width: 5cms; ">
+16446
+</td>
+<td style="text-align:center;width: 5cms; ">
+20
+</td>
+<td style="text-align:center;width: 5cms; ">
+26174
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+26260
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+16147
+</td>
+<td style="text-align:center;width: 5cms; ">
+3809
+</td>
+<td style="text-align:center;width: 5cms; ">
+21691
+</td>
+<td style="text-align:center;width: 5cms; ">
+136328
+</td>
+<td style="text-align:center;">
+95.16%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9516191
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+X-5499-20
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+76071
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+20717
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+2546
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+9431
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+9
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+1134
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+6
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+10
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+1131
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+10
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+9368
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+2380
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+20446
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+67188
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+46.90%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.4689967
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5510-20
+</td>
+<td style="text-align:center;">
+5721
+</td>
+<td style="text-align:center;width: 5cms; ">
+21263
+</td>
+<td style="text-align:center;width: 5cms; ">
+4128
+</td>
+<td style="text-align:center;width: 5cms; ">
+17276
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+26211
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+26342
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+17043
+</td>
+<td style="text-align:center;width: 5cms; ">
+4121
+</td>
+<td style="text-align:center;width: 5cms; ">
+21111
+</td>
+<td style="text-align:center;width: 5cms; ">
+137538
+</td>
+<td style="text-align:center;">
+96.01%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9600653
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5521-20
+</td>
+<td style="text-align:center;">
+5987
+</td>
+<td style="text-align:center;width: 5cms; ">
+21154
+</td>
+<td style="text-align:center;width: 5cms; ">
+4205
+</td>
+<td style="text-align:center;width: 5cms; ">
+17817
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+25472
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+25836
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+17674
+</td>
+<td style="text-align:center;width: 5cms; ">
+4165
+</td>
+<td style="text-align:center;width: 5cms; ">
+20893
+</td>
+<td style="text-align:center;width: 5cms; ">
+137272
+</td>
+<td style="text-align:center;">
+95.82%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9582086
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5536-20
+</td>
+<td style="text-align:center;">
+5945
+</td>
+<td style="text-align:center;width: 5cms; ">
+21069
+</td>
+<td style="text-align:center;width: 5cms; ">
+4087
+</td>
+<td style="text-align:center;width: 5cms; ">
+17779
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+25915
+</td>
+<td style="text-align:center;width: 5cms; ">
+19
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+25948
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+17298
+</td>
+<td style="text-align:center;width: 5cms; ">
+4190
+</td>
+<td style="text-align:center;width: 5cms; ">
+20971
+</td>
+<td style="text-align:center;width: 5cms; ">
+137314
+</td>
+<td style="text-align:center;">
+95.85%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9585017
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5454
+</td>
+<td style="text-align:center;">
+5992
+</td>
+<td style="text-align:center;width: 5cms; ">
+21030
+</td>
+<td style="text-align:center;width: 5cms; ">
+4184
+</td>
+<td style="text-align:center;width: 5cms; ">
+17602
+</td>
+<td style="text-align:center;width: 5cms; ">
+18
+</td>
+<td style="text-align:center;width: 5cms; ">
+26011
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26219
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+17225
+</td>
+<td style="text-align:center;width: 5cms; ">
+4102
+</td>
+<td style="text-align:center;width: 5cms; ">
+20832
+</td>
+<td style="text-align:center;width: 5cms; ">
+137267
+</td>
+<td style="text-align:center;">
+95.82%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9581737
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+X-5465-20
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+39895
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+50384
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+244
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+944
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+22
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+414
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+9
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+18
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+416
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+18
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+869
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+241
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+49785
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+103364
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+72.15%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.7215184
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5477-20
+</td>
+<td style="text-align:center;">
+6104
+</td>
+<td style="text-align:center;width: 5cms; ">
+21382
+</td>
+<td style="text-align:center;width: 5cms; ">
+3938
+</td>
+<td style="text-align:center;width: 5cms; ">
+17210
+</td>
+<td style="text-align:center;width: 5cms; ">
+19
+</td>
+<td style="text-align:center;width: 5cms; ">
+25994
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+26326
+</td>
+<td style="text-align:center;width: 5cms; ">
+18
+</td>
+<td style="text-align:center;width: 5cms; ">
+16961
+</td>
+<td style="text-align:center;width: 5cms; ">
+3980
+</td>
+<td style="text-align:center;width: 5cms; ">
+21300
+</td>
+<td style="text-align:center;width: 5cms; ">
+137155
+</td>
+<td style="text-align:center;">
+95.74%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9573919
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5489-20
+</td>
+<td style="text-align:center;">
+6043
+</td>
+<td style="text-align:center;width: 5cms; ">
+21397
+</td>
+<td style="text-align:center;width: 5cms; ">
+3949
+</td>
+<td style="text-align:center;width: 5cms; ">
+17093
+</td>
+<td style="text-align:center;width: 5cms; ">
+21
+</td>
+<td style="text-align:center;width: 5cms; ">
+26130
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26453
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+16759
+</td>
+<td style="text-align:center;width: 5cms; ">
+3933
+</td>
+<td style="text-align:center;width: 5cms; ">
+21438
+</td>
+<td style="text-align:center;width: 5cms; ">
+137216
+</td>
+<td style="text-align:center;">
+95.78%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9578177
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5500-20
+</td>
+<td style="text-align:center;">
+5764
+</td>
+<td style="text-align:center;width: 5cms; ">
+21494
+</td>
+<td style="text-align:center;width: 5cms; ">
+3967
+</td>
+<td style="text-align:center;width: 5cms; ">
+17255
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+26049
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26343
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+17050
+</td>
+<td style="text-align:center;width: 5cms; ">
+4052
+</td>
+<td style="text-align:center;width: 5cms; ">
+21233
+</td>
+<td style="text-align:center;width: 5cms; ">
+137495
+</td>
+<td style="text-align:center;">
+95.98%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9597652
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5511-20
+</td>
+<td style="text-align:center;">
+5711
+</td>
+<td style="text-align:center;width: 5cms; ">
+21063
+</td>
+<td style="text-align:center;width: 5cms; ">
+4134
+</td>
+<td style="text-align:center;width: 5cms; ">
+17697
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+25882
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+26151
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+17618
+</td>
+<td style="text-align:center;width: 5cms; ">
+4073
+</td>
+<td style="text-align:center;width: 5cms; ">
+20889
+</td>
+<td style="text-align:center;width: 5cms; ">
+137548
+</td>
+<td style="text-align:center;">
+96.01%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9601351
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5522-20
+</td>
+<td style="text-align:center;">
+5781
+</td>
+<td style="text-align:center;width: 5cms; ">
+21389
+</td>
+<td style="text-align:center;width: 5cms; ">
+4114
+</td>
+<td style="text-align:center;width: 5cms; ">
+17259
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+25997
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26262
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+17136
+</td>
+<td style="text-align:center;width: 5cms; ">
+4047
+</td>
+<td style="text-align:center;width: 5cms; ">
+21229
+</td>
+<td style="text-align:center;width: 5cms; ">
+137478
+</td>
+<td style="text-align:center;">
+95.96%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9596465
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5537-20
+</td>
+<td style="text-align:center;">
+6082
+</td>
+<td style="text-align:center;width: 5cms; ">
+22442
+</td>
+<td style="text-align:center;width: 5cms; ">
+3811
+</td>
+<td style="text-align:center;width: 5cms; ">
+15904
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+26436
+</td>
+<td style="text-align:center;width: 5cms; ">
+20
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26797
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+15829
+</td>
+<td style="text-align:center;width: 5cms; ">
+3778
+</td>
+<td style="text-align:center;width: 5cms; ">
+22118
+</td>
+<td style="text-align:center;width: 5cms; ">
+137177
+</td>
+<td style="text-align:center;">
+95.75%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9575454
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+5455
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+23211
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+1137
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11208
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+45868
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+65
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+2182
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+54
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+59
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+2095
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+64
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+45086
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11100
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+1130
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+120048
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+83.80%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.8379788
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+X-5466-20
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+97582
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3349
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3174
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+12574
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+30
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3486
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3622
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+12787
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3149
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+3473
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+45677
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+31.88%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.3188421
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5478-20
+</td>
+<td style="text-align:center;">
+5870
+</td>
+<td style="text-align:center;width: 5cms; ">
+21367
+</td>
+<td style="text-align:center;width: 5cms; ">
+4078
+</td>
+<td style="text-align:center;width: 5cms; ">
+17347
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+26106
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+4
+</td>
+<td style="text-align:center;width: 5cms; ">
+26203
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+17039
+</td>
+<td style="text-align:center;width: 5cms; ">
+4080
+</td>
+<td style="text-align:center;width: 5cms; ">
+21124
+</td>
+<td style="text-align:center;width: 5cms; ">
+137389
+</td>
+<td style="text-align:center;">
+95.90%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9590253
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+X-5490-20
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+42482
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+48131
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+394
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+1658
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+377
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+7
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+391
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+11
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+1547
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+411
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+47828
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+100777
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+70.35%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.7034602
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5501-20
+</td>
+<td style="text-align:center;">
+5703
+</td>
+<td style="text-align:center;width: 5cms; ">
+21110
+</td>
+<td style="text-align:center;width: 5cms; ">
+4080
+</td>
+<td style="text-align:center;width: 5cms; ">
+17656
+</td>
+<td style="text-align:center;width: 5cms; ">
+6
+</td>
+<td style="text-align:center;width: 5cms; ">
+26228
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26165
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+17197
+</td>
+<td style="text-align:center;width: 5cms; ">
+4089
+</td>
+<td style="text-align:center;width: 5cms; ">
+20984
+</td>
+<td style="text-align:center;width: 5cms; ">
+137556
+</td>
+<td style="text-align:center;">
+96.02%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9601910
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5512-20
+</td>
+<td style="text-align:center;">
+5631
+</td>
+<td style="text-align:center;width: 5cms; ">
+21113
+</td>
+<td style="text-align:center;width: 5cms; ">
+4118
+</td>
+<td style="text-align:center;width: 5cms; ">
+17704
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+25922
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26097
+</td>
+<td style="text-align:center;width: 5cms; ">
+5
+</td>
+<td style="text-align:center;width: 5cms; ">
+17420
+</td>
+<td style="text-align:center;width: 5cms; ">
+4159
+</td>
+<td style="text-align:center;width: 5cms; ">
+21055
+</td>
+<td style="text-align:center;width: 5cms; ">
+137628
+</td>
+<td style="text-align:center;">
+96.07%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9606936
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5523-20
+</td>
+<td style="text-align:center;">
+5873
+</td>
+<td style="text-align:center;width: 5cms; ">
+21465
+</td>
+<td style="text-align:center;width: 5cms; ">
+4053
+</td>
+<td style="text-align:center;width: 5cms; ">
+17379
+</td>
+<td style="text-align:center;width: 5cms; ">
+21
+</td>
+<td style="text-align:center;width: 5cms; ">
+25660
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26176
+</td>
+<td style="text-align:center;width: 5cms; ">
+3
+</td>
+<td style="text-align:center;width: 5cms; ">
+17276
+</td>
+<td style="text-align:center;width: 5cms; ">
+3973
+</td>
+<td style="text-align:center;width: 5cms; ">
+21362
+</td>
+<td style="text-align:center;width: 5cms; ">
+137386
+</td>
+<td style="text-align:center;">
+95.90%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9590043
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5543-20
+</td>
+<td style="text-align:center;">
+5658
+</td>
+<td style="text-align:center;width: 5cms; ">
+21782
+</td>
+<td style="text-align:center;width: 5cms; ">
+3969
+</td>
+<td style="text-align:center;width: 5cms; ">
+16959
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26172
+</td>
+<td style="text-align:center;width: 5cms; ">
+21
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+26395
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+16706
+</td>
+<td style="text-align:center;width: 5cms; ">
+3910
+</td>
+<td style="text-align:center;width: 5cms; ">
+21652
+</td>
+<td style="text-align:center;width: 5cms; ">
+137601
+</td>
+<td style="text-align:center;">
+96.05%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9605051
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5456
+</td>
+<td style="text-align:center;">
+5842
+</td>
+<td style="text-align:center;width: 5cms; ">
+21665
+</td>
+<td style="text-align:center;width: 5cms; ">
+4037
+</td>
+<td style="text-align:center;width: 5cms; ">
+16991
+</td>
+<td style="text-align:center;width: 5cms; ">
+21
+</td>
+<td style="text-align:center;width: 5cms; ">
+26056
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+26393
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+16928
+</td>
+<td style="text-align:center;width: 5cms; ">
+3994
+</td>
+<td style="text-align:center;width: 5cms; ">
+21285
+</td>
+<td style="text-align:center;width: 5cms; ">
+137417
+</td>
+<td style="text-align:center;">
+95.92%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9592207
+</td>
+</tr>
+<tr>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+X-5467-20
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+53154
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+15400
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+5342
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+21791
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+24
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+2657
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+17
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+18
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+2678
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+18
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+21436
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+5369
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+15355
+</td>
+<td style="text-align:center;width: 5cms; color: white !important;background-color: red !important;">
+90105
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+62.90%
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+143259
+</td>
+<td style="text-align:center;color: white !important;background-color: red !important;">
+0.6289657
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5479-20
+</td>
+<td style="text-align:center;">
+5898
+</td>
+<td style="text-align:center;width: 5cms; ">
+21431
+</td>
+<td style="text-align:center;width: 5cms; ">
+4003
+</td>
+<td style="text-align:center;width: 5cms; ">
+17107
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26193
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+26392
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+16768
+</td>
+<td style="text-align:center;width: 5cms; ">
+3979
+</td>
+<td style="text-align:center;width: 5cms; ">
+21436
+</td>
+<td style="text-align:center;width: 5cms; ">
+137361
+</td>
+<td style="text-align:center;">
+95.88%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9588298
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5491-20
+</td>
+<td style="text-align:center;">
+6057
+</td>
+<td style="text-align:center;width: 5cms; ">
+21133
+</td>
+<td style="text-align:center;width: 5cms; ">
+4060
+</td>
+<td style="text-align:center;width: 5cms; ">
+17649
+</td>
+<td style="text-align:center;width: 5cms; ">
+19
+</td>
+<td style="text-align:center;width: 5cms; ">
+25968
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+25973
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+17349
+</td>
+<td style="text-align:center;width: 5cms; ">
+4121
+</td>
+<td style="text-align:center;width: 5cms; ">
+20900
+</td>
+<td style="text-align:center;width: 5cms; ">
+137202
+</td>
+<td style="text-align:center;">
+95.77%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9577199
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5502-20
+</td>
+<td style="text-align:center;">
+5647
+</td>
+<td style="text-align:center;width: 5cms; ">
+21577
+</td>
+<td style="text-align:center;width: 5cms; ">
+3950
+</td>
+<td style="text-align:center;width: 5cms; ">
+17105
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+26368
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26517
+</td>
+<td style="text-align:center;width: 5cms; ">
+17
+</td>
+<td style="text-align:center;width: 5cms; ">
+16679
+</td>
+<td style="text-align:center;width: 5cms; ">
+3923
+</td>
+<td style="text-align:center;width: 5cms; ">
+21435
+</td>
+<td style="text-align:center;width: 5cms; ">
+137612
+</td>
+<td style="text-align:center;">
+96.06%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9605819
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5513-20
+</td>
+<td style="text-align:center;">
+5692
+</td>
+<td style="text-align:center;width: 5cms; ">
+20986
+</td>
+<td style="text-align:center;width: 5cms; ">
+4235
+</td>
+<td style="text-align:center;width: 5cms; ">
+17702
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+25832
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+26116
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+17673
+</td>
+<td style="text-align:center;width: 5cms; ">
+4192
+</td>
+<td style="text-align:center;width: 5cms; ">
+20790
+</td>
+<td style="text-align:center;width: 5cms; ">
+137567
+</td>
+<td style="text-align:center;">
+96.03%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9602678
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5524-20
+</td>
+<td style="text-align:center;">
+5794
+</td>
+<td style="text-align:center;width: 5cms; ">
+21991
+</td>
+<td style="text-align:center;width: 5cms; ">
+3865
+</td>
+<td style="text-align:center;width: 5cms; ">
+16321
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+26587
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+2
+</td>
+<td style="text-align:center;width: 5cms; ">
+26746
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+16103
+</td>
+<td style="text-align:center;width: 5cms; ">
+3906
+</td>
+<td style="text-align:center;width: 5cms; ">
+21906
+</td>
+<td style="text-align:center;width: 5cms; ">
+137465
+</td>
+<td style="text-align:center;">
+95.96%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9595558
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5545-20
+</td>
+<td style="text-align:center;">
+5781
+</td>
+<td style="text-align:center;width: 5cms; ">
+20863
+</td>
+<td style="text-align:center;width: 5cms; ">
+4149
+</td>
+<td style="text-align:center;width: 5cms; ">
+17902
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+25929
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26132
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+17694
+</td>
+<td style="text-align:center;width: 5cms; ">
+4133
+</td>
+<td style="text-align:center;width: 5cms; ">
+20628
+</td>
+<td style="text-align:center;width: 5cms; ">
+137478
+</td>
+<td style="text-align:center;">
+95.96%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9596465
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5457
+</td>
+<td style="text-align:center;">
+5995
+</td>
+<td style="text-align:center;width: 5cms; ">
+21245
+</td>
+<td style="text-align:center;width: 5cms; ">
+4010
+</td>
+<td style="text-align:center;width: 5cms; ">
+17193
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+26316
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+6
+</td>
+<td style="text-align:center;width: 5cms; ">
+26462
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+16937
+</td>
+<td style="text-align:center;width: 5cms; ">
+4003
+</td>
+<td style="text-align:center;width: 5cms; ">
+21062
+</td>
+<td style="text-align:center;width: 5cms; ">
+137264
+</td>
+<td style="text-align:center;">
+95.82%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9581527
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5468-20
+</td>
+<td style="text-align:center;">
+5752
+</td>
+<td style="text-align:center;width: 5cms; ">
+20994
+</td>
+<td style="text-align:center;width: 5cms; ">
+4176
+</td>
+<td style="text-align:center;width: 5cms; ">
+17878
+</td>
+<td style="text-align:center;width: 5cms; ">
+18
+</td>
+<td style="text-align:center;width: 5cms; ">
+25909
+</td>
+<td style="text-align:center;width: 5cms; ">
+5
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+25859
+</td>
+<td style="text-align:center;width: 5cms; ">
+7
+</td>
+<td style="text-align:center;width: 5cms; ">
+17626
+</td>
+<td style="text-align:center;width: 5cms; ">
+4195
+</td>
+<td style="text-align:center;width: 5cms; ">
+20832
+</td>
+<td style="text-align:center;width: 5cms; ">
+137507
+</td>
+<td style="text-align:center;">
+95.98%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9598489
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5480-20
+</td>
+<td style="text-align:center;">
+6627
+</td>
+<td style="text-align:center;width: 5cms; ">
+21230
+</td>
+<td style="text-align:center;width: 5cms; ">
+4150
+</td>
+<td style="text-align:center;width: 5cms; ">
+17433
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+25426
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+25771
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+17344
+</td>
+<td style="text-align:center;width: 5cms; ">
+4133
+</td>
+<td style="text-align:center;width: 5cms; ">
+21095
+</td>
+<td style="text-align:center;width: 5cms; ">
+136632
+</td>
+<td style="text-align:center;">
+95.37%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9537411
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5492-20
+</td>
+<td style="text-align:center;">
+6063
+</td>
+<td style="text-align:center;width: 5cms; ">
+21695
+</td>
+<td style="text-align:center;width: 5cms; ">
+3975
+</td>
+<td style="text-align:center;width: 5cms; ">
+16976
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26300
+</td>
+<td style="text-align:center;width: 5cms; ">
+18
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+26286
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+16598
+</td>
+<td style="text-align:center;width: 5cms; ">
+3883
+</td>
+<td style="text-align:center;width: 5cms; ">
+21434
+</td>
+<td style="text-align:center;width: 5cms; ">
+137196
+</td>
+<td style="text-align:center;">
+95.77%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9576781
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5503-20
+</td>
+<td style="text-align:center;">
+5760
+</td>
+<td style="text-align:center;width: 5cms; ">
+22203
+</td>
+<td style="text-align:center;width: 5cms; ">
+3789
+</td>
+<td style="text-align:center;width: 5cms; ">
+15985
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+26679
+</td>
+<td style="text-align:center;width: 5cms; ">
+5
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+27005
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+16101
+</td>
+<td style="text-align:center;width: 5cms; ">
+3829
+</td>
+<td style="text-align:center;width: 5cms; ">
+21870
+</td>
+<td style="text-align:center;width: 5cms; ">
+137499
+</td>
+<td style="text-align:center;">
+95.98%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9597931
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5514-20
+</td>
+<td style="text-align:center;">
+5909
+</td>
+<td style="text-align:center;width: 5cms; ">
+21199
+</td>
+<td style="text-align:center;width: 5cms; ">
+4060
+</td>
+<td style="text-align:center;width: 5cms; ">
+17299
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+25761
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26332
+</td>
+<td style="text-align:center;width: 5cms; ">
+14
+</td>
+<td style="text-align:center;width: 5cms; ">
+17523
+</td>
+<td style="text-align:center;width: 5cms; ">
+4090
+</td>
+<td style="text-align:center;width: 5cms; ">
+21042
+</td>
+<td style="text-align:center;width: 5cms; ">
+137350
+</td>
+<td style="text-align:center;">
+95.88%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9587530
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5525-20
+</td>
+<td style="text-align:center;">
+5707
+</td>
+<td style="text-align:center;width: 5cms; ">
+21496
+</td>
+<td style="text-align:center;width: 5cms; ">
+4006
+</td>
+<td style="text-align:center;width: 5cms; ">
+17292
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+26003
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26329
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+17232
+</td>
+<td style="text-align:center;width: 5cms; ">
+4045
+</td>
+<td style="text-align:center;width: 5cms; ">
+21104
+</td>
+<td style="text-align:center;width: 5cms; ">
+137552
+</td>
+<td style="text-align:center;">
+96.02%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9601631
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5546-20
+</td>
+<td style="text-align:center;">
+5693
+</td>
+<td style="text-align:center;width: 5cms; ">
+21658
+</td>
+<td style="text-align:center;width: 5cms; ">
+3880
+</td>
+<td style="text-align:center;width: 5cms; ">
+16853
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+26164
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26621
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+16907
+</td>
+<td style="text-align:center;width: 5cms; ">
+3993
+</td>
+<td style="text-align:center;width: 5cms; ">
+21433
+</td>
+<td style="text-align:center;width: 5cms; ">
+137566
+</td>
+<td style="text-align:center;">
+96.03%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9602608
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5458-20
+</td>
+<td style="text-align:center;">
+6200
+</td>
+<td style="text-align:center;width: 5cms; ">
+20757
+</td>
+<td style="text-align:center;width: 5cms; ">
+4176
+</td>
+<td style="text-align:center;width: 5cms; ">
+18133
+</td>
+<td style="text-align:center;width: 5cms; ">
+21
+</td>
+<td style="text-align:center;width: 5cms; ">
+25974
+</td>
+<td style="text-align:center;width: 5cms; ">
+20
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+25683
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+17576
+</td>
+<td style="text-align:center;width: 5cms; ">
+4316
+</td>
+<td style="text-align:center;width: 5cms; ">
+20378
+</td>
+<td style="text-align:center;width: 5cms; ">
+137059
+</td>
+<td style="text-align:center;">
+95.67%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9567217
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5469-20
+</td>
+<td style="text-align:center;">
+6912
+</td>
+<td style="text-align:center;width: 5cms; ">
+20922
+</td>
+<td style="text-align:center;width: 5cms; ">
+4331
+</td>
+<td style="text-align:center;width: 5cms; ">
+17951
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+25206
+</td>
+<td style="text-align:center;width: 5cms; ">
+11
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+25298
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+17620
+</td>
+<td style="text-align:center;width: 5cms; ">
+4180
+</td>
+<td style="text-align:center;width: 5cms; ">
+20791
+</td>
+<td style="text-align:center;width: 5cms; ">
+136347
+</td>
+<td style="text-align:center;">
+95.18%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9517517
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5481-20
+</td>
+<td style="text-align:center;">
+11316
+</td>
+<td style="text-align:center;width: 5cms; ">
+20887
+</td>
+<td style="text-align:center;width: 5cms; ">
+4080
+</td>
+<td style="text-align:center;width: 5cms; ">
+16988
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+23982
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+24326
+</td>
+<td style="text-align:center;width: 5cms; ">
+12
+</td>
+<td style="text-align:center;width: 5cms; ">
+16957
+</td>
+<td style="text-align:center;width: 5cms; ">
+4064
+</td>
+<td style="text-align:center;width: 5cms; ">
+20609
+</td>
+<td style="text-align:center;width: 5cms; ">
+131943
+</td>
+<td style="text-align:center;">
+92.10%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9210102
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B6 - 1618C
+</td>
+<td style="text-align:center;">
+5157
+</td>
+<td style="text-align:center;width: 5cms; ">
+34040
+</td>
+<td style="text-align:center;width: 5cms; ">
+112
+</td>
+<td style="text-align:center;width: 5cms; ">
+293
+</td>
+<td style="text-align:center;width: 5cms; ">
+3
+</td>
+<td style="text-align:center;width: 5cms; ">
+34611
+</td>
+<td style="text-align:center;width: 5cms; ">
+3
+</td>
+<td style="text-align:center;width: 5cms; ">
+0
+</td>
+<td style="text-align:center;width: 5cms; ">
+34847
+</td>
+<td style="text-align:center;width: 5cms; ">
+1
+</td>
+<td style="text-align:center;width: 5cms; ">
+303
+</td>
+<td style="text-align:center;width: 5cms; ">
+105
+</td>
+<td style="text-align:center;width: 5cms; ">
+33784
+</td>
+<td style="text-align:center;width: 5cms; ">
+138102
+</td>
+<td style="text-align:center;">
+96.40%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9640023
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B6 - 1618
+</td>
+<td style="text-align:center;">
+5056
+</td>
+<td style="text-align:center;width: 5cms; ">
+34089
+</td>
+<td style="text-align:center;width: 5cms; ">
+114
+</td>
+<td style="text-align:center;width: 5cms; ">
+296
+</td>
+<td style="text-align:center;width: 5cms; ">
+3
+</td>
+<td style="text-align:center;width: 5cms; ">
+34622
+</td>
+<td style="text-align:center;width: 5cms; ">
+3
+</td>
+<td style="text-align:center;width: 5cms; ">
+0
+</td>
+<td style="text-align:center;width: 5cms; ">
+34832
+</td>
+<td style="text-align:center;width: 5cms; ">
+1
+</td>
+<td style="text-align:center;width: 5cms; ">
+295
+</td>
+<td style="text-align:center;width: 5cms; ">
+105
+</td>
+<td style="text-align:center;width: 5cms; ">
+33843
+</td>
+<td style="text-align:center;width: 5cms; ">
+138203
+</td>
+<td style="text-align:center;">
+96.47%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9647073
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5515-20
+</td>
+<td style="text-align:center;">
+5951
+</td>
+<td style="text-align:center;width: 5cms; ">
+20760
+</td>
+<td style="text-align:center;width: 5cms; ">
+4196
+</td>
+<td style="text-align:center;width: 5cms; ">
+17690
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+25853
+</td>
+<td style="text-align:center;width: 5cms; ">
+16
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26196
+</td>
+<td style="text-align:center;width: 5cms; ">
+8
+</td>
+<td style="text-align:center;width: 5cms; ">
+17871
+</td>
+<td style="text-align:center;width: 5cms; ">
+4214
+</td>
+<td style="text-align:center;width: 5cms; ">
+20478
+</td>
+<td style="text-align:center;width: 5cms; ">
+137308
+</td>
+<td style="text-align:center;">
+95.85%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9584599
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5526-20
+</td>
+<td style="text-align:center;">
+5852
+</td>
+<td style="text-align:center;width: 5cms; ">
+21961
+</td>
+<td style="text-align:center;width: 5cms; ">
+3892
+</td>
+<td style="text-align:center;width: 5cms; ">
+16378
+</td>
+<td style="text-align:center;width: 5cms; ">
+13
+</td>
+<td style="text-align:center;width: 5cms; ">
+26380
+</td>
+<td style="text-align:center;width: 5cms; ">
+15
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+26757
+</td>
+<td style="text-align:center;width: 5cms; ">
+10
+</td>
+<td style="text-align:center;width: 5cms; ">
+16412
+</td>
+<td style="text-align:center;width: 5cms; ">
+3865
+</td>
+<td style="text-align:center;width: 5cms; ">
+21714
+</td>
+<td style="text-align:center;width: 5cms; ">
+137407
+</td>
+<td style="text-align:center;">
+95.92%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9591509
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+X-5547-20
+</td>
+<td style="text-align:center;">
+5646
+</td>
+<td style="text-align:center;width: 5cms; ">
+20874
+</td>
+<td style="text-align:center;width: 5cms; ">
+4231
+</td>
+<td style="text-align:center;width: 5cms; ">
+17742
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+25962
+</td>
+<td style="text-align:center;width: 5cms; ">
+9
+</td>
+<td style="text-align:center;width: 5cms; ">
+6
+</td>
+<td style="text-align:center;width: 5cms; ">
+26241
+</td>
+<td style="text-align:center;width: 5cms; ">
+6
+</td>
+<td style="text-align:center;width: 5cms; ">
+17501
+</td>
+<td style="text-align:center;width: 5cms; ">
+4215
+</td>
+<td style="text-align:center;width: 5cms; ">
+20817
+</td>
+<td style="text-align:center;width: 5cms; ">
+137613
+</td>
+<td style="text-align:center;">
+96.06%
+</td>
+<td style="text-align:center;">
+143259
+</td>
+<td style="text-align:center;">
+0.9605889
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="gender-summary-by-sample" class="section level3">
+<h3>Gender Summary by Sample</h3>
+<table class="table table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+<th style="text-align:center;">
+Provided.Sex
+</th>
+<th style="text-align:center;">
+Inferred.Sex
+</th>
+<th style="text-align:center;">
+DO.Generation
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5447
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+B6 - 1618A
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+–
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+–
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5470-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5482-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5493-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5504-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+B6 - 1618B
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+–
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+–
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5527-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+X-5448-20
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+Female
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5459-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5195
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5483-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5494-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5505-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5516-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5529-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5449-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5460
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5472-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5484-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5495-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5506-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5517-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5530-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5450-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5461
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5473-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5485-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5496-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5507-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5518-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5531-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5451-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5462-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5474-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5486-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5497-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5508-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5519-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5532-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5452
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5463-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5475-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5487-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5498-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5509-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5520-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5533-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5453
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5464
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5476-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5488-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5499-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5510-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5521-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5536-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5454
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+X-5465-20
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+Female
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5477-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5489-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5500-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5511-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5522-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5537-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+5455
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+Female
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+X-5466-20
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+Female
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5478-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5490-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5501-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5512-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5523-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5543-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5456
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+X-5467-20
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+Female
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5479-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5491-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5502-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5513-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5524-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5545-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5457
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5468-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5480-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5492-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5503-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5514-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5525-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5546-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5458-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5469-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Female
+</td>
+<td style="text-align:center;width: 3cm; ">
+F
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5481-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+B6 - 1618C
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+–
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+–
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+B6 - 1618
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+–
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+M
+</td>
+<td style="text-align:center;width: 3cm; color: white !important;background-color: blue !important;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5515-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5526-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5547-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+Male
+</td>
+<td style="text-align:center;width: 3cm; ">
+M
+</td>
+<td style="text-align:center;width: 3cm; ">
+35
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="phenotype-summary-by-sample" class="section level3">
+<h3>Phenotype Summary by Sample</h3>
+<p>no information about phenotypes</p>
+</div>
+<div id="all-problematic-samples" class="section level3">
+<h3>All Problematic Samples</h3>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+<th style="text-align:center;">
+low_call.rate
+</th>
+<th style="text-align:center;">
+different_sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+B6 - 1618A
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+B6 - 1618B
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5448-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5195
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5507-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5509-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5499-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5465-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+5455
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5466-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5490-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+X-5467-20
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+B6 - 1618C
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 3cm; ">
+B6 - 1618
+</td>
+<td style="text-align:center;width: 3cm; ">
+</td>
+<td style="text-align:center;width: 3cm; ">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre><code>R version 3.6.2 (2019-12-12)
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+Running under: macOS Catalina 10.15.7
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_AU.UTF-8/en_AU.UTF-8/en_AU.UTF-8/C/en_AU.UTF-8/en_AU.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] tibble_3.0.1      readxl_1.3.1      cluster_2.1.0     dplyr_0.8.5      
+ [5] optparse_1.6.6    rhdf5_2.28.1      mclust_5.4.6      tidyr_1.0.2      
+ [9] data.table_1.12.8 knitr_1.28        kableExtra_1.1.0  workflowr_1.6.2  
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.4.6      cellranger_1.1.0  compiler_3.6.2    pillar_1.4.4     
+ [5] later_1.0.0       git2r_0.26.1      tools_3.6.2       digest_0.6.25    
+ [9] evaluate_0.14     lifecycle_0.2.0   viridisLite_0.3.0 pkgconfig_2.0.3  
+[13] rlang_0.4.6       rstudioapi_0.11   yaml_2.2.1        xfun_0.13        
+[17] stringr_1.4.0     httr_1.4.1        xml2_1.3.1        fs_1.4.1         
+[21] vctrs_0.3.1       hms_0.5.3         getopt_1.20.3     tidyselect_1.0.0 
+[25] webshot_0.5.2     rprojroot_1.3-2   glue_1.4.1        R6_2.4.1         
+[29] rmarkdown_2.1     Rhdf5lib_1.6.3    purrr_0.3.4       readr_1.3.1      
+[33] magrittr_1.5      whisker_0.4       backports_1.1.7   scales_1.1.1     
+[37] promises_1.1.0    htmltools_0.4.0   ellipsis_0.3.1    assertthat_0.2.1 
+[41] rvest_0.3.5       colorspace_1.4-1  httpuv_1.5.2      stringi_1.4.6    
+[45] munsell_0.5.0     crayon_1.3.4     </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
