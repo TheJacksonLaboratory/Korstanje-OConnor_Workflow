@@ -10,13 +10,17 @@ editor_options:
   chunk_output_type: console
 ---
 
-### Project At A Glance [Total Samples: 570]
+### Project At A Glance [Total Samples: 570 (not including redone samples)]
 * Samples: Jackson_Lab_Korstanje_MURGIGV01_20201111
 	+ [Total Samples: 192](0.1_samples_batch_20201111.html)
 * Samples: Jackson_Lab_Korstanje_MURGIGV01_20201118
 	+ [Total Samples: 96](0.1_samples_batch_20201118.html)
 * Samples: Jackson_Lab_Korstanje_MURGIGV01_20210211
 	+ [Total Samples: 282](0.1_samples_batch_20210211.html)
+* Redone Samples: Jackson_Lab_Korstanje_MURGIGV01_20210604 
+	+ [Total Samples: 24](0.1_samples_batch_20210604.html)
+* Redone Samples: Jackson_Lab_Korstanje_MURGIGV01_20210701 
+	+ [Total Samples: 19](0.1_samples_batch_20210701.html)
 
 
 ### Haplotype Phasing
@@ -25,6 +29,9 @@ editor_options:
 	+ [Concordance](0.3_concordance_random_samples_bqc.html)
 * 3 batches
 	+ [Figures](0.2_haplotype_comparison_bqc_3batches.html)
+	+ Concordance
+* redone
+	+ [Figures](0.2_haplotype_comparison_bqc_redone.html)
 	+ Concordance
 
 
@@ -41,6 +48,8 @@ editor_options:
 	+ 3 batches
 		- [Without Controls](2.1_sample_bqc_3batches.html)
 		- [With Controls](2.1_sample_bqc_wcont_3batches.html)
+	+ redone
+		- [With Controls](2.1_sample_bqc_wcont_redone.html)
 * Step 2: SNP QC (Monomorphic, Genotype Error & Missing Data)
 	+ 2 batches
 		- [Without Controls](2.2.1_snp_qc.html)
@@ -48,6 +57,8 @@ editor_options:
 	+ 3 batches
 		- [Without Controls](2.2.1_snp_qc_3batches.html)
 		- [With Controls](2.2.1_snp_qc_wcont_3batches.html)
+	+ redone
+		- [With Controls](2.2.1_snp_qc_wcont_redone.html)
 * Step 3: Effect of Data Cleaning
 * Step 4: Preparing Files for QTL Analysis
 
