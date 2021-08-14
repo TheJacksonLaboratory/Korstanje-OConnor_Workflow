@@ -21,6 +21,8 @@ editor_options:
 	+ [Total Samples: 24](0.1_samples_batch_20210604.html)
 * Redone Samples: Jackson_Lab_Korstanje_MURGIGV01_20210701 
 	+ [Total Samples: 19](0.1_samples_batch_20210701.html)
+* New Samples: Jackson_Lab_Reinholdt_MURGIGV01_20210726
+	+ [Total Samples: 59](0.1_samples_batch_20210726.html)
 
 
 ### Haplotype Phasing
@@ -32,6 +34,9 @@ editor_options:
 	+ Concordance
 * redone
 	+ [Figures](0.2_haplotype_comparison_bqc_redone.html)
+	+ Concordance
+* new samples
+	+ [Figures](0.2_haplotype_comparison_bqc_reinholt.html)
 	+ Concordance
 
 
@@ -50,6 +55,9 @@ editor_options:
 		- [With Controls](2.1_sample_bqc_wcont_3batches.html)
 	+ redone
 		- [With Controls](2.1_sample_bqc_wcont_redone.html)
+	+ new samples
+		- [All Samples in File](2.1_sample_bqc_wcont_reinholt.html)
+		- [Project Only Samples](2.1_sample_bqc_wcont_reinholt.html)
 * Step 2: SNP QC (Monomorphic, Genotype Error & Missing Data)
 	+ 2 batches
 		- [Without Controls](2.2.1_snp_qc.html)
@@ -59,6 +67,9 @@ editor_options:
 		- [With Controls](2.2.1_snp_qc_wcont_3batches.html)
 	+ redone
 		- [With Controls](2.2.1_snp_qc_wcont_redone.html)
+	+ new samples
+		- [All Samples in File](2.2.1_snp_qc_wcont_reinholt.html)
+		- [Project Only Samples](2.2.1_snp_qc_wcont_reinholt.html)
 * Step 3: Effect of Data Cleaning
 * Step 4: Preparing Files for QTL Analysis
 
