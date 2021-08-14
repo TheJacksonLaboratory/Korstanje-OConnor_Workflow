@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Belinda Cornes" />
+
+<meta name="date" content="2021-08-14" />
+
+<title>Step 1: Sample QC [Reinholdt Samples]</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/d3-4.9.0/d3.min.js"></script>
+<link href="site_libs/colorbrewer-1.0.0/colorbrewer.css" rel="stylesheet" />
+<script src="site_libs/colorbrewer-1.0.0/colorbrewer.js"></script>
+<script src="site_libs/d3-tip-0.7.1/index-min.js"></script>
+<link href="site_libs/d3panels-1.4.9/d3panels.min.css" rel="stylesheet" />
+<script src="site_libs/d3panels-1.4.9/d3panels.min.js"></script>
+<script src="site_libs/qtlcharts_iplot-0.11.6/iplot.js"></script>
+<script src="site_libs/iplot-binding-0.11.6/iplot.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="site_libs/qtlcharts_iboxplot-0.11.6/iboxplot.js"></script>
+<script src="site_libs/iboxplot-binding-0.11.6/iboxplot.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Korstanje-OConnor Workflow</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Step 1: Sample QC [Reinholdt Samples]</h1>
+<h4 class="author">Belinda Cornes</h4>
+<h4 class="date">2021-08-14</h4>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#loading-project">Loading Project</a></li>
+<li><a href="#missing-data">Missing Data</a></li>
+<li><a href="#sex">Sex</a></li>
+<li><a href="#sample-duplicates">Sample Duplicates</a></li>
+<li><a href="#array-intensities">Array Intensities</a></li>
+<li><a href="#genotype-frequencies">Genotype Frequencies</a></li>
+<li><a href="#crossover-counts">Crossover Counts</a></li>
+<li><a href="#genotyping-error-lod-scores">Genotyping Error LOD Scores</a></li>
+<li><a href="#apparent-genotyping-errors">Apparent Genotyping Errors</a></li>
+<li><a href="#removing-samples">Removing Samples</a></li>
+</ul>
+</div>
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2021-08-14
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+</p>
+<p>
+<strong>Knit directory:</strong> <code>Korstanje-OConnor_Workflow/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div class="panel-group" id="workflowr-checks">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210317code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210317)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20210317code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20210317)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongabsolute"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>File paths:</strong> absolute </a>
+</p>
+</div>
+<div id="strongFilepathsstrongabsolute" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Using absolute paths to the files within your workflowr project makes it difficult for you and others to run your code on a different machine. Change the absolute path(s) below to the suggested relative path(s) to make your code more reproducible.
+</p>
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th style="text-align:left;">
+absolute
+</th>
+<th style="text-align:left;">
+relative
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+/Users/corneb/Documents/MyJax/CS/Projects/Korstanje-Oconnor/workflowr/Korstanje-OConnor_Workflow
+</td>
+<td style="text-align:left;">
+.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomTheJacksonLaboratoryKorstanjeOConnorWorkflowtreec8b2d371fe962018d6921b8325e9a771a50753eatargetblankc8b2d37a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/tree/c8b2d371fe962018d6921b8325e9a771a50753ea" target="_blank">c8b2d37</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomTheJacksonLaboratoryKorstanjeOConnorWorkflowtreec8b2d371fe962018d6921b8325e9a771a50753eatargetblankc8b2d37a" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/tree/c8b2d371fe962018d6921b8325e9a771a50753ea" target="_blank">c8b2d37</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    analysis/.DS_Store
+    Ignored:    output/.DS_Store
+
+Untracked files:
+    Untracked:  data/bad_markers_all_3batches.RData
+    Untracked:  data/bad_markers_all_reinholt.RData
+    Untracked:  data/bad_markers_all_wcont_3batches.RData
+    Untracked:  data/bad_markers_all_wcont_redone.RData
+    Untracked:  data/e_3batches.RData
+    Untracked:  data/e_g_snpg_samqc_3batches.RData
+    Untracked:  data/e_g_snpg_samqc_reinholt.RData
+    Untracked:  data/e_g_snpg_samqc_wcont_3batches.RData
+    Untracked:  data/e_g_snpg_samqc_wcont_redone.RData
+    Untracked:  data/e_g_snpg_samqc_wcont_reinholt.RData
+    Untracked:  data/e_reinholt.RData
+    Untracked:  data/e_wcont_3batches.RData
+    Untracked:  data/e_wcont_redone.RData
+    Untracked:  data/e_wcont_reinholt.RData
+    Untracked:  data/errors_ind_3batches.RData
+    Untracked:  data/errors_ind_reinholt.RData
+    Untracked:  data/errors_ind_wcont_3batches.RData
+    Untracked:  data/errors_ind_wcont_redone.RData
+    Untracked:  data/errors_ind_wcont_reinholt.RData
+    Untracked:  data/genotype_errors_marker_3batches.RData
+    Untracked:  data/genotype_errors_marker_reinholt.RData
+    Untracked:  data/genotype_errors_marker_wcont_3batches.RData
+    Untracked:  data/genotype_errors_marker_wcont_redone.RData
+    Untracked:  data/genotype_freq_marker_3batches.RData
+    Untracked:  data/genotype_freq_marker_reinholt.RData
+    Untracked:  data/genotype_freq_marker_wcont_3batches.RData
+    Untracked:  data/genotype_freq_marker_wcont_redone.RData
+    Untracked:  data/gm_allqc_3batches.RData
+    Untracked:  data/gm_allqc_reinholt.RData
+    Untracked:  data/gm_allqc_wcont_3batches.RData
+    Untracked:  data/gm_allqc_wcont_redone.RData
+    Untracked:  data/gm_samqc_3batches.RData
+    Untracked:  data/gm_samqc_reinholt.RData
+    Untracked:  data/gm_samqc_wcont_3batches.RData
+    Untracked:  data/gm_samqc_wcont_redone.RData
+    Untracked:  data/gm_samqc_wcont_reinholt.RData
+    Untracked:  data/m_3batches.RData
+    Untracked:  data/m_reinholt.RData
+    Untracked:  data/m_wcont_3batches.RData
+    Untracked:  data/m_wcont_redone.RData
+    Untracked:  data/m_wcont_reinholt.RData
+    Untracked:  data/nxo_3batches.RData
+    Untracked:  data/nxo_reinholt.RData
+    Untracked:  data/nxo_wcont_3batches.RData
+    Untracked:  data/nxo_wcont_redone.RData
+    Untracked:  data/nxo_wcont_reinholt.RData
+    Untracked:  data/percent_missing_id_3batches.RData
+    Untracked:  data/percent_missing_id_reinholt.RData
+    Untracked:  data/percent_missing_id_wcont_3batches.RData
+    Untracked:  data/percent_missing_id_wcont_redone.RData
+    Untracked:  data/percent_missing_id_wcont_reinholt.RData
+    Untracked:  data/percent_missing_marker_3batches.RData
+    Untracked:  data/percent_missing_marker_reinholt.RData
+    Untracked:  data/percent_missing_marker_wcont_3batches.RData
+    Untracked:  data/percent_missing_marker_wcont_redone.RData
+    Untracked:  data/qc_info_bad_sample_3batches.RData
+    Untracked:  data/qc_info_bad_sample_reinholt.RData
+    Untracked:  data/qc_info_bad_sample_wcont_3batches.RData
+    Untracked:  data/qc_info_bad_sample_wcont_redone.RData
+    Untracked:  data/qc_info_bad_sample_wcont_reinholt.RData
+    Untracked:  data/snpg_3batches.RData
+    Untracked:  data/snpg_reinholt.RData
+    Untracked:  data/snpg_wcont_3batches.RData
+    Untracked:  data/snpg_wcont_redone.RData
+    Untracked:  data/snpg_wcont_reinholt.RData
+    Untracked:  data/summary.cg_3batches.RData
+    Untracked:  data/summary.cg_reinholt.RData
+    Untracked:  data/summary.cg_wcont_3batches.RData
+    Untracked:  data/summary.cg_wcont_redone.RData
+    Untracked:  data/summary.cg_wcont_reinholt.RData
+    Untracked:  output/Percent_genotype_errors_obs_vs_predicted_3batches.pdf
+    Untracked:  output/Percent_genotype_errors_obs_vs_predicted_reinholt.pdf
+    Untracked:  output/Percent_genotype_errors_obs_vs_predicted_wcont_3batches.pdf
+    Untracked:  output/Percent_genotype_errors_obs_vs_predicted_wcont_redone.pdf
+    Untracked:  output/Percent_missing_genotype_data_3batches.pdf
+    Untracked:  output/Percent_missing_genotype_data_per_marker_3batches.pdf
+    Untracked:  output/Percent_missing_genotype_data_per_marker_reinholt.pdf
+    Untracked:  output/Percent_missing_genotype_data_per_marker_wcont_3batches.pdf
+    Untracked:  output/Percent_missing_genotype_data_per_marker_wcont_redone.pdf
+    Untracked:  output/Percent_missing_genotype_data_reinholt.pdf
+    Untracked:  output/Percent_missing_genotype_data_wcont_3batches.pdf
+    Untracked:  output/Percent_missing_genotype_data_wcont_redone.pdf
+    Untracked:  output/genotype_error_marker_3batches.pdf
+    Untracked:  output/genotype_error_marker_reinholt.pdf
+    Untracked:  output/genotype_error_marker_wcont_3batches.pdf
+    Untracked:  output/genotype_error_marker_wcont_redone.pdf
+    Untracked:  output/genotype_frequency_marker_3batches.pdf
+    Untracked:  output/genotype_frequency_marker_reinholt.pdf
+    Untracked:  output/genotype_frequency_marker_wcont_3batches.pdf
+    Untracked:  output/genotype_frequency_marker_wcont_redone.pdf
+    Untracked:  output/number_crossover_3batches.pdf
+    Untracked:  output/number_crossover_reinholt.pdf
+    Untracked:  output/number_crossover_wcont_3batches.pdf
+    Untracked:  output/number_crossover_wcont_redone.pdf
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/2.1_sample_bqc_reinholdt.Rmd</code>) and HTML (<code>docs/2.1_sample_bqc_reinholdt.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/c8b2d371fe962018d6921b8325e9a771a50753ea/analysis/2.1_sample_bqc_reinholdt.Rmd" target="_blank">c8b2d37</a>
+</td>
+<td>
+Belinda Cornes
+</td>
+<td>
+2021-08-14
+</td>
+<td>
+reinholdt results
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<p>This script is running genotype QC on raw data (with some outcomes already seen in the <a href="summary.html">project at a glace</a>). Here, we first load the R/qtl2 package and the data. We’ll also load the R/broman package for some utilities and plotting functions, and R/qtlcharts for interactive graphs.</p>
+<p>We will follow the steps by <code>Karl Broman</code> found <a href="https://kbroman.org/qtl2/assets/vignettes/do_diagnostics.html">here</a></p>
+<div id="loading-project" class="section level3">
+<h3>Loading Project</h3>
+<pre class="r"><code>gmf &lt;- read_cross2(&quot;/Users/corneb/Documents/MyJax/CS/Projects/Korstanje-Oconnor/haplotype.reconstruction/output_cell.data/qtl2/gm.json&quot;)
+#gmf &lt;- read_cross2(&quot;/Users/corneb/Documents/MyJax/CS/Projects/Oconnor/genoprobs/3.batches/all.samples/qtl2/gm_sorted.json&quot;)
+
+#gm &lt;- get(load(&quot;gm_DO_3batches.RData&quot;))
+gmf</code></pre>
+<pre><code>Object of class cross2 (crosstype &quot;do&quot;)
+
+Total individuals                54
+No. genotyped individuals        54
+No. phenotyped individuals       54
+No. with both geno &amp; pheno       54
+
+No. phenotypes                    1
+No. covariates                    3
+No. phenotype covariates          0
+
+No. chromosomes                  20
+Total markers                137220
+
+No. markers by chr:
+    1     2     3     4     5     6     7     8     9    10    11    12    13 
+10415 10432  8203  7951  8028  8125  7756  6714  6979  6628  7430  6441  6323 
+   14    15    16    17    18    19     X 
+ 6227  5531  5174  5320  4784  3676  5083 </code></pre>
+<pre class="r"><code>##pruning out controls
+
+control.mice &lt;- c(&quot;KJgDNA2&quot;, &quot;KJgDNA3&quot;, &quot;KJgDNA4&quot;, &quot;KJgDNA5&quot;, &quot;KJgDNA6&quot;, &quot;KJgDNA7&quot;)
+
+#gm &lt;- gmf[! ind_ids(gmf) %in%control.mice,]
+gm &lt;- gmf[! sapply(strsplit(as.character(ind_ids(gmf)),&#39;_&#39;,fixed=T),function(x) x[6]) %in%control.mice,]
+gm</code></pre>
+<pre><code>Object of class cross2 (crosstype &quot;do&quot;)
+
+Total individuals                54
+No. genotyped individuals        54
+No. phenotyped individuals       54
+No. with both geno &amp; pheno       54
+
+No. phenotypes                    1
+No. covariates                    3
+No. phenotype covariates          0
+
+No. chromosomes                  20
+Total markers                137220
+
+No. markers by chr:
+    1     2     3     4     5     6     7     8     9    10    11    12    13 
+10415 10432  8203  7951  8028  8125  7756  6714  6979  6628  7430  6441  6323 
+   14    15    16    17    18    19     X 
+ 6227  5531  5174  5320  4784  3676  5083 </code></pre>
+<pre class="r"><code>sample_file &lt;- dir(path = filepaths, pattern = &quot;^DODB_*&quot;, full.names = TRUE)
+#sample_file &lt;- dir(path = filepaths, pattern = &quot;^DODB_*&quot;, full.names = TRUE)
+samples.all &lt;- read.csv(sample_file)
+samples &lt;- samples.all[! samples.all$Original.Mouse.ID %in%control.mice,]
+#samples &lt;- read.csv(sample_file)
+all.equal(as.character(ind_ids(gm)), as.character(samples$Unique.Sample.ID))</code></pre>
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div id="missing-data" class="section level3">
+<h3>Missing Data</h3>
+<pre class="r"><code>percent_missing &lt;- n_missing(gm, &quot;ind&quot;, &quot;prop&quot;)*100
+
+labels &lt;- paste0(as.character(do.call(rbind.data.frame, strsplit(names(percent_missing), &quot;_&quot;))[,6]), &quot; (&quot;, round(percent_missing,2), &quot;%)&quot;)
+iplot(seq_along(percent_missing), percent_missing, indID=labels,
+      chartOpts=list(xlab=&quot;Mouse&quot;, ylab=&quot;Percent missing genotype data&quot;,
+                     ylim=c(0, 70)))</code></pre>
+<pre><code>Set screen size to height=700 x width=1000</code></pre>
+<div id="htmlwidget-f3b64798a4a1b8f30209" style="width:912px;height:576px;" class="iplot html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f3b64798a4a1b8f30209">{"x":{"data":{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],"y":[4.1845,3.8493,4.9978,4.8229,3.9929,4.0635,3.9965,3.6686,4.1619,3.7903,4.3893,4.0803,3.9943,4.0322,4.0278,3.7516,3.8835,3.748,4.0818,4.4454,4.022,4.057,17.398,3.9069,4.3172,4.4053,3.8981,3.9994,4.3055,3.9112,3.7269,3.6744,4.6903,4.0082,4.03,4.0912,10.63,4.5234,10.155,3.8952,6.776,4.3113,4.5227,4.8885,4.9249,4.4199,17.565,5.0678,4.1918,3.7618,4.315,5.1246,4.2873,28.996],"group":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"indID":["8358 (4.18%)","480 (3.85%)","3606 (5%)","5642 (4.82%)","2276 (3.99%)","1863 (4.06%)","8362 (4%)","5583 (3.67%)","5382 (4.16%)","2228 (3.79%)","3693 (4.39%)","844 (4.08%)","751 (3.99%)","5367 (4.03%)","2482 (4.03%)","5574 (3.75%)","5653 (3.88%)","5349 (3.75%)","589 (4.08%)","2338 (4.45%)","8354 (4.02%)","5635 (4.06%)","2318 (17.4%)","5264 (3.91%)","37 (4.32%)","7 (4.41%)","2303 (3.9%)","4714 (4%)","1908 (4.31%)","5409 (3.91%)","5662 (3.73%)","5377 (3.67%)","878 (4.69%)","2253 (4.01%)","13 (4.03%)","3811 (4.09%)","2080 (10.63%)","3831 (4.52%)","5372 (10.16%)","5412 (3.9%)","5396 (6.78%)","5626 (4.31%)","5327 (4.52%)","5337 (4.89%)","2389 (4.92%)","2402 (4.42%)","2297 (17.57%)","3594 (5.07%)","3698 (4.19%)","2347 (3.76%)","3492 (4.31%)","3624 (5.12%)","3504 (4.29%)","2131 (29%)"]},"chartOpts":{"xlab":"Mouse","ylab":"Percent missing genotype data","ylim":[0,70]}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#save into pdf
+pdf(file = &quot;output/Percent_missing_genotype_data_reinholt.pdf&quot;, width = 20, height = 20)
+#labels &lt;- as.character(do.call(rbind.data.frame, strsplit(names(totxo), &quot;V01_&quot;))[,2])
+labels &lt;- as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6])
+#labels &lt;- paste0(names(percent_missing), &quot; (&quot;, round(percent_missing,2), &quot;%)&quot;)
+labels[percent_missing &lt; 10] = &quot;&quot;
+# Change point shapes and colors
+p &lt;- ggplot(data = data.frame(Mouse=seq_along(percent_missing),  
+                         Percent_missing_genotype_data = percent_missing,
+                         batch = factor(as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,5]))
+                         #batch = factor(as.character(do.call(rbind.data.frame, strsplit(as.character(samples$Directory), &quot;_&quot;))[,5]))
+                         ), 
+        aes(x=Mouse, y=Percent_missing_genotype_data, color = batch)) +
+        geom_point() +
+        geom_hline(yintercept=10, linetype=&quot;solid&quot;, color = &quot;red&quot;) +
+        geom_text_repel(aes(label=labels), vjust = 0, nudge_y = 0.01, show.legend = FALSE, size=3) +
+        theme(text = element_text(size = 10))
+p
+
+dev.off()</code></pre>
+<pre><code>quartz_off_screen 
+                2 </code></pre>
+<pre class="r"><code>p</code></pre>
+<p><img src="figure/2.1_sample_bqc_reinholdt.Rmd/Missing%20data%20per%20sample-2.png" width="912" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>save(percent_missing,file = &quot;data/percent_missing_id_reinholt.RData&quot;)
+
+gm.covar = data.frame(id=rownames(gm$covar),gm$covar)
+qc_info_cr &lt;- merge(gm.covar,
+                  data.frame(id = names(percent_missing),percent_missing = percent_missing,stringsAsFactors = F),by = &quot;id&quot;)
+bad.sample.cr &lt;- qc_info_cr[qc_info_cr$percent_missing &gt;= 10,]</code></pre>
+<table class="table table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+<th style="text-align:center;">
+Genoprobs_Sample_ID
+</th>
+<th style="text-align:center;">
+percent_missing
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+2080
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2080_E5
+</td>
+<td style="text-align:center;width: 5cm; ">
+10.6303745809649
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+2131
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2131_F7
+</td>
+<td style="text-align:center;width: 5cm; ">
+28.9957732109022
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+2297
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2297_G6
+</td>
+<td style="text-align:center;width: 5cm; ">
+17.5652237283195
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+2318
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2318_G3
+</td>
+<td style="text-align:center;width: 5cm; ">
+17.3983384346305
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+5372
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5372_G5
+</td>
+<td style="text-align:center;width: 5cm; ">
+10.155225185833
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sex" class="section level3">
+<h3>Sex</h3>
+<pre class="r"><code>hdf5_filename &lt;- dir(path = filepaths, pattern = &quot;^hdf5_*&quot;, full.names = TRUE)
+snps_file &lt;- &quot;/Users/corneb/Documents/MyJax/CS/Projects/QTL2_support.files/gm_uwisc_v1.csv&quot;
+snps &lt;- read.csv(snps_file)
+
+snps &lt;- snps[snps$unique == TRUE, ]
+#snps &lt;- snps[snps$chr %in% c(1:19, &quot;X&quot;), ]
+snps$chr &lt;- sub(&quot;^chr&quot;, &quot;&quot;, snps$chr)  ###remove prefix &quot;chr&quot;
+colnames(snps)[colnames(snps)==&quot;bp_mm10&quot;] &lt;- &quot;pos&quot; 
+colnames(snps)[colnames(snps)==&quot;cM_cox&quot;] &lt;- &quot;cM&quot;
+snps &lt;- snps %&gt;% drop_na(chr, marker) 
+snps$pos &lt;- snps$pos * 1e-6
+rownames(snps) &lt;- snps$marker
+colnames(snps)[1:4] &lt;- c(&quot;marker&quot;, &quot;chr&quot;, &quot;pos&quot;, &quot;pos&quot;) 
+
+#  g &lt;- h5read(hdf5_filename, &quot;G&quot;)
+#  g &lt;- do.call(cbind, g)
+x &lt;- h5read(hdf5_filename, &quot;X&quot;) # X channel intensities
+x &lt;- do.call(cbind, x)
+y &lt;- h5read(hdf5_filename, &quot;Y&quot;) # Y channel intensities
+y &lt;- do.call(cbind, y)
+rn &lt;- h5read(hdf5_filename, &quot;rownames&quot;)[[1]]  # markers 
+cn &lt;- h5read(hdf5_filename, &quot;colnames&quot;)  # samples
+cn &lt;- do.call(c, cn)
+# dimnames(g) &lt;- list(rn, cn)
+dimnames(x) &lt;- list(rn, cn)
+dimnames(y) &lt;- list(rn, cn)
+#cr &lt;- colMeans(g != &quot;--&quot;) # Call rate for each sample avg 0.95
+#  sex &lt;- determine_sex(x = x, y = y, markers = snps)$se
+
+markers &lt;- snps
+
+chrx &lt;- markers$marker[which(markers$chr == &quot;X&quot;)]
+chry &lt;- markers$marker[which(markers$chr == &quot;Y&quot;)]
+#x[chrx,ind_ids(gm)]
+
+chrx_int &lt;- colMeans(x[chrx,as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6])] + y[chrx,as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6])], na.rm = T)
+chry_int &lt;- colMeans(x[chry,as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6])] + y[chry,as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6])], na.rm = T)
+#  df &lt;- data.frame(x = chrx_int, y = chry_int)
+#  mc &lt;- Mclust(data = df, G = 2, model = &quot;VVV&quot;, prior=priorControl()) 
+#  # Determine which cluster is females by selecting the cluster with the
+#  # higher Chr X intensity mean.
+#  cluster_means &lt;- mc$parameters$mean
+#  female_cl &lt;- which.max(cluster_means[&quot;x&quot;,])
+#  sex &lt;- rep(&quot;M&quot;, length(mc$classification))
+#  names(sex) &lt;- colnames(x)
+#  sex[mc$classification == female_cl] &lt;- &quot;F&quot;
+#  return(list(sex = sex))
+
+#xint &lt;- read_csv_numer(&quot;/Users/corneb/Documents/MyJax/CS/Projects/Simon.John.Tolman/Data/GM/Simon.John.Tolman_qtl2_chrXint.csv&quot;, transpose=TRUE)
+#yint &lt;- read_csv_numer(&quot;data/Univ_of_Penn_Thaiss_qtl2_chrYint.csv&quot;, transpose=TRUE)
+
+#xint2 &lt;- t(x[chrx,ind_ids(gm)])
+#yint2 &lt;- t(y[chry,ind_ids(gm)])
+
+#sample_file &lt;- dir(path = filepaths, pattern = &quot;^DODB_*&quot;, full.names = TRUE)
+#samples &lt;- read.csv(sample_file)
+
+all.equal(as.character(ind_ids(gm)), as.character(samples$Unique.Sample.ID))</code></pre>
+<pre><code>[1] TRUE</code></pre>
+<pre class="r"><code>#sex order
+sex &lt;- samples$Sex
+#sex &lt;- gm$covar[rownames(xint),&quot;sexp&quot;]
+#sex &lt;- substr(rownames(xint), 1, 1)
+
+#x_pval &lt;- apply(xint2, 2, function(a) t.test(a ~ sex)$p.value)
+#y_pval &lt;- apply(yint2, 2, function(a) t.test(a ~ sex)$p.value)
+
+#xint_ave &lt;- rowMeans(xint2[, x_pval &lt; 0.05/length(x_pval)], na.rm=TRUE)
+#yint_ave &lt;- rowMeans(yint2[, y_pval &lt; 0.05/length(y_pval)], na.rm=TRUE)
+
+#BAF = yint / (xint + yint)
+#LRR = log2((xint + yint) / (xint_ave+yint_ave))
+
+point_colors &lt;- as.character( brocolors(&quot;web&quot;)[c(&quot;red&quot;,&quot;green&quot;, &quot;purple&quot;)] )
+percent_missing &lt;- n_missing(gm, summary=&quot;proportion&quot;)*100
+labels &lt;- paste0(names(chrx_int), &quot; (&quot;, round(percent_missing), &quot;%)&quot;)
+iplot( chrx_int,  chry_int, group=sex, indID=labels,
+      chartOpts=list(pointcolor=point_colors, pointsize=4,
+                     xlab=&quot;Average X chr intensity&quot;, ylab=&quot;Average Y chr intensity&quot;))</code></pre>
+<div id="htmlwidget-9c52c1f69abe72785df3" style="width:912px;height:576px;" class="iplot html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9c52c1f69abe72785df3">{"x":{"data":{"x":[0.81957,1.0196,0.81112,1.0075,1.009,1.0155,0.83786,1.0231,1.0344,1.0189,0.83354,1.0133,0.8307,0.83498,1.0551,0.84483,1.0504,0.84834,1.0224,0.83527,1.035,1.021,0.92494,1.0735,0.83431,0.84234,0.84254,0.82949,1.0165,0.83974,1.0382,0.84352,0.82509,0.83423,0.84223,0.82298,1.0281,0.84826,1.0424,0.8397,0.85881,1.0228,1.0218,0.8275,0.81878,0.83444,0.99393,0.83352,0.83372,1.027,0.84225,0.81605,0.82506,1.5069],"y":[0.62826,0.058581,0.60206,0.10416,0.080677,0.090645,0.66716,0.071645,0.074871,0.063645,0.65523,0.084645,0.65445,0.64332,0.10248,0.68787,0.094903,0.66523,0.077677,0.65177,0.090484,0.084516,0.55839,0.083226,0.65403,0.61784,0.65935,0.63371,0.071355,0.66574,0.092258,0.66755,0.19742,0.65861,0.66019,0.65371,0.228,0.64023,0.17294,0.68406,0.60732,0.087258,0.11677,0.61823,0.64845,0.64871,0.38906,0.61955,0.64119,0.069548,0.65277,0.6259,0.64274,1.1603],"group":[1,2,3,2,2,2,3,2,3,2,3,2,3,3,2,3,2,3,2,3,2,2,3,3,3,3,3,2,2,3,2,3,2,3,3,3,2,3,3,2,3,2,3,3,2,3,3,3,3,2,3,3,3,2],"indID":["8358 (4%)","480 (4%)","3606 (5%)","5642 (5%)","2276 (4%)","1863 (4%)","8362 (4%)","5583 (4%)","5382 (4%)","2228 (4%)","3693 (4%)","844 (4%)","751 (4%)","5367 (4%)","2482 (4%)","5574 (4%)","5653 (4%)","5349 (4%)","589 (4%)","2338 (4%)","8354 (4%)","5635 (4%)","2318 (17%)","5264 (4%)","37 (4%)","7 (4%)","2303 (4%)","4714 (4%)","1908 (4%)","5409 (4%)","5662 (4%)","5377 (4%)","878 (5%)","2253 (4%)","13 (4%)","3811 (4%)","2080 (11%)","3831 (5%)","5372 (10%)","5412 (4%)","5396 (7%)","5626 (4%)","5327 (5%)","5337 (5%)","2389 (5%)","2402 (4%)","2297 (18%)","3594 (5%)","3698 (4%)","2347 (4%)","3492 (4%)","3624 (5%)","3504 (4%)","2131 (29%)"]},"chartOpts":{"pointcolor":["#ff4136","#2ecc40","#b10dc9"],"pointsize":4,"xlab":"Average X chr intensity","ylab":"Average Y chr intensity"}},"evals":[],"jsHooks":[]}</script>
+<p>For figures above and below, those labelled as female in metadata given, are coloured <code>green</code>, with those labelled as male are coloured as <code>purple</code>. The above is an interactive scatterplot of the average SNP intensity on the Y chromosome versus the average SNP intensity on the X chromosome.</p>
+<p>The cluster in the upper-left are male mice (low X chromosome intensity and high Y chromosome intensity), and the cluster in the lower-right are female mice (high X chromosome intensity and low Y chromsome intensity).</p>
+<pre class="r"><code>phetX &lt;- rowSums(gm$geno$X == 2)/rowSums(gm$geno$X != 0)
+phetX &lt;- phetX[as.character(do.call(rbind.data.frame, strsplit(names(phetX), &quot;_&quot;))[,6]) %in% names(chrx_int)]
+names(phetX) &lt;- as.character(do.call(rbind.data.frame, strsplit(names(phetX), &quot;_&quot;))[,6])
+iplot(chrx_int, phetX, group=sex, indID=labels,
+      chartOpts=list(pointcolor=point_colors, pointsize=4,
+                     xlab=&quot;Average X chr intensity&quot;, ylab=&quot;Proportion het on X chr&quot;))</code></pre>
+<div id="htmlwidget-4415da58db86afdaf3b4" style="width:912px;height:576px;" class="iplot html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4415da58db86afdaf3b4">{"x":{"data":{"x":[0.81957,1.0196,0.81112,1.0075,1.009,1.0155,0.83786,1.0231,1.0344,1.0189,0.83354,1.0133,0.8307,0.83498,1.0551,0.84483,1.0504,0.84834,1.0224,0.83527,1.035,1.021,0.92494,1.0735,0.83431,0.84234,0.84254,0.82949,1.0165,0.83974,1.0382,0.84352,0.82509,0.83423,0.84223,0.82298,1.0281,0.84826,1.0424,0.8397,0.85881,1.0228,1.0218,0.8275,0.81878,0.83444,0.99393,0.83352,0.83372,1.027,0.84225,0.81605,0.82506,1.5069],"y":[0.014925,0.16312,0.027176,0.30699,0.14867,0.20305,0.016219,0.16038,0.20063,0.15133,0.016649,0.19493,0.012747,0.015681,0.33228,0.013655,0.30835,0.015763,0.16681,0.020892,0.26508,0.12727,0.090686,0.23197,0.014402,0.012984,0.019227,0.013812,0.21339,0.014502,0.19713,0.013655,0.019539,0.01089,0.013818,0.023286,0.1004,0.016299,0.1617,0.016136,0.016021,0.21343,0.14555,0.02161,0.027551,0.014209,0.28937,0.02342,0.015815,0.16465,0.020558,0.023085,0.015177,0.79098],"group":[1,2,3,2,2,2,3,2,3,2,3,2,3,3,2,3,2,3,2,3,2,2,3,3,3,3,3,2,2,3,2,3,2,3,3,3,2,3,3,2,3,2,3,3,2,3,3,3,3,2,3,3,3,2],"indID":["8358 (4%)","480 (4%)","3606 (5%)","5642 (5%)","2276 (4%)","1863 (4%)","8362 (4%)","5583 (4%)","5382 (4%)","2228 (4%)","3693 (4%)","844 (4%)","751 (4%)","5367 (4%)","2482 (4%)","5574 (4%)","5653 (4%)","5349 (4%)","589 (4%)","2338 (4%)","8354 (4%)","5635 (4%)","2318 (17%)","5264 (4%)","37 (4%)","7 (4%)","2303 (4%)","4714 (4%)","1908 (4%)","5409 (4%)","5662 (4%)","5377 (4%)","878 (5%)","2253 (4%)","13 (4%)","3811 (4%)","2080 (11%)","3831 (5%)","5372 (10%)","5412 (4%)","5396 (7%)","5626 (4%)","5327 (5%)","5337 (5%)","2389 (5%)","2402 (4%)","2297 (18%)","3594 (5%)","3698 (4%)","2347 (4%)","3492 (4%)","3624 (5%)","3504 (4%)","2131 (29%)"]},"chartOpts":{"pointcolor":["#ff4136","#2ecc40","#b10dc9"],"pointsize":4,"xlab":"Average X chr intensity","ylab":"Proportion het on X chr"}},"evals":[],"jsHooks":[]}</script>
+<p>In the above scatterplot, we show the proportion of hets vs the average intensity for the X chromosome SNPs. In calculating the proportion of heterozygous genotypes for the individuals, we look at X chromosome genotypes equal to 2 which corresponds to the heterozygote) relative to not being 0 (which is used to encode missing genotypes). The genotypes are arranged with rows being individuals and columns being markers.</p>
+<p>The following are the mice that have had sex incorrectly assigned:</p>
+<table class="table table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+<th style="text-align:center;">
+Genoprobs_Sample_ID
+</th>
+<th style="text-align:center;">
+Sex
+</th>
+<th style="text-align:center;">
+Inferred.Sex
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+8358
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_8358_A1
+</td>
+<td style="text-align:center;width: 5cm; ">
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+5382
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5382_A2
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+2318
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2318_G3
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+5264
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5264_H3
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+4714
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_4714_D4
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+5372
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5372_G5
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+5412
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5412_H5
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+5327
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5327_C6
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+2389
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2389_E6
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+2297
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2297_G6
+</td>
+<td style="text-align:center;width: 5cm; ">
+M
+</td>
+<td style="text-align:center;width: 5cm; ">
+F
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sample-duplicates" class="section level3">
+<h3>Sample Duplicates</h3>
+<pre class="r"><code>cg &lt;- compare_geno(gm, cores=10)
+summary.cg &lt;- summary(cg)</code></pre>
+<table class="table table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+iid1
+</th>
+<th style="text-align:left;">
+ind1
+</th>
+<th style="text-align:center;">
+pc.miss.ind1
+</th>
+<th style="text-align:center;">
+iid2
+</th>
+<th style="text-align:center;">
+ind2
+</th>
+<th style="text-align:center;">
+pc.miss.ind2
+</th>
+<th style="text-align:center;">
+prop_match
+</th>
+<th style="text-align:center;">
+n_mismatch
+</th>
+<th style="text-align:left;">
+n_typed
+</th>
+<th style="text-align:left;">
+n_match
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+2253
+</td>
+<td style="text-align:left;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2253_B5
+</td>
+<td style="text-align:center;width: 5cm; ">
+4.008162
+</td>
+<td style="text-align:center;width: 5cm; ">
+5396
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5396_A6
+</td>
+<td style="text-align:center;width: 5cm; ">
+6.775980
+</td>
+<td style="text-align:center;width: 5cm; ">
+0.9975296
+</td>
+<td style="text-align:center;width: 5cm; ">
+314
+</td>
+<td style="text-align:left;">
+127107
+</td>
+<td style="text-align:left;">
+126793
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 5cm; ">
+5574
+</td>
+<td style="text-align:left;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5574_H2
+</td>
+<td style="text-align:center;width: 5cm; ">
+3.751640
+</td>
+<td style="text-align:center;width: 5cm; ">
+2389
+</td>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2389_E6
+</td>
+<td style="text-align:center;width: 5cm; ">
+4.924938
+</td>
+<td style="text-align:center;width: 5cm; ">
+0.9971826
+</td>
+<td style="text-align:center;width: 5cm; ">
+366
+</td>
+<td style="text-align:left;">
+129907
+</td>
+<td style="text-align:left;">
+129541
+</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a histogram of the proportion of matching genotypes. The tick marks below the histogram indicate individual pairs.</p>
+<pre class="r"><code>save(summary.cg,file = &quot;data/summary.cg_reinholt.RData&quot;)
+
+#pdf(file = &quot;output/Proportion_matching_genotypes_before_removal_of_bad_samples_reinholt.pdf&quot;, width = 20, height = 20) 
+#par(mar=c(5.1,0.6,0.6, 0.6))
+#hist(cg[upper.tri(cg)], breaks=seq(0, 1, length=201),
+#     main=&quot;&quot;, yaxt=&quot;n&quot;, ylab=&quot;&quot;, xlab=&quot;Proportion matching genotypes&quot;)
+#rug(cg[upper.tri(cg)])
+#dev.off()
+
+par(mar=c(5.1,0.6,0.6, 0.6))
+hist(cg[upper.tri(cg)], breaks=seq(0, 1, length=201),
+     main=&quot;&quot;, yaxt=&quot;n&quot;, ylab=&quot;&quot;, xlab=&quot;Proportion matching genotypes&quot;)
+rug(cg[upper.tri(cg)])</code></pre>
+<p><img src="figure/2.1_sample_bqc_reinholdt.Rmd/Sample%20duplicates%20figures-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="array-intensities" class="section level3">
+<h3>Array Intensities</h3>
+<pre class="r"><code>#load the intensities.fst_reinholt.RData
+#load(&quot;data/intensities.fst_reinholt.RData&quot;)
+
+xn &lt;- x[,as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6])]
+xn &lt;- xn[snps$marker,]
+xnm &lt;- rownames(xn)
+
+yn &lt;- y[,as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6])]
+yn &lt;- yn[snps$marker,]
+
+# bring together in one matrix
+result &lt;- cbind(snp=rep(snps$marker, 2),
+                channel=rep(c(&quot;x&quot;, &quot;y&quot;), each=length(snps$marker)),
+                as.data.frame(rbind(xn, yn)))
+rownames(result) &lt;- 1:nrow(result)
+
+# bring SNP rows together
+result &lt;- result[as.numeric(t(cbind(seq_along(snps$marker), seq_along(snps$marker)+length(snps$marker)))),]
+rownames(result) &lt;- 1:nrow(result)
+
+#load the intensities.fst_reinholt.RData
+#load(&quot;data/heh/intensities.fst_reinholt.RData&quot;)
+#X and Y channel
+X &lt;- result[result$channel == &quot;x&quot;,]
+rownames(X) &lt;- X$snp
+X &lt;- X[,c(-1,-2)]
+
+Y &lt;- result[result$channel == &quot;y&quot;,]
+rownames(Y) &lt;- Y$snp
+Y &lt;- Y[,c(-1,-2)]
+
+int &lt;- result
+
+#int &lt;- result
+
+#rm(result)
+int &lt;- int[seq(1, nrow(int), by=2),-(1:2)] + int[-seq(1, nrow(int), by=2),-(1:2)]
+int &lt;- int[,intersect(as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6]), colnames(int))]
+names(percent_missing) &lt;- as.character(do.call(rbind.data.frame, strsplit(names(percent_missing), &quot;_&quot;))[,6])
+n &lt;- names(sort(percent_missing[intersect(as.character(do.call(rbind.data.frame, strsplit(ind_ids(gm), &quot;_&quot;))[,6]), colnames(int))], decreasing=TRUE))
+iboxplot(log10(t(int[,n])+1), orderByMedian=FALSE, chartOpts=list(ylab=&quot;log10(SNP intensity + 1)&quot;))</code></pre>
+<p><div id="htmlwidget-0c7e572f914cbee065a8" style="width:912px;height:576px;" class="iboxplot html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0c7e572f914cbee065a8">{"x":{"data":{"ind":["2131","2297","2318","2080","5372","5396","3624","3594","3606","2389","5337","5642","878","3831","5327","2338","2402","7","3693","37","3492","5626","1908","3504","3698","8358","5382","3811","589","844","1863","5635","5367","13","2482","8354","2253","4714","8362","751","2276","5409","5264","2303","5412","5653","480","2228","2347","5574","5349","5662","5377","5583"],"qu":[0.001,0.01,0.1,0.25,0.5,0.75,0.9,0.99,0.999],"breaks":[0,0.0080835,0.016167,0.02425,0.032334,0.040417,0.048501,0.056584,0.064668,0.072751,0.080835,0.088918,0.097002,0.10509,0.11317,0.12125,0.12934,0.13742,0.1455,0.15359,0.16167,0.16975,0.17784,0.18592,0.194,0.20209,0.21017,0.21825,0.22634,0.23442,0.2425,0.25059,0.25867,0.26675,0.27484,0.28292,0.29101,0.29909,0.30717,0.31526,0.32334,0.33142,0.33951,0.34759,0.35567,0.36376,0.37184,0.37992,0.38801,0.39609,0.40417,0.41226,0.42034,0.42842,0.43651,0.44459,0.45267,0.46076,0.46884,0.47693,0.48501,0.49309,0.50118,0.50926,0.51734,0.52543,0.53351,0.54159,0.54968,0.55776,0.56584,0.57393,0.58201,0.59009,0.59818,0.60626,0.61434,0.62243,0.63051,0.63859,0.64668,0.65476,0.66285,0.67093,0.67901,0.6871,0.69518,0.70326,0.71135,0.71943,0.72751,0.7356,0.74368,0.75176,0.75985,0.76793,0.77601,0.7841,0.79218,0.80026,0.80835,0.81643,0.82451,0.8326,0.84068,0.84877,0.85685,0.86493,0.87302,0.8811,0.88918,0.89727,0.90535,0.91343,0.92152,0.9296,0.93768,0.94577,0.95385,0.96193,0.97002,0.9781,0.98618,0.99427,1.0024,1.0104,1.0185,1.0266,1.0347,1.0428,1.0509,1.0589,1.067,1.0751,1.0832,1.0913,1.0994,1.1074,1.1155,1.1236,1.1317,1.1398,1.1479,1.1559,1.164,1.1721,1.1802,1.1883,1.1964,1.2044,1.2125,1.2206,1.2287,1.2368,1.2449,1.2529,1.261,1.2691,1.2772,1.2853,1.2934,1.3014,1.3095,1.3176,1.3257,1.3338,1.3419,1.3499,1.358,1.3661,1.3742,1.3823,1.3904,1.3984,1.4065,1.4146,1.4227,1.4308,1.4389,1.4469,1.455,1.4631,1.4712,1.4793,1.4874,1.4954,1.5035,1.5116,1.5197,1.5278,1.5359,1.5439,1.552,1.5601,1.5682,1.5763,1.5844,1.5924,1.6005,1.6086,1.6167,1.6248,1.6329,1.6409,1.649,1.6571,1.6652,1.6733,1.6814,1.6894,1.6975,1.7056,1.7137,1.7218,1.7299,1.7379,1.746,1.7541,1.7622,1.7703,1.7784,1.7864,1.7945,1.8026,1.8107,1.8188,1.8269,1.8349,1.843,1.8511,1.8592,1.8673,1.8754,1.8835,1.8915,1.8996,1.9077,1.9158,1.9239,1.932,1.94,1.9481,1.9562,1.9643,1.9724,1.9805,1.9885,1.9966,2.0047,2.0128,2.0209,2.029],"quant":[[0.088966,0.021189,0.025306,0.023252,0.029789,0.034628,0.034367,0.041133,0.037028,0.039017,0.03623,0.038756,0.034628,0.036629,0.039811,0.034768,0.037028,0.03623,0.041393,0.033826,0.041393,0.033424,0.031949,0.031812,0.032216,0.031812,0.035029,0.031812,0.035029,0.03543,0.029384,0.035969,0.034628,0.037426,0.033424,0.0306,0.035029,0.033021,0.032216,0.034227,0.031004,0.033563,0.03583,0.037426,0.041787,0.03543,0.026125,0.029789,0.027757,0.037028,0.029525,0.03074,0.034227,0.029789],[0.15776,0.061452,0.064083,0.065206,0.068186,0.065953,0.061075,0.070776,0.067443,0.068928,0.063543,0.070038,0.064458,0.069668,0.071882,0.064083,0.067815,0.066699,0.07664,0.064832,0.077004,0.062958,0.062958,0.061452,0.064458,0.062206,0.068928,0.062206,0.068557,0.067443,0.061075,0.069298,0.067815,0.069298,0.068186,0.063333,0.066699,0.065206,0.065953,0.064832,0.064083,0.068186,0.0757,0.071514,0.078094,0.071145,0.058426,0.067071,0.062958,0.073352,0.06558,0.069468,0.07225,0.068698],[0.25042,0.1758,0.17886,0.18498,0.18156,0.16791,0.15229,0.16791,0.15927,0.16465,0.15776,0.16554,0.16316,0.17114,0.17114,0.16286,0.16702,0.17056,0.17869,0.16702,0.17782,0.16584,0.16406,0.16227,0.16909,0.16732,0.17348,0.16673,0.1726,0.17289,0.16967,0.16997,0.1726,0.17522,0.17696,0.16997,0.17289,0.16997,0.17348,0.17056,0.17143,0.17667,0.19089,0.17696,0.18526,0.18041,0.17319,0.18156,0.17609,0.18696,0.18241,0.18441,0.18583,0.18921],[0.3032,0.25744,0.25792,0.26174,0.25744,0.24674,0.22994,0.24502,0.23528,0.2413,0.23629,0.23679,0.24105,0.24674,0.24477,0.2418,0.24353,0.2465,0.25018,0.24329,0.24871,0.24428,0.24204,0.2403,0.24452,0.24254,0.24576,0.24502,0.24773,0.24797,0.24601,0.24428,0.24748,0.25036,0.24969,0.24674,0.24773,0.24748,0.24773,0.24601,0.24477,0.25115,0.26102,0.25091,0.25551,0.25139,0.24748,0.25358,0.24993,0.25648,0.25503,0.25575,0.2572,0.25864],[0.36192,0.33826,0.33566,0.33546,0.33143,0.32675,0.31471,0.32366,0.31576,0.32035,0.31931,0.31302,0.32077,0.32469,0.32077,0.32263,0.32243,0.32325,0.32139,0.32077,0.32015,0.32346,0.3216,0.31994,0.32015,0.31827,0.31869,0.32222,0.32263,0.32201,0.32077,0.32056,0.32139,0.3249,0.3216,0.32263,0.32263,0.32387,0.32098,0.32098,0.31848,0.32346,0.32879,0.32387,0.32263,0.3216,0.31994,0.32263,0.32118,0.32305,0.32572,0.32428,0.3251,0.32387],[0.42308,0.4079,0.40312,0.39933,0.39585,0.39445,0.3897,0.39305,0.38775,0.38987,0.39129,0.38148,0.39111,0.39358,0.38757,0.39305,0.39164,0.38987,0.38382,0.38721,0.38346,0.39235,0.38952,0.38917,0.38614,0.38382,0.38431,0.38828,0.38917,0.38686,0.38543,0.38899,0.38596,0.39023,0.38489,0.38775,0.38668,0.3897,0.38632,0.38668,0.3831,0.38686,0.38828,0.38863,0.38238,0.38328,0.38346,0.38364,0.38274,0.38292,0.38632,0.38543,0.38614,0.3831],[0.48742,0.46509,0.4609,0.45439,0.45286,0.45332,0.45621,0.45652,0.45225,0.45209,0.45545,0.44185,0.45454,0.45697,0.44855,0.45712,0.45439,0.45086,0.44091,0.44855,0.44059,0.45347,0.45071,0.45255,0.44762,0.44498,0.44514,0.44778,0.45071,0.44638,0.4442,0.45194,0.44607,0.44979,0.44451,0.447,0.44638,0.45117,0.44809,0.44716,0.44295,0.44467,0.44373,0.44824,0.4388,0.44075,0.44232,0.44091,0.44075,0.44059,0.44295,0.44311,0.44326,0.43965],[0.77283,0.55425,0.55979,0.54102,0.54888,0.5479,0.57978,0.5617,0.57438,0.54796,0.55871,0.56632,0.55775,0.57351,0.55035,0.56045,0.56194,0.54864,0.54642,0.55182,0.56027,0.54851,0.54814,0.55853,0.55115,0.5479,0.54888,0.54382,0.55606,0.54949,0.54045,0.56526,0.54777,0.54913,0.54728,0.54382,0.54307,0.55072,0.55746,0.54839,0.54864,0.54165,0.54327,0.55534,0.53491,0.53832,0.5432,0.53593,0.53706,0.53892,0.53403,0.54033,0.54345,0.53668],[1.491,0.60358,0.6237,0.58908,0.60322,0.59626,0.65741,0.6169,0.65925,0.59262,0.61321,0.65581,0.61204,0.63205,0.60602,0.61598,0.61581,0.60238,0.61563,0.6072,0.63938,0.59656,0.59832,0.62162,0.6179,0.61507,0.6113,0.59221,0.61465,0.61045,0.59802,0.6262,0.60892,0.60318,0.61087,0.5989,0.59424,0.60423,0.63121,0.60845,0.61518,0.59715,0.60606,0.61169,0.59106,0.5981,0.60206,0.5945,0.59413,0.60275,0.58384,0.59806,0.60148,0.6071]],"counts":[[6,5,4,6,9,4,6,15,19,30,34,51,54,77,108,133,202,207,259,335,407,467,574,750,882,967,1230,1348,1650,1875,2091,2393,2647,2892,3304,3477,3783,4083,4272,4709,4771,4965,4885,4997,4932,5110,4735,4817,4624,4491,4143,3878,3639,3356,3065,2755,2444,2250,2091,1786,1612,1335,1187,996,907,790,735,599,513,434,414,338,313,269,244,233,197,155,152,145,128,138,107,110,97,99,88,89,74,74,58,45,58,57,49,55,48,42,41,39,42,39,32,25,29,30,26,24,26,32,29,26,18,19,20,25,20,20,29,17,18,19,16,15,15,20,10,13,8,12,15,10,8,8,9,8,7,21,7,6,14,11,4,8,7,8,6,6,3,7,3,8,11,6,11,9,8,3,5,8,6,7,3,8,7,9,6,2,5,3,6,5,3,6,2,6,6,6,2,5,1,6,8,5,6,4,4,6,1,2,2,6,3,0,4,1,5,5,0,3,2,6,3,2,3,3,2,2,4,4,3,2,2,3,2,1,3,3,1,3,0,1,4,0,2,0,2,3,1,3,1,2,0,2,3,2,0,1,1,0,1,0,0,0,2,1,0,0,1,0,1],[15,59,100,143,205,278,361,389,479,526,634,632,727,771,847,920,980,1017,1146,1222,1282,1435,1548,1627,1763,1835,2008,2122,2338,2310,2441,2646,2886,2837,3186,3320,3347,3555,3647,3799,3864,4119,4023,4044,4052,4181,4053,4010,3850,3781,3447,3390,3245,3075,2877,2590,2415,2219,1942,1705,1608,1337,1132,1002,783,678,515,440,362,296,261,196,145,125,75,56,27,13,12,8,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[12,37,79,128,191,269,307,377,408,522,548,599,642,779,827,820,988,988,1150,1184,1271,1436,1514,1593,1727,1928,2004,2183,2330,2412,2650,2728,2954,3012,3246,3390,3630,3663,3801,4036,4002,4275,4269,4405,4107,4174,4091,4156,3906,3749,3424,3425,3059,2929,2614,2383,2235,1967,1734,1524,1397,1228,963,885,752,611,496,420,337,308,252,189,157,131,108,92,76,41,39,27,21,9,3,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[9,45,99,130,178,240,303,338,380,448,497,599,538,680,732,776,868,926,1036,1140,1227,1345,1371,1535,1697,1786,2003,2149,2261,2402,2637,2788,2965,3092,3396,3528,3783,3823,4034,4228,4298,4575,4553,4497,4329,4586,4314,4224,4014,3838,3495,3389,3025,2987,2627,2341,2195,1931,1725,1505,1284,1034,938,760,613,492,427,329,263,245,168,119,92,48,28,25,12,8,3,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,24,59,101,144,244,283,330,436,460,516,586,628,743,785,847,906,952,1145,1224,1292,1383,1554,1677,1660,1983,1997,2188,2403,2547,2734,2935,3052,3138,3473,3626,3779,3878,4149,4328,4377,4565,4470,4507,4386,4566,4248,4046,3799,3666,3256,3198,2900,2734,2463,2170,1951,1836,1572,1346,1216,1034,885,718,626,516,415,338,306,221,218,157,151,100,84,46,23,21,12,4,3,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,11,30,65,159,230,358,438,540,585,749,732,831,848,985,979,1155,1191,1338,1408,1462,1543,1741,1791,1953,2034,2197,2387,2529,2592,2899,2974,3037,3105,3408,3481,3611,3642,3896,4013,4069,4241,4235,4262,4115,4130,4133,3920,3633,3503,3153,3096,2836,2595,2463,2144,1893,1724,1580,1383,1186,1109,883,815,636,564,442,400,306,271,213,155,125,84,51,32,17,12,6,2,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,5,19,76,198,342,460,521,657,766,882,923,996,1172,1242,1229,1455,1454,1629,1669,1773,1937,1978,2157,2182,2379,2448,2562,2725,2775,3032,3109,3198,3242,3317,3425,3623,3613,3682,3870,3756,3846,3837,3813,3726,3771,3541,3319,3203,3112,2792,2669,2536,2259,2062,1903,1744,1612,1406,1334,1102,976,876,768,646,593,486,440,368,326,263,224,220,197,154,132,129,104,85,80,58,43,36,38,17,9,5,4,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,5,9,40,65,185,287,405,542,573,699,765,801,934,1044,1023,1153,1197,1390,1441,1522,1704,1714,1869,2016,2163,2191,2460,2570,2692,2781,3034,3148,3195,3477,3563,3892,3827,3998,4120,4067,4267,4242,4269,4043,3963,3903,3614,3431,3276,3001,2778,2615,2476,2228,1995,1933,1732,1576,1340,1239,1037,995,830,643,603,471,407,349,314,238,237,187,169,136,82,62,49,20,19,6,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,3,18,54,117,227,354,413,590,664,801,821,900,988,1166,1149,1346,1424,1556,1644,1693,1825,1955,2098,2262,2365,2330,2536,2775,2827,3082,3214,3283,3306,3616,3616,3770,3712,3881,3910,3962,4019,4012,3955,3831,3781,3640,3602,3265,3254,2775,2792,2426,2191,2047,1847,1717,1435,1303,1237,1121,902,873,710,641,534,508,402,356,277,250,217,204,147,131,138,116,87,81,49,61,44,34,25,26,13,9,5,0,2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,5,16,43,95,165,332,422,584,601,749,787,850,962,1039,1079,1218,1319,1386,1534,1624,1769,1732,1987,2032,2241,2283,2452,2673,2772,2893,3120,3136,3344,3599,3656,3801,3821,4050,4037,4047,4244,4164,4184,3975,3970,3900,3532,3514,3192,2935,2779,2582,2368,2122,2024,1888,1639,1485,1373,1187,1037,871,762,686,537,449,395,352,263,220,165,133,69,43,25,14,9,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[7,8,12,50,154,282,423,523,589,736,809,934,917,1026,1149,1149,1335,1296,1555,1607,1633,1787,1815,1970,2160,2244,2354,2538,2640,2702,2906,3008,3071,3150,3475,3520,3688,3770,3833,3855,3905,4066,3928,3912,3894,3928,3682,3591,3392,3219,2979,2809,2549,2378,2114,1938,1817,1592,1385,1331,1232,1084,959,861,692,659,549,437,390,280,272,238,142,143,127,80,56,32,15,7,7,3,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,5,14,51,86,220,306,369,485,550,658,737,855,893,1042,1103,1242,1310,1436,1591,1737,1886,1976,2127,2258,2380,2421,2757,2877,2995,3201,3369,3552,3618,3656,3862,4070,4058,3996,4202,4078,4370,4257,4104,3963,3970,3607,3500,3365,3093,2797,2614,2372,2242,1959,1700,1442,1376,1110,1003,906,799,719,565,476,417,407,316,252,224,207,183,164,126,118,100,90,75,71,55,48,52,30,17,22,11,11,4,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[8,14,21,55,156,259,395,470,573,613,747,799,872,996,1056,1059,1226,1218,1426,1490,1636,1735,1759,1975,2053,2165,2261,2477,2588,2745,2911,3092,3205,3212,3555,3586,3726,3690,4017,4095,3958,4151,4113,4079,4037,4018,3745,3637,3463,3248,2911,2858,2516,2422,2130,1907,1922,1622,1498,1334,1177,1040,963,764,732,602,481,392,327,293,245,231,173,141,91,72,54,30,20,12,3,0,2,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,0,29,56,107,211,320,380,469,548,646,742,720,884,912,1023,1100,1094,1305,1383,1531,1631,1760,1805,2054,2170,2232,2397,2639,2707,2871,3053,3080,3288,3612,3623,3717,3799,4002,4106,4142,4158,4124,4383,4136,3959,3951,3749,3446,3417,3054,2865,2605,2395,2199,2057,1835,1651,1473,1336,1234,1009,888,816,631,566,478,423,394,305,307,263,242,185,181,152,99,86,68,32,27,10,5,6,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,14,11,35,81,182,245,384,467,480,629,664,757,886,1029,1054,1130,1102,1327,1480,1546,1585,1808,1943,2050,2291,2265,2531,2740,2763,3025,3182,3348,3299,3667,3656,3873,4038,4201,4261,4332,4431,4335,4269,4053,4193,3938,3620,3533,3185,2915,2903,2523,2360,2069,1928,1746,1566,1380,1233,1084,929,813,679,627,514,420,349,290,268,212,161,145,108,77,52,42,16,9,9,4,3,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[2,14,27,60,140,290,398,472,555,670,738,842,809,927,1054,1068,1218,1323,1401,1514,1593,1641,1818,1864,1953,2107,2340,2438,2561,2713,2823,3062,3044,3160,3445,3514,3706,3805,3942,3936,3940,4100,4249,4078,4052,4026,3786,3627,3427,3227,2940,2867,2576,2436,2195,2064,1828,1719,1551,1386,1251,1058,959,850,743,621,544,380,403,293,260,219,195,145,123,93,58,38,25,17,7,5,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,4,16,64,119,215,334,448,466,583,625,736,864,912,1028,987,1210,1241,1381,1454,1612,1644,1768,1878,2009,2214,2290,2525,2591,2723,2724,3165,3217,3324,3566,3542,3857,3811,3918,4047,4046,4203,4192,4190,4052,4054,3823,3655,3618,3379,2975,2826,2552,2381,2144,1982,1860,1583,1484,1320,1206,980,908,796,650,597,499,402,347,314,257,248,194,158,110,97,60,48,24,8,7,5,2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[5,5,19,60,123,263,327,440,511,539,668,705,758,846,939,959,1106,1143,1325,1397,1431,1604,1692,1911,1933,2104,2244,2362,2693,2717,2872,3001,3241,3198,3584,3734,3916,3897,4249,4188,4305,4368,4241,4447,4164,4273,3930,3744,3544,3263,3008,2909,2636,2303,2208,1996,1796,1599,1446,1373,1164,992,891,731,637,526,431,383,308,233,204,166,136,108,79,38,28,14,11,3,3,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,7,13,30,63,161,235,297,368,416,569,614,653,800,854,897,1016,1080,1198,1290,1445,1574,1736,1791,2006,2050,2289,2440,2690,2838,3038,3240,3531,3415,3855,4007,4128,4359,4419,4436,4511,4655,4639,4594,4387,4273,4171,3893,3534,3319,3138,2768,2496,2264,1996,1839,1664,1486,1200,1053,961,777,663,529,418,424,324,243,235,221,164,139,120,102,72,73,64,33,26,16,4,4,5,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[2,11,31,73,170,280,344,457,536,551,674,704,798,901,984,940,1234,1222,1383,1480,1551,1695,1668,1995,2014,2173,2242,2464,2643,2759,2901,3131,3232,3297,3601,3724,3823,3896,4171,4302,4214,4332,4329,4411,4242,4107,3858,3832,3538,3108,2912,2726,2487,2394,2114,1871,1699,1574,1408,1243,1076,936,822,708,630,478,433,351,292,304,194,186,127,117,88,59,47,19,13,5,2,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,5,12,28,81,174,237,257,363,457,530,592,677,713,866,907,1054,1148,1281,1360,1425,1621,1716,1881,2002,2159,2343,2472,2713,2914,3078,3342,3399,3538,3910,3993,4122,4275,4399,4470,4513,4681,4576,4440,4343,4333,3932,3849,3574,3274,3046,2767,2473,2292,1950,1690,1606,1325,1175,1029,868,716,670,578,437,383,323,280,251,252,193,156,158,135,127,91,80,67,57,43,45,24,14,7,7,4,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[8,10,17,83,168,308,411,468,559,618,686,773,782,919,960,1029,1220,1162,1346,1447,1518,1639,1716,1919,1971,2222,2175,2478,2475,2611,2875,3101,3182,3204,3414,3652,3675,3693,4002,4105,4149,4191,4172,4231,4072,4029,3841,3677,3618,3297,3145,2843,2664,2600,2257,2044,1868,1656,1523,1373,1174,1117,906,799,673,571,524,421,316,279,214,186,110,92,43,45,15,8,6,2,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[5,13,34,96,225,293,370,437,539,629,726,784,817,920,1031,1018,1248,1234,1453,1478,1544,1689,1813,1883,1979,2150,2249,2429,2678,2716,2828,3007,3200,3170,3612,3600,3744,3813,4062,4005,4143,4306,4118,4303,4177,4179,3929,3674,3487,3369,2908,2873,2568,2419,2101,1962,1826,1642,1471,1242,1160,973,951,765,637,531,462,346,325,253,215,148,124,92,56,40,19,8,10,2,2,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,4,35,107,196,345,390,500,596,632,720,808,875,904,1015,1027,1227,1273,1483,1528,1573,1670,1810,2001,2006,2220,2289,2463,2669,2702,2958,3128,3213,3227,3542,3609,3751,3757,4005,4158,4065,4267,4214,4193,4011,3939,3795,3569,3314,3232,2999,2772,2507,2282,2173,1892,1820,1548,1458,1341,1100,1022,818,829,635,524,467,389,342,297,224,202,146,144,113,83,67,52,34,22,12,6,4,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,4,35,102,177,301,381,380,491,549,666,718,761,871,902,925,1161,1121,1374,1421,1516,1706,1687,1844,1990,2071,2328,2524,2748,2806,2981,3095,3255,3478,3727,3750,3943,4029,4289,4337,4377,4471,4391,4308,4221,4051,3829,3745,3373,3223,2960,2693,2504,2282,2032,1920,1743,1518,1383,1204,1002,919,792,692,613,496,404,325,286,239,177,178,132,107,89,60,55,48,17,22,10,1,2,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,13,32,104,223,323,372,421,523,541,636,716,752,913,932,935,1156,1205,1374,1465,1517,1662,1806,1916,2030,2180,2439,2541,2717,2799,2882,3270,3412,3479,3716,3793,3983,4113,4203,4358,4334,4506,4545,4423,4130,4086,3806,3525,3336,3139,2870,2717,2365,2290,1977,1835,1584,1537,1301,1147,1103,843,789,659,547,439,406,318,277,208,171,147,141,102,63,63,59,30,28,15,6,3,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[8,4,31,51,132,228,322,383,389,490,578,684,723,808,902,933,1046,1144,1281,1365,1478,1715,1780,1970,2014,2214,2340,2553,2692,2800,3066,3249,3361,3536,3769,3970,4196,4143,4370,4379,4484,4497,4449,4411,4270,4121,3767,3531,3399,3141,2862,2749,2414,2276,2022,1835,1688,1476,1285,1171,1039,887,784,648,555,468,380,290,280,234,180,149,130,112,81,64,44,34,20,11,7,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,7,35,107,225,339,365,455,494,617,674,731,797,897,963,964,1127,1163,1415,1417,1530,1599,1710,1775,1955,2110,2230,2472,2582,2719,2823,3042,3210,3322,3503,3727,3765,3953,4215,4179,4141,4481,4375,4380,4257,4213,4012,3795,3588,3363,3040,2925,2526,2407,2104,1947,1651,1593,1370,1270,1126,961,838,730,592,484,468,330,284,265,185,150,121,62,35,29,15,7,2,4,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,4,30,70,127,250,345,348,430,491,645,697,735,792,904,938,1092,1070,1324,1412,1495,1626,1652,1857,1913,2167,2275,2470,2578,2695,2929,3174,3242,3215,3690,3747,3925,4138,4183,4371,4336,4385,4391,4434,4152,4176,3888,3686,3555,3220,3059,2728,2600,2385,2107,1891,1813,1601,1400,1297,1153,966,789,742,607,523,434,343,321,260,251,197,157,144,98,67,59,36,20,13,7,1,3,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[5,7,24,63,140,277,315,382,436,495,591,643,745,809,889,924,1075,1110,1329,1377,1470,1632,1746,1868,1867,2133,2225,2433,2615,2707,2966,3201,3283,3392,3761,3825,4057,4005,4183,4389,4419,4508,4450,4523,4284,4249,3989,3771,3569,3161,2974,2816,2532,2331,2170,1859,1792,1559,1429,1194,1039,887,750,650,541,456,387,293,271,229,189,179,129,99,91,76,40,25,23,8,4,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,21,42,138,250,349,353,398,474,516,633,675,779,776,916,978,1129,1110,1318,1401,1520,1611,1670,1886,1972,2098,2309,2441,2703,2705,2917,3196,3359,3483,3569,3751,4074,4016,4207,4284,4330,4534,4502,4507,4293,4278,4016,3671,3458,3373,3026,2795,2574,2261,2036,1899,1688,1547,1363,1138,1034,861,785,657,517,480,375,277,237,202,162,124,103,79,54,32,18,15,8,4,2,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[8,9,22,60,126,238,311,355,457,524,639,664,783,821,956,991,1133,1186,1370,1479,1576,1673,1792,1917,2048,2232,2328,2481,2662,2820,2851,3180,3336,3382,3664,3868,3901,3926,4172,4187,4206,4296,4312,4200,4070,4001,3836,3566,3559,3216,2985,2727,2520,2247,2095,1802,1708,1513,1409,1227,1165,942,853,743,645,580,486,369,322,265,289,218,204,159,143,101,70,61,45,34,19,6,0,5,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,7,17,83,170,260,319,352,451,505,648,635,722,848,892,964,1042,1060,1295,1422,1526,1551,1701,1944,1932,2187,2228,2430,2631,2712,2903,3191,3314,3502,3708,3814,3994,4082,4268,4400,4343,4641,4457,4479,4335,4236,3990,3695,3655,3191,2979,2765,2510,2229,2038,1915,1649,1464,1385,1189,1064,951,796,621,542,491,393,338,242,226,206,150,135,96,77,56,46,25,15,7,8,3,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,5,15,52,126,221,327,361,454,504,588,611,745,798,899,946,1011,1029,1262,1296,1440,1549,1695,1807,1878,2047,2140,2426,2541,2728,2918,3144,3133,3290,3535,3749,3989,3907,4240,4368,4390,4496,4465,4431,4355,4267,4015,3834,3642,3431,3091,2860,2653,2379,2211,1998,1729,1601,1436,1376,1167,971,841,721,590,479,421,376,287,253,226,167,135,97,72,49,21,18,15,5,3,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,10,26,84,132,249,331,366,369,449,527,620,632,716,920,863,1057,1074,1221,1298,1413,1597,1664,1801,1872,2197,2218,2532,2553,2831,3086,3154,3326,3578,3817,4007,4017,4140,4466,4529,4344,4646,4583,4610,4455,4295,4038,3760,3535,3278,2885,2767,2430,2221,2013,1834,1681,1500,1367,1134,995,887,786,596,540,442,373,323,252,219,192,127,138,82,79,67,39,29,27,11,5,1,3,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[11,9,37,111,210,317,343,417,481,537,631,660,772,848,889,973,1114,1131,1289,1438,1515,1570,1645,1927,1876,2068,2195,2438,2605,2740,2924,3109,3187,3273,3691,3812,3875,3862,4153,4376,4362,4473,4450,4455,4280,4260,3996,3826,3603,3377,2992,2905,2523,2332,2111,1923,1726,1587,1441,1238,1138,847,809,674,587,476,433,320,252,250,170,128,116,89,53,38,24,13,8,3,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,8,28,56,158,269,311,420,477,512,593,668,767,772,893,922,1079,1141,1287,1358,1438,1621,1696,1826,1909,2132,2196,2495,2623,2787,2931,3111,3284,3381,3618,3740,3988,4037,4216,4339,4354,4688,4416,4483,4511,4220,3960,3868,3451,3318,2955,2835,2500,2389,2143,1854,1773,1496,1414,1255,1080,927,785,699,557,500,393,332,282,188,204,153,100,69,47,22,21,8,4,1,2,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[2,9,23,84,171,265,369,428,481,555,676,693,762,875,937,938,1150,1123,1305,1448,1407,1638,1717,1830,1931,2084,2135,2449,2518,2651,2835,3105,3164,3159,3597,3720,3952,3931,4104,4165,4182,4393,4318,4434,4314,4309,4061,3869,3491,3350,3044,2812,2502,2405,2156,1967,1764,1616,1451,1307,1150,1014,886,744,630,526,444,405,301,276,222,185,136,115,68,48,32,11,12,8,3,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,7,45,82,154,297,364,368,450,495,585,623,708,812,894,900,1094,1062,1294,1392,1444,1538,1652,1781,1964,2172,2327,2488,2716,2720,3005,3219,3380,3440,3627,3964,4143,4027,4265,4471,4334,4632,4415,4284,4173,4274,3939,3652,3434,3266,2836,2746,2519,2319,1985,1838,1663,1470,1329,1199,1077,923,823,748,557,514,446,326,281,232,217,186,152,111,112,74,78,56,46,32,28,22,6,4,2,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,10,23,71,204,295,357,404,436,525,587,723,747,827,921,970,1126,1191,1286,1435,1442,1675,1706,1927,1942,2200,2268,2430,2607,2710,2967,3156,3330,3384,3717,3816,3970,4034,4244,4224,4365,4413,4372,4396,4261,4225,3931,3703,3514,3197,3026,2824,2443,2334,2072,1910,1683,1537,1413,1221,1052,954,815,683,566,478,419,323,278,238,173,161,127,110,81,56,38,32,12,8,6,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,17,42,104,215,291,368,366,424,499,609,675,679,821,931,925,1135,1182,1245,1338,1557,1676,1681,1894,2095,2210,2411,2518,2728,2788,3111,3302,3315,3448,3863,3915,3934,4159,4417,4559,4386,4440,4447,4524,4315,4143,3850,3733,3557,3236,2726,2676,2302,2270,1926,1820,1665,1415,1238,1098,946,820,728,623,536,429,377,317,259,225,178,160,122,107,79,62,57,30,27,18,7,4,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[5,9,24,84,160,238,319,354,438,490,555,624,690,744,907,852,980,1085,1159,1301,1425,1532,1657,1749,1881,2105,2205,2359,2513,2684,2957,3133,3221,3497,3839,3836,3970,4179,4328,4482,4501,4731,4573,4501,4398,4329,4054,3934,3561,3368,3059,2909,2600,2369,2126,1919,1741,1498,1437,1222,1009,897,726,639,510,442,351,309,263,222,164,118,87,83,50,35,17,14,8,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[9,8,23,61,117,177,234,295,328,340,418,470,560,603,690,717,833,842,1006,1076,1171,1381,1401,1598,1734,1965,2023,2150,2533,2639,2842,3180,3246,3370,3783,3993,4118,4365,4460,4626,4780,5020,4850,4947,4662,4730,4351,4116,3947,3523,3236,2998,2647,2417,2181,1897,1772,1578,1401,1127,1041,823,724,583,473,374,328,259,249,195,173,128,110,106,76,50,34,23,13,9,4,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,7,14,51,143,189,285,351,389,463,582,624,670,769,873,891,1006,1076,1242,1354,1412,1598,1589,1773,1892,2042,2243,2311,2654,2699,2969,3156,3303,3385,3656,3827,4007,4051,4450,4368,4441,4552,4593,4495,4347,4241,3901,3820,3565,3287,3010,2921,2520,2420,2190,1929,1713,1561,1385,1235,1050,904,838,639,568,462,452,361,291,256,259,203,154,124,107,64,51,34,20,8,5,3,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[5,5,12,32,71,145,221,280,333,430,454,560,540,640,755,813,924,999,1121,1224,1286,1457,1550,1780,1810,1974,2266,2340,2597,2786,2981,3260,3401,3524,4002,4041,4406,4507,4767,4817,4910,4946,4658,4943,4622,4525,4093,3804,3605,3305,2998,2747,2520,2248,1983,1801,1610,1475,1260,1040,909,783,657,522,432,398,283,247,226,172,148,109,93,61,33,27,17,5,2,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[7,12,25,59,134,236,262,342,373,405,489,558,696,685,800,859,1007,1041,1114,1268,1354,1539,1609,1788,2007,2153,2164,2412,2729,2746,3069,3249,3389,3445,3856,3949,4286,4256,4601,4692,4656,4927,4783,4694,4412,4292,3966,3852,3571,3286,2924,2730,2491,2285,1992,1765,1707,1455,1328,1138,918,781,706,561,472,409,340,252,232,178,156,122,88,79,54,38,20,11,8,3,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[8,17,87,180,285,348,376,370,465,505,569,602,662,810,900,911,1067,1047,1175,1298,1402,1597,1709,1876,1959,2172,2236,2488,2629,2749,2941,3272,3449,3485,3827,3883,4073,4181,4422,4536,4439,4584,4615,4636,4322,4162,4011,3740,3573,3248,2941,2760,2370,2266,1968,1818,1676,1437,1264,1088,1007,826,745,597,504,413,334,296,246,191,173,138,115,98,65,36,24,30,9,6,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[11,14,40,123,179,254,290,363,363,451,503,548,545,750,792,788,940,996,1102,1184,1320,1497,1599,1715,1882,2000,2205,2485,2584,2702,2930,3192,3449,3502,3894,3942,4226,4305,4594,4799,4696,4955,4797,4738,4482,4450,3998,3828,3703,3351,2958,2845,2442,2214,2013,1924,1740,1406,1247,1156,987,790,691,572,457,374,290,272,226,164,142,108,96,68,40,31,13,11,7,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[10,11,63,155,223,316,333,331,397,466,533,640,660,734,832,876,1037,1046,1169,1293,1420,1587,1553,1778,1861,2077,2232,2484,2611,2809,3052,3182,3283,3557,3803,3997,4100,4315,4433,4686,4646,4792,4744,4661,4467,4455,3959,3791,3485,3271,2884,2740,2392,2281,2034,1879,1688,1405,1289,1120,940,813,713,580,495,372,308,269,240,178,150,99,78,73,42,30,22,7,5,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,6,18,54,126,216,275,286,360,359,425,489,593,639,669,768,909,880,1092,1150,1272,1374,1577,1696,1865,1968,2153,2382,2634,2732,3009,3309,3373,3550,4002,4168,4408,4466,4784,4827,4955,4885,4955,4853,4477,4436,4081,3816,3551,3236,2960,2815,2362,2324,2045,1852,1790,1426,1267,1100,978,717,637,552,454,370,305,239,218,160,162,123,106,81,63,35,31,20,13,5,3,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[7,16,44,126,193,301,292,352,422,407,480,578,586,680,742,847,882,969,1108,1152,1286,1430,1558,1769,1798,2020,2105,2241,2533,2760,2996,3028,3261,3360,3748,3876,4078,4243,4447,4602,4697,4829,4785,4716,4573,4514,4250,4091,3702,3456,3219,2753,2593,2462,2070,1940,1780,1568,1374,1139,1050,852,706,599,500,402,324,281,229,177,128,107,69,37,21,15,10,4,1,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[5,12,42,113,151,251,285,310,360,416,477,510,539,649,722,795,963,950,1072,1182,1307,1454,1521,1721,1813,2072,2114,2373,2626,2641,2936,3167,3343,3507,3822,4002,4306,4280,4541,4715,4642,4889,4800,4721,4560,4514,4164,3848,3620,3268,3066,2839,2574,2300,2074,1800,1792,1527,1344,1134,1020,858,752,613,520,405,300,293,245,181,163,132,104,84,65,23,23,12,7,2,1,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[4,11,23,72,128,223,253,283,392,381,447,505,587,665,757,732,873,945,1108,1137,1282,1451,1497,1694,1820,1986,2181,2306,2529,2635,2866,3173,3347,3493,3986,3976,4334,4345,4498,4752,4707,4736,4859,4846,4507,4487,4159,3962,3588,3435,3047,2861,2604,2349,2142,1811,1690,1518,1339,1139,1043,784,712,598,522,454,338,282,255,202,169,147,121,92,61,45,24,19,9,5,2,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,16,43,124,192,260,286,292,321,338,397,440,560,578,688,709,839,803,1106,1132,1184,1335,1441,1644,1709,1999,1980,2383,2591,2737,3028,3251,3394,3628,3960,4058,4515,4425,4846,5053,4962,5088,5113,4869,4534,4557,4056,3807,3567,3359,3050,2774,2443,2291,2018,1852,1688,1487,1270,1053,899,795,663,574,415,366,302,237,178,174,136,108,92,67,60,46,42,21,18,11,2,2,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]},"chartOpts":{"ylab":"log10(SNP intensity + 1)"}},"evals":[],"jsHooks":[]}</script> In the above plot, distributions of array intensities (after a log10(x+1) transformation) are displayed.</p>
+<p>The arrays are sorted by the proportion of missing genotype data for the sample, and the curves connect various quantiles of the intensities.</p>
+<pre class="r"><code>qu &lt;- apply(int, 2, quantile, c(0.01, 0.99), na.rm=TRUE)
+group &lt;- (percent_missing &gt;= 19.97) + (percent_missing &gt; 5) + (percent_missing &gt; 2) + 1
+labels &lt;- paste0(colnames(qu), &quot; (&quot;, round(percent_missing), &quot;%)&quot;)
+iplot(qu[1,], qu[2,], indID=labels, group=group,
+      chartOpts=list(xlab=&quot;1 %ile of array intensities&quot;,
+                     ylab=&quot;99 %ile of array intensities&quot;,
+                     pointcolor=c(&quot;#ccc&quot;, &quot;slateblue&quot;, &quot;Orchid&quot;, &quot;#ff851b&quot;)))</code></pre>
+<p><div id="htmlwidget-859faef2725068e45d18" style="width:912px;height:576px;" class="iplot html-widget"></div>
+<script type="application/json" data-for="htmlwidget-859faef2725068e45d18">{"x":{"data":{"x":[0.154,0.144,0.168,0.175,0.159,0.151,0.164,0.17138,0.172,0.167,0.193,0.168,0.161,0.169,0.17,0.184,0.178,0.163,0.171,0.159,0.157,0.173,0.159,0.19042,0.161,0.166,0.179,0.162,0.156,0.17,0.17346,0.181,0.16,0.166,0.173,0.154,0.162,0.174,0.17,0.197,0.164,0.156,0.18,0.15756,0.172,0.169,0.152,0.177,0.16,0.156,0.194,0.151,0.152,0.438],"y":[2.531,2.493,2.753,2.684,2.537,2.471,2.6096,2.441,2.539,2.435,2.519,2.544,2.535,2.53,2.526,2.4588,2.454,2.42,2.598,2.6345,2.498,2.675,2.629,2.4936,2.563,2.537,2.592,2.554,2.533,2.4805,2.47,2.495,2.612,2.492,2.541,2.498,2.4755,2.7455,2.539,2.427,2.531,2.536,2.551,2.62,2.5315,2.647,2.583,2.645,2.5576,2.444,2.633,2.8,2.6185,4.927],"group":[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,2,2,2,2,2,2,3,2,3,2,3,2,2,2,2,2,3,3,2,2,2,3,2,4],"indID":["8358 (4%)","480 (4%)","3606 (5%)","5642 (5%)","2276 (4%)","1863 (4%)","8362 (4%)","5583 (4%)","5382 (4%)","2228 (4%)","3693 (4%)","844 (4%)","751 (4%)","5367 (4%)","2482 (4%)","5574 (4%)","5653 (4%)","5349 (4%)","589 (4%)","2338 (4%)","8354 (4%)","5635 (4%)","2318 (17%)","5264 (4%)","37 (4%)","7 (4%)","2303 (4%)","4714 (4%)","1908 (4%)","5409 (4%)","5662 (4%)","5377 (4%)","878 (5%)","2253 (4%)","13 (4%)","3811 (4%)","2080 (11%)","3831 (5%)","5372 (10%)","5412 (4%)","5396 (7%)","5626 (4%)","5327 (5%)","5337 (5%)","2389 (5%)","2402 (4%)","2297 (18%)","3594 (5%)","3698 (4%)","2347 (4%)","3492 (4%)","3624 (5%)","3504 (4%)","2131 (29%)"]},"chartOpts":{"xlab":"1 %ile of array intensities","ylab":"99 %ile of array intensities","pointcolor":["#ccc","slateblue","Orchid","#ff851b"]}},"evals":[],"jsHooks":[]}</script> For this particular set of arrays, a plot of the 1 %ile vs the 99 %ile is quite revealing. In the following, the orange points are those with &gt; 20% missing genotypes, the pink points are the samples with 5-20% missing genotypes, and the blue points are the samples with 2-5% missing genotypes.</p>
+</div>
+<div id="genotype-frequencies" class="section level3">
+<h3>Genotype Frequencies</h3>
+<p>The following triangle plots show the genotype frequency distributions for the mice, among the four groups of markers with common minor allele frequency (MAF) in the founder strains. These plots make use of the fact that for a point within an equilateral triangle, the sum of the distances to the three sides is a constant.</p>
+<pre class="r"><code>g &lt;- do.call(&quot;cbind&quot;, gm$geno[1:19])
+fg &lt;- do.call(&quot;cbind&quot;, gm$founder_geno[1:19])
+g &lt;- g[,colSums(fg==0)==0]
+fg &lt;- fg[,colSums(fg==0)==0]
+fgn &lt;- colSums(fg==3)
+
+gf_ind &lt;- vector(&quot;list&quot;, 4)
+for(i in 1:4) {
+  gf_ind[[i]] &lt;- t(apply(g[,fgn==i], 1, function(a) table(factor(a, 1:3))/sum(a != 0)))
+}
+
+par(mfrow=c(4,1), mar=c(0.6, 0.6, 2.6, 0.6))
+for(i in 1:4) {
+  triplot(c(&quot;AA&quot;, &quot;AB&quot;, &quot;BB&quot;), main=paste0(&quot;MAF = &quot;, i, &quot;/8&quot;))
+  tripoints(gf_ind[[i]], pch=21, bg=&quot;lightblue&quot;)
+  tripoints(c((1-i/8)^2, 2*i/8*(1-i/8), (i/8)^2), pch=21, bg=&quot;violetred&quot;)
+  
+  if(i&gt;=3) { # label mouse with lowest het
+    wh &lt;- which(gf_ind[[i]][,2] == min(gf_ind[[i]][,2]))
+    tritext(gf_ind[[i]][wh,,drop=FALSE] + c(0.02, -0.02, 0),
+            names(wh), adj=c(0, 1))
+  }
+  
+  # label other mice
+  if(i==1) {
+    lab &lt;- rownames(gf_ind[[i]])[gf_ind[[i]][,2]&gt;0.3]
+  }
+  else if(i==2) {
+    lab &lt;- rownames(gf_ind[[i]])[gf_ind[[i]][,2]&gt;0.48]
+  }
+  else if(i==3) {
+    lab &lt;- rownames(gf_ind[[i]])[gf_ind[[i]][,2]&gt;0.51]
+  }
+  else if(i==4) {
+    lab &lt;- rownames(gf_ind[[i]])[gf_ind[[i]][,2]&gt;0.6]
+  }
+  
+  for(ind in lab) {
+    if(grepl(&quot;^F&quot;, ind) &amp;&amp; i != 3) {
+      tritext(gf_ind[[i]][ind,,drop=FALSE] + c(-0.01, 0, +0.01), ind, adj=c(1,0.5))
+    } else {
+      tritext(gf_ind[[i]][ind,,drop=FALSE] + c(0.01, 0, -0.01), ind, adj=c(0,0.5))
+    }
+  }
+}</code></pre>
+<p><img src="figure/2.1_sample_bqc_reinholdt.Rmd/Genotype%20frequencies-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>The majority of individuals are tightly clustered around the expected distribution (in pink). There are a few outliers with elevated &amp; reduced heterozygosity, but most of these are among the samples with highest rates of missing genotypes.</p>
+</div>
+<div id="crossover-counts" class="section level3">
+<h3>Crossover Counts</h3>
+<pre class="r"><code>#load pre-caluated results
+#load(&quot;data/pr_reinholt.RData&quot;)
+pr&lt;-readRDS(paste0(filepaths,&quot;cell_gig_data__GigaMUGA_genoprobs_36state.rds&quot;))
+#load(&quot;data/m_reinholt.RData&quot;)
+#load(&quot;data/nxo_reinholt.RData&quot;)
+
+m &lt;- maxmarg(pr)
+nxo &lt;- count_xo(m)
+#save(pr, file = &quot;data/pr_reinholt.RData&quot;)
+#str(pr)
+save(m, file = &quot;data/m_reinholt.RData&quot;)
+save(nxo, file = &quot;data/nxo_reinholt.RData&quot;)
+
+e &lt;- calc_errorlod(gm, pr)
+#str(e)
+e &lt;- do.call(&quot;cbind&quot;, e)
+save(e, file = &quot;data/e_reinholt.RData&quot;)
+
+snpg &lt;- predict_snpgeno(gm, m)
+snpg &lt;- do.call(&quot;cbind&quot;, snpg)
+save(snpg, file = &quot;data/snpg_reinholt.RData&quot;)
+
+#crossover
+totxo &lt;- rowSums(nxo)[rownames(gm$covar)]
+names(totxo) &lt;- as.character(do.call(rbind.data.frame, strsplit(names(totxo), &quot;_&quot;))[,6])
+iplot(seq_along(totxo),
+      totxo,
+      group=gm$covar$generation,
+      chartOpts=list(xlab=&quot;Mouse&quot;, ylab=&quot;Number of crossovers&quot;, 
+                     margin=list(left=80,top=40,right=40,bottom=40,inner=5),
+                     axispos=list(xtitle=25,ytitle=50,xlabel=5,ylabel=5)))</code></pre>
+<div id="htmlwidget-a6401eaf80dfa0282aae" style="width:912px;height:576px;" class="iplot html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a6401eaf80dfa0282aae">{"x":{"data":{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],"y":[652,679,650,666,660,658,609,673,670,653,616,623,646,630,622,569,680,619,627,644,640,670,925,674,663,635,674,635,651,651,676,631,643,637,619,641,700,631,658,647,638,705,631,650,578,661,1195,646,631,644,676,647,644,3308],"group":[2,4,4,2,3,3,2,2,2,3,1,1,3,2,2,2,3,2,1,3,2,3,3,2,3,3,3,3,3,4,2,2,1,3,3,1,3,1,2,2,2,3,2,2,3,3,3,4,1,3,3,4,3,3],"indID":["8358","480","3606","5642","2276","1863","8362","5583","5382","2228","3693","844","751","5367","2482","5574","5653","5349","589","2338","8354","5635","2318","5264","37","7","2303","4714","1908","5409","5662","5377","878","2253","13","3811","2080","3831","5372","5412","5396","5626","5327","5337","2389","2402","2297","3594","3698","2347","3492","3624","3504","2131"]},"chartOpts":{"xlab":"Mouse","ylab":"Number of crossovers","margin":{"left":80,"top":40,"right":40,"bottom":40,"inner":5},"axispos":{"xtitle":25,"ytitle":50,"xlabel":5,"ylabel":5}}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#save crossover into pdf
+pdf(file = &quot;output/number_crossover_reinholt.pdf&quot;)
+cross_over &lt;- data.frame(Mouse = seq_along(totxo), id=names(totxo), Number_crossovers = totxo, generation = gm$covar$generation)
+#names(totxo) &lt;- as.character(do.call(rbind.data.frame, strsplit(names(totxo), &quot;V01_&quot;))[,2])
+#names(totxo) &lt;- as.character(do.call(rbind.data.frame, strsplit(names(totxo), &quot;_&quot;))[,6])
+names(totxo)[totxo &gt;= 200 &amp; totxo &lt;= 800] = &quot;&quot;
+# Change point shapes and colors
+p &lt;-ggplot(cross_over, aes(x=Mouse, y=Number_crossovers, fill = generation, color=generation)) +
+  geom_point() +
+  geom_text_repel(aes(label=names(totxo),hjust=0,vjust=0), show.legend = FALSE)
+p
+dev.off()</code></pre>
+<pre><code>quartz_off_screen 
+                2 </code></pre>
+<pre class="r"><code>p</code></pre>
+<p><img src="figure/2.1_sample_bqc_reinholdt.Rmd/Crossover%20counts-2.png" width="912" style="display: block; margin: auto;" /> Counts of inferred crossovers can be a useful diagnostic for identifying problem samples, which may show an excessive number of apparent crossovers. Above is a plot of the number of crossovers vs the mouse index, colored by generation.</p>
+<p>We’re looking for mice with an excessive number of crossovers as well as mice with very few crossovers. These are shown below</p>
+<p><strong>NB:</strong> DO generation of an individual is taken into account.</p>
+<pre><code>     percent_missing total_xo
+3594            5.07      646
+3624            5.12      647
+5396            6.78      638
+5372           10.16      658
+2080           10.63      700
+2318           17.40      925
+2297           17.57     1195
+2131           29.00     3308</code></pre>
+<table class="table table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+<th style="text-align:center;">
+Genoprobs_Sample_ID
+</th>
+<th style="text-align:center;">
+number.xo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2297
+</td>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2297_G6
+</td>
+<td style="text-align:center;">
+1195
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2131
+</td>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2131_F7
+</td>
+<td style="text-align:center;">
+3308
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="genotyping-error-lod-scores" class="section level3">
+<h3>Genotyping Error LOD Scores</h3>
+<pre class="r"><code>#load(&quot;data/e_reinholt.RData&quot;)
+errors_ind &lt;- rowSums(e&gt;2)[rownames(gm$covar)]/n_typed(gm)*100
+lab &lt;- paste0(as.character(do.call(rbind.data.frame, strsplit(names(errors_ind), &quot;_&quot;))[,6]), &quot; (&quot;, myround(percent_missing[as.character(do.call(rbind.data.frame, strsplit(rownames(gm$covar), &quot;_&quot;))[,6])],1), &quot;%)&quot;)
+iplot(seq_along(errors_ind), errors_ind, indID=lab,
+      chartOpts=list(xlab=&quot;Mouse&quot;, ylab=&quot;Percent genotyping errors&quot;, ylim=c(0, 15),
+                     axispos=list(xtitle=25, ytitle=50, xlabel=5, ylabel=5)))</code></pre>
+<div id="htmlwidget-794817da17764190ecde" style="width:912px;height:576px;" class="iplot html-widget"></div>
+<script type="application/json" data-for="htmlwidget-794817da17764190ecde">{"x":{"data":{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],"y":[0.050199,0.051539,0.079778,0.084991,0.046303,0.053174,0.040232,0.039339,0.053989,0.042418,0.041159,0.053943,0.040231,0.0486,0.041004,0.04013,0.037152,0.040128,0.041787,0.059487,0.042521,0.060766,0.11822,0.040953,0.041128,0.048027,0.039432,0.028846,0.050262,0.040196,0.036334,0.034045,0.064993,0.044033,0.037968,0.041032,0.085621,0.05114,0.06489,0.04019,0.058629,0.059404,0.075564,0.076621,0.083549,0.041173,0.20598,0.06218,0.045638,0.037105,0.049505,0.084493,0.057866,9.1233],"group":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"indID":["8358 (4.2%)","480 (3.8%)","3606 (5.0%)","5642 (4.8%)","2276 (4.0%)","1863 (4.1%)","8362 (4.0%)","5583 (3.7%)","5382 (4.2%)","2228 (3.8%)","3693 (4.4%)","844 (4.1%)","751 (4.0%)","5367 (4.0%)","2482 (4.0%)","5574 (3.8%)","5653 (3.9%)","5349 (3.7%)","589 (4.1%)","2338 (4.4%)","8354 (4.0%)","5635 (4.1%)","2318 (17.4%)","5264 (3.9%)","37 (4.3%)","7 (4.4%)","2303 (3.9%)","4714 (4.0%)","1908 (4.3%)","5409 (3.9%)","5662 (3.7%)","5377 (3.7%)","878 (4.7%)","2253 (4.0%)","13 (4.0%)","3811 (4.1%)","2080 (10.6%)","3831 (4.5%)","5372 (10.2%)","5412 (3.9%)","5396 (6.8%)","5626 (4.3%)","5327 (4.5%)","5337 (4.9%)","2389 (4.9%)","2402 (4.4%)","2297 (17.6%)","3594 (5.1%)","3698 (4.2%)","2347 (3.8%)","3492 (4.3%)","3624 (5.1%)","3504 (4.3%)","2131 (29.0%)"]},"chartOpts":{"xlab":"Mouse","ylab":"Percent genotyping errors","ylim":[0,15],"axispos":{"xtitle":25,"ytitle":50,"xlabel":5,"ylabel":5}}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>save(errors_ind, file = &quot;data/errors_ind_reinholt.RData&quot;)</code></pre>
+</div>
+<div id="apparent-genotyping-errors" class="section level3">
+<h3>Apparent Genotyping Errors</h3>
+<pre class="r"><code>#load(&quot;data/snpg_reinholt.RData&quot;)
+#snpg &lt;- gm$geno
+
+snpgn &lt;- snpg[rownames(gm$covar),]
+#snpgn &lt;- do.call(&quot;cbind&quot;, gm$geno)
+
+gobs &lt;- do.call(&quot;cbind&quot;, gm$geno)
+gobs[gobs==0] &lt;- NA
+
+par(pty=&quot;s&quot;)
+err_direct &lt;- rowMeans(snpgn != gobs, na.rm=TRUE)*100
+errors_ind_0 &lt;- rowSums(e &gt; 0)[rownames(gm$covar)]/n_typed(gm)*100
+par(mar=c(4.1,4.1,0.6, 0.6))
+grayplot(errors_ind_0, err_direct,
+         xlab=&quot;Percent errors (error LOD &gt; 0)&quot;,
+         ylab=&quot;Percent errors (obs vs predicted)&quot;,
+         xlim=c(0, 35), ylim=c(0, 35))
+abline(0,1,lty=2, col=&quot;gray60&quot;)</code></pre>
+<p><img src="figure/2.1_sample_bqc_reinholdt.Rmd/apparent%20genotyping%20errors-1.png" width="912" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>pdf(file = &quot;output/Percent_genotype_errors_obs_vs_predicted_reinholt.pdf&quot;,width = 20, height = 20) 
+par(pty=&quot;s&quot;)
+err_direct &lt;- rowMeans(snpgn != gobs, na.rm=TRUE)*100
+errors_ind_0 &lt;- rowSums(e &gt; 0)[rownames(gm$covar)]/n_typed(gm)*100
+par(mar=c(4.1,4.1,0.6, 0.6))
+grayplot(errors_ind_0, err_direct,
+         xlab=&quot;Percent errors (error LOD &gt; 0)&quot;,
+         ylab=&quot;Percent errors (obs vs predicted)&quot;,
+         xlim=c(0, 35), ylim=c(0, 35))
+abline(0,1,lty=2, col=&quot;gray60&quot;)
+dev.off()</code></pre>
+<pre><code>quartz_off_screen 
+                2 </code></pre>
+<pre class="r"><code>par(pty=&quot;s&quot;)
+par(mar=c(4.1,4.1,0.6, 0.6))
+grayplot(errors_ind_0, err_direct,
+         xlab=&quot;Percent errors (error LOD &gt; 0)&quot;,
+         ylab=&quot;Percent errors (obs vs predicted)&quot;,
+         xlim=c(0, 35), ylim=c(0, 35))
+abline(0,1,lty=2, col=&quot;gray60&quot;)</code></pre>
+<p><img src="figure/2.1_sample_bqc_reinholdt.Rmd/apparent%20genotyping%20errors-2.png" width="912" style="display: block; margin: auto;" /></p>
+</div>
+<div id="removing-samples" class="section level3">
+<h3>Removing Samples</h3>
+<pre class="r"><code>##percent missing
+gm.covar = data.frame(id=as.character(do.call(rbind.data.frame, strsplit(rownames(gm$covar), &quot;_&quot;))[,6]),gm$covar)
+qc_info &lt;- merge(gm.covar,
+                  data.frame(id = names(percent_missing),percent_missing = percent_missing,stringsAsFactors = F),by = &quot;id&quot;)
+
+#cross_over
+qc_info &lt;- merge(qc_info,
+                 data.frame(id = rownames(cross_over),
+                            Number_crossovers = cross_over$Number_crossovers,stringsAsFactors = F),by = &quot;id&quot;)
+
+#missing sex
+#qc_info$sex.match &lt;- ifelse(qc_info$sexp == qc_info$sex, TRUE, FALSE)
+rownames(samples) &lt;- as.character(samples$Original.Mouse.ID)
+samples &lt;- samples[as.character(qc_info$id),]
+#samples$Unique.Sample.ID &lt;- as.character(samples$Unique.Sample.ID)
+all.equal(as.character(qc_info$id), as.character(samples$Original.Mouse.ID))</code></pre>
+<pre><code>[1] TRUE</code></pre>
+<pre class="r"><code>qc_info$sex.match &lt;- ifelse(samples$Inferred.Sex == substring(samples$Sex, 1, 1), TRUE, FALSE)
+
+
+#genotype errors
+qc_info &lt;- merge(qc_info,
+                 data.frame(id = as.character(do.call(rbind.data.frame, strsplit(names(errors_ind), &quot;_&quot;))[,6]),
+                            genotype_erros = errors_ind,stringsAsFactors = F),by = &quot;id&quot;)
+
+##duplicated id to be remove
+qc_info$duplicate.id &lt;- ifelse(qc_info$id %in% as.character(do.call(rbind.data.frame, strsplit(summary.cg$remove.id, &quot;_&quot;))[,6]), TRUE,FALSE)
+
+#bad.sample &lt;- qc_info[qc_info$generation ==1 | qc_info$Number_crossovers &lt;= 200 | qc_info$Number_crossovers &gt;=1000 | qc_info$percent_missing &gt;= 10 | qc_info$genotype_erros &gt;= 1 | qc_info$remove.id.duplicated == TRUE,]
+bad.sample &lt;- qc_info[qc_info$generation ==1 | qc_info$Number_crossovers &lt;= 200 | qc_info$Number_crossovers &gt;=1000 | qc_info$percent_missing &gt;= 10 | qc_info$genotype_erros &gt;= 1 | qc_info$duplicate.id == TRUE,]
+
+save(qc_info, bad.sample, file = &quot;data/qc_info_bad_sample_reinholt.RData&quot;)
+
+gm_samqc &lt;- gm[paste0(&quot;-&quot;,as.character(bad.sample$id.1)),]
+
+#fix sex mismatch
+#gm_samqc$covar[gm_samqc$covar$id %in% names(yint_ave[!names(yint_ave) %in% bad.sample$id][yint_ave[!names(yint_ave) %in% bad.sample$id] &lt;= 0.1]),&quot;sexp&quot;] &lt;- &quot;F&quot;
+
+gm_samqc</code></pre>
+<pre><code>Object of class cross2 (crosstype &quot;do&quot;)
+
+Total individuals                47
+No. genotyped individuals        47
+No. phenotyped individuals       47
+No. with both geno &amp; pheno       47
+
+No. phenotypes                    1
+No. covariates                    3
+No. phenotype covariates          0
+
+No. chromosomes                  20
+Total markers                137220
+
+No. markers by chr:
+    1     2     3     4     5     6     7     8     9    10    11    12    13 
+10415 10432  8203  7951  8028  8125  7756  6714  6979  6628  7430  6441  6323 
+   14    15    16    17    18    19     X 
+ 6227  5531  5174  5320  4784  3676  5083 </code></pre>
+<pre class="r"><code>save(gm_samqc, file = &quot;data/gm_samqc_reinholt.RData&quot;)
+
+# update other stuff
+e &lt;- e[ind_ids(gm_samqc),]
+g &lt;- g[ind_ids(gm_samqc),]
+snpg &lt;- snpg[ind_ids(gm_samqc),]
+
+save(e,g,snpg, file = &quot;data/e_g_snpg_samqc_reinholt.RData&quot;)
+#save(e,g, file = &quot;data/e_g_snpg_samqc_reinholt.RData&quot;)</code></pre>
+<p>Here is the list of samples that were removed:</p>
+<table class="table table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Genoprobs_Sample_ID
+</th>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2080_E5
+</td>
+<td style="text-align:center;">
+2080
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2131_F7
+</td>
+<td style="text-align:center;">
+2131
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2297_G6
+</td>
+<td style="text-align:center;">
+2297
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2318_G3
+</td>
+<td style="text-align:center;">
+2318
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2389_E6
+</td>
+<td style="text-align:center;">
+2389
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5372_G5
+</td>
+<td style="text-align:center;">
+5372
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5396_A6
+</td>
+<td style="text-align:center;">
+5396
+</td>
+</tr>
+</tbody>
+</table>
+<p>Below is a table summarising the problematic samples found throughout QC. These include the following:</p>
+<ul>
+<li>no_pheno == sample does not have a phenotype (if applicable)</li>
+<li>high_miss == sample has higher than 10% missing genotypes</li>
+<li>diff_sex == sample has sex mismatch</li>
+<li>high_xo == sample had crossover events greater than 1000 and less than 200</li>
+<li>high_geno_errors == Sample has geno errors above 1%</li>
+<li>DO_generation == DO generation is 1</li>
+<li>dublicate_ID == sample was duplicated</li>
+</ul>
+<p><strong>NB:</strong> For duplcate pairs, the one that was chosen to be removed was the one that had a higher missing rate</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Genoprobs_Sample_ID
+</th>
+<th style="text-align:center;">
+Neogen_Sample_ID
+</th>
+<th style="text-align:center;">
+high_miss
+</th>
+<th style="text-align:center;">
+diff_sex
+</th>
+<th style="text-align:center;">
+high_xo
+</th>
+<th style="text-align:center;">
+DO.Generation
+</th>
+<th style="text-align:center;">
+high_geno.errors
+</th>
+<th style="text-align:center;">
+duplicate_ID
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2080_E5
+</td>
+<td style="text-align:center;">
+2080
+</td>
+<td style="text-align:center;">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2131_F7
+</td>
+<td style="text-align:center;">
+2131
+</td>
+<td style="text-align:center;">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: purple !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: purple !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: pink !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: pink !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2253_B5
+</td>
+<td style="text-align:center;">
+2253
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: orange !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: orange !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2297_G6
+</td>
+<td style="text-align:center;">
+2297
+</td>
+<td style="text-align:center;">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+<span style="     color: purple !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: purple !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2318_G3
+</td>
+<td style="text-align:center;">
+2318
+</td>
+<td style="text-align:center;">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_2389_E6
+</td>
+<td style="text-align:center;">
+2389
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: orange !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: orange !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_4714_D4
+</td>
+<td style="text-align:center;">
+4714
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5264_H3
+</td>
+<td style="text-align:center;">
+5264
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5327_C6
+</td>
+<td style="text-align:center;">
+5327
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5372_G5
+</td>
+<td style="text-align:center;">
+5372
+</td>
+<td style="text-align:center;">
+<span style="     color: red !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: red !important;">XX</span>
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5382_A2
+</td>
+<td style="text-align:center;">
+5382
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5396_A6
+</td>
+<td style="text-align:center;">
+5396
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: orange !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: orange !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5412_H5
+</td>
+<td style="text-align:center;">
+5412
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_5574_H2
+</td>
+<td style="text-align:center;">
+5574
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: orange !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: orange !important;">XX</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;width: 5cm; ">
+Jackson_Lab_Reinholdt_MURGIGV01_20210726_8358_A1
+</td>
+<td style="text-align:center;">
+8358
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+<span style="     color: blue !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: blue !important;">XX</span>
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 3.6.2 (2019-12-12)
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+Running under: macOS Catalina 10.15.7
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_AU.UTF-8/en_AU.UTF-8/en_AU.UTF-8/C/en_AU.UTF-8/en_AU.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] readxl_1.3.1      cluster_2.1.0     dplyr_0.8.5       optparse_1.6.6   
+ [5] rhdf5_2.28.1      tidyr_1.0.2       data.table_1.14.0 fst_0.9.2        
+ [9] knitr_1.33        kableExtra_1.1.0  mclust_5.4.6      ggrepel_0.8.2    
+[13] ggplot2_3.3.5     qtlcharts_0.11-6  qtl2_0.22         broman_0.70-4    
+[17] workflowr_1.6.2  
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.7        assertthat_0.2.1  rprojroot_1.3-2   digest_0.6.27    
+ [5] utf8_1.2.1        cellranger_1.1.0  R6_2.5.0          backports_1.2.1  
+ [9] RSQLite_2.2.7     evaluate_0.14     httr_1.4.1        highr_0.9        
+[13] pillar_1.6.1      rlang_0.4.11      rstudioapi_0.13   whisker_0.4      
+[17] blob_1.2.1        rmarkdown_2.1     labeling_0.4.2    qtl_1.46-2       
+[21] webshot_0.5.2     readr_1.3.1       stringr_1.4.0     htmlwidgets_1.5.3
+[25] bit_4.0.4         munsell_0.5.0     compiler_3.6.2    httpuv_1.5.2     
+[29] xfun_0.24         pkgconfig_2.0.3   htmltools_0.5.1.1 tidyselect_1.0.0 
+[33] tibble_3.1.2      fansi_0.5.0       viridisLite_0.4.0 crayon_1.4.1     
+[37] withr_2.4.2       later_1.0.0       grid_3.6.2        jsonlite_1.7.2   
+[41] gtable_0.3.0      lifecycle_1.0.0   DBI_1.1.1         git2r_0.26.1     
+[45] magrittr_2.0.1    scales_1.1.1      stringi_1.7.2     cachem_1.0.5     
+[49] farver_2.1.0      fs_1.4.1          promises_1.1.0    getopt_1.20.3    
+[53] xml2_1.3.1        ellipsis_0.3.2    vctrs_0.3.8       Rhdf5lib_1.6.3   
+[57] tools_3.6.2       bit64_4.0.5       glue_1.4.2        purrr_0.3.4      
+[61] hms_0.5.3         parallel_3.6.2    fastmap_1.1.0     yaml_2.2.1       
+[65] colorspace_2.0-2  rvest_0.3.5       memoise_2.0.0    </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

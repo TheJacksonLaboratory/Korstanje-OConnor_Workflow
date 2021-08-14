@@ -13,7 +13,7 @@
 
 <meta name="date" content="2021-08-14" />
 
-<title>Korstanje-OConnor Workflow</title>
+<title>Haplotype Phasing Before QC [Reinholdt Samples]</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -310,7 +310,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Korstanje-OConnor Workflow</h1>
+<h1 class="title toc-ignore">Haplotype Phasing Before QC [Reinholdt Samples]</h1>
 <h4 class="author">Belinda Cornes</h4>
 <h4 class="date">2021-08-14</h4>
 
@@ -318,11 +318,8 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#project-at-a-glance-total-samples-570">Project At A Glance [Total Samples: 570]</a></li>
-<li><a href="#haplotype-phasing">Haplotype Phasing</a></li>
-<li><a href="#phenotype-qc">1. Phenotype QC</a></li>
-<li><a href="#genotype-qc">2. Genotype QC</a></li>
-<li><a href="#qtl-analysis">3. QTL Analysis</a></li>
+<li><a href="#loading-project">Loading Project</a></li>
+<li><a href="#phased-plots-for-do-mice">Phased Plots for DO Mice</a></li>
 </ul>
 </div>
 
@@ -566,7 +563,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/0.2_haplotype_comparison_bqc_reinholdt.Rmd</code>) and HTML (<code>docs/0.2_haplotype_comparison_bqc_reinholdt.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -595,7 +592,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/c8b2d371fe962018d6921b8325e9a771a50753ea/analysis/index.Rmd" target="_blank">c8b2d37</a>
+<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/c8b2d371fe962018d6921b8325e9a771a50753ea/analysis/0.2_haplotype_comparison_bqc_reinholdt.Rmd" target="_blank">c8b2d37</a>
 </td>
 <td>
 Belinda Cornes
@@ -607,363 +604,6 @@ Belinda Cornes
 reinholdt results
 </td>
 </tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/c949cf349f18e482cb32c00d4bd10e0bb2000dca/analysis/index.Rmd" target="_blank">c949cf3</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-08-14
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/2032395097a46c85eaf48146247ea47b6a9fe6b2/docs/index.html" target="_blank">2032395</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-07-08
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/59ea5436f1fd34e5c2826c5850747155ca08165b/analysis/index.Rmd" target="_blank">59ea543</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-07-08
-</td>
-<td>
-redone samples
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/189f1fdca8b79fa3430c02cb08b20477316346ef/analysis/index.Rmd" target="_blank">189f1fd</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-07-08
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/6118bcdbb5fdba2cd5be3f2bd47d7ddea951878b/docs/index.html" target="_blank">6118bcd</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-04-06
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/f12c1f3928f1d3b54c8cd12477fac8a88cd3b75d/analysis/index.Rmd" target="_blank">f12c1f3</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-04-06
-</td>
-<td>
-qc for 3 batches
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/325fbabf367ae979c9a2b200c0101eb1c713544b/analysis/index.Rmd" target="_blank">325fbab</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-04-06
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/ec08270fef823f50cdb0531728e1e8b96d53e354/docs/index.html" target="_blank">ec08270</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-04-01
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/0ff90db78e54389fac47db483165ececc7ddabeb/analysis/index.Rmd" target="_blank">0ff90db</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-04-01
-</td>
-<td>
-concordance re-upload
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/55d73d81243d3a7e3e4e4c239631cbb20e69edc9/docs/index.html" target="_blank">55d73d8</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-04-01
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/8fbc6ec8fc0647956657aa9d661205dc05cbfe3c/analysis/index.Rmd" target="_blank">8fbc6ec</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-04-01
-</td>
-<td>
-corrected sample qc
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/5e70dd7d6a1a0c8891f21e25078c006bea6a95dc/docs/index.html" target="_blank">5e70dd7</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-29
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/39b62553121df4cb035adf08c76d80ef566832cd/analysis/index.Rmd" target="_blank">39b6255</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-26
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/7e1ef4c26ba920d47abf669a9433c2001f48da34/docs/index.html" target="_blank">7e1ef4c</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-25
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/d7dde7b43b071cb481f372afc59815cae25ae503/analysis/index.Rmd" target="_blank">d7dde7b</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-25
-</td>
-<td>
-concordance update
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/10285242d9bb1043922d1dd76910bc91334035e5/docs/index.html" target="_blank">1028524</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-25
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/d8050475083164d113f665cce72ca409f7bd36a0/docs/index.html" target="_blank">d805047</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-25
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/b1371d9196748387f7926ce7013e8a7b6479bbd0/analysis/index.Rmd" target="_blank">b1371d9</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-25
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/40817a47a190a83f974e57d8a33009ee55fe1b0c/docs/index.html" target="_blank">40817a4</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-22
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/71541b39e1384317cbab21ec0009f55631bd325e/analysis/index.Rmd" target="_blank">71541b3</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-22
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TheJacksonLaboratory/Korstanje-OConnor_Workflow/blob/6d2430763019a2e850e17ddee67c7bc0c2c2c1eb/analysis/index.Rmd" target="_blank">6d24307</a>
-</td>
-<td>
-Belinda Cornes
-</td>
-<td>
-2021-03-17
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -971,146 +611,230 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<div id="project-at-a-glance-total-samples-570" class="section level3">
-<h3>Project At A Glance [Total Samples: 570]</h3>
-<ul>
-<li>Samples: Jackson_Lab_Korstanje_MURGIGV01_20201111
-<ul>
-<li><a href="0.1_samples_batch_20201111.html">Total Samples: 192</a></li>
-</ul></li>
-<li>Samples: Jackson_Lab_Korstanje_MURGIGV01_20201118
-<ul>
-<li><a href="0.1_samples_batch_20201118.html">Total Samples: 96</a></li>
-</ul></li>
-<li>Samples: Jackson_Lab_Korstanje_MURGIGV01_20210211
-<ul>
-<li><a href="0.1_samples_batch_20210211.html">Total Samples: 282</a></li>
-</ul></li>
-<li>Redone Samples: Jackson_Lab_Korstanje_MURGIGV01_20210604
-<ul>
-<li><a href="0.1_samples_batch_20210604.html">Total Samples: 24</a></li>
-</ul></li>
-<li>Redone Samples: Jackson_Lab_Korstanje_MURGIGV01_20210701
-<ul>
-<li><a href="0.1_samples_batch_20210701.html">Total Samples: 19</a></li>
-</ul></li>
-<li>New Samples: Jackson_Lab_Reinholdt_MURGIGV01_20210726
-<ul>
-<li><a href="0.1_samples_batch_20210726.html">Total Samples: 54</a></li>
-</ul></li>
-</ul>
+<div id="loading-project" class="section level3">
+<h3>Loading Project</h3>
+<pre class="r"><code>gm &lt;- read_cross2(&quot;/Users/corneb/Documents/MyJax/CS/Projects/Korstanje-Oconnor/haplotype.reconstruction/output_cell.data/qtl2/gm.json&quot;)
+
+#gm &lt;- get(load(&quot;gm_DO.RData&quot;))
+gm</code></pre>
+<pre><code>Object of class cross2 (crosstype &quot;do&quot;)
+
+Total individuals                54
+No. genotyped individuals        54
+No. phenotyped individuals       54
+No. with both geno &amp; pheno       54
+
+No. phenotypes                    1
+No. covariates                    3
+No. phenotype covariates          0
+
+No. chromosomes                  20
+Total markers                137220
+
+No. markers by chr:
+    1     2     3     4     5     6     7     8     9    10    11    12    13 
+10415 10432  8203  7951  8028  8125  7756  6714  6979  6628  7430  6441  6323 
+   14    15    16    17    18    19     X 
+ 6227  5531  5174  5320  4784  3676  5083 </code></pre>
+<pre class="r"><code>apr &lt;- readRDS(&quot;/Users/corneb/Documents/MyJax/CS/Projects/Korstanje-Oconnor/haplotype.reconstruction/output_cell.data/cell_gig_data__GigaMUGA_genoprobs_8state.rds&quot;)
+pr &lt;- readRDS(&quot;/Users/corneb/Documents/MyJax/CS/Projects/Korstanje-Oconnor/haplotype.reconstruction/output_cell.data/cell_gig_data__GigaMUGA_genoprobs_36state.rds&quot;)
+mice &lt;- ind_ids(gm)
+micelg &lt;- as.data.frame(mice)
+#micelg$miceids &lt;- sapply(strsplit(as.character(micelg$mice),&#39;_&#39;,fixed=T),function(x) x[6])
+#micelg &lt;- micelg[order(micelg$miceids),]
+micelg &lt;- micelg[order(micelg$mice),]
+#mice &lt;- micelg$mice
+micedf &lt;- as.data.frame(micelg)
+#mice &lt;- micedf$micelg
+names(micedf) &lt;- c(&quot;mice&quot;)
+micedf$original.mouse.id &lt;- sapply(strsplit(as.character(micedf$mice),&#39;_&#39;,fixed=T),function(x) x[6])</code></pre>
 </div>
-<div id="haplotype-phasing" class="section level3">
-<h3>Haplotype Phasing</h3>
-<ul>
-<li>2 batches
-<ul>
-<li><a href="0.2_haplotype_comparison_bqc.html">Figures</a></li>
-<li><a href="0.3_concordance_random_samples_bqc.html">Concordance</a></li>
-</ul></li>
-<li>3 batches
-<ul>
-<li><a href="0.2_haplotype_comparison_bqc_3batches.html">Figures</a></li>
-<li>Concordance</li>
-</ul></li>
-<li>redone
-<ul>
-<li><a href="0.2_haplotype_comparison_bqc_redone.html">Figures</a></li>
-<li>Concordance</li>
-</ul></li>
-<li>new samples
-<ul>
-<li><a href="0.2_haplotype_comparison_bqc_reinholdt.html">Figures</a></li>
-<li>Concordance</li>
-</ul></li>
-</ul>
-</div>
-<div id="phenotype-qc" class="section level3">
-<h3>1. Phenotype QC</h3>
-<ul>
-<li>Phenotypes
-<ul>
-<li>no phenotypes</li>
-</ul></li>
-</ul>
-</div>
-<div id="genotype-qc" class="section level3">
-<h3>2. Genotype QC</h3>
-<ul>
-<li>Step 1: Sample QC
-<ul>
-<li>2 batches
-<ul>
-<li><a href="2.1_sample_bqc.html">Without Controls</a></li>
-<li><a href="2.1_sample_bqc_wcont.html">With Controls</a></li>
-</ul></li>
-<li>3 batches
-<ul>
-<li><a href="2.1_sample_bqc_3batches.html">Without Controls</a></li>
-<li><a href="2.1_sample_bqc_wcont_3batches.html">With Controls</a></li>
-</ul></li>
-<li>redone
-<ul>
-<li><a href="2.1_sample_bqc_wcont_redone.html">With Controls</a></li>
-</ul></li>
-<li>new samples
-<ul>
-<li><a href="2.1_sample_bqc_wcont_reinholdt.html">All Samples in File</a></li>
-<li><a href="2.1_sample_bqc_wcont_reinholdt.html">Project Only Samples</a></li>
-</ul></li>
-</ul></li>
-<li>Step 2: SNP QC (Monomorphic, Genotype Error &amp; Missing Data)
-<ul>
-<li>2 batches
-<ul>
-<li><a href="2.2.1_snp_qc.html">Without Controls</a></li>
-<li><a href="2.2.1_snp_qc_wcont.html">With Controls</a></li>
-</ul></li>
-<li>3 batches
-<ul>
-<li><a href="2.2.1_snp_qc_3batches.html">Without Controls</a></li>
-<li><a href="2.2.1_snp_qc_wcont_3batches.html">With Controls</a></li>
-</ul></li>
-<li>redone
-<ul>
-<li><a href="2.2.1_snp_qc_wcont_redone.html">With Controls</a></li>
-</ul></li>
-<li>new samples
-<ul>
-<li><a href="2.2.1_snp_qc_wcont_reinholdt.html">All Samples in File</a></li>
-<li><a href="2.2.1_snp_qc_wcont_reinholdt.html">Project Only Samples</a></li>
-</ul></li>
-</ul></li>
-<li>Step 3: Effect of Data Cleaning</li>
-<li>Step 4: Preparing Files for QTL Analysis</li>
-</ul>
-</div>
-<div id="qtl-analysis" class="section level3">
-<h3>3. QTL Analysis</h3>
-<ul>
-<li>Step 1a: DO Report</li>
-<li>Step 1b: Recombination Block Size &amp; Founder Proportions</li>
-<li>Step 2: GCTA Heritability
-<ul>
-<li>no phenotypes for GCTA analysis</li>
-</ul></li>
-<li>Step 3: QTL Mapping (<code>R/qtl2</code>)
-<ul>
-<li>no phenotypes for <code>R/qtl2</code> analysis</li>
-</ul></li>
-<li>Step 4: QTL Permutation (<code>R/qtl2</code>)
-<ul>
-<li>no phenotypes for <code>R/qtl2</code> analysis</li>
-</ul></li>
-<li>Step 5: QTL Best Linear Unbiased Prediction (BLUP) (<code>R/qtl2</code>)
-<ul>
-<li>no phenotypes for <code>R/qtl2</code> analysis</li>
-</ul></li>
-<li>Step 6: Results from <code>R/qtl2</code> analysis
-<ul>
-<li>no phenotypes for <code>R/qtl2</code> analysis</li>
-</ul></li>
-</ul>
+<div id="phased-plots-for-do-mice" class="section level3">
+<h3>Phased Plots for DO Mice</h3>
+<pre class="r"><code>for(i in micedf$mice){
+
+    print(i)
+    mouse.id &lt;- sapply(strsplit(as.character(i),&#39;_&#39;,fixed=T),function(x) x[6])
+    batch &lt;- sapply(strsplit(as.character(i),&#39;_&#39;,fixed=T),function(x) x[5])
+    #mouse.id &lt;- i
+    print(mouse.id)
+
+    gmi &lt;- gm[i, ] 
+    #map &lt;- insert_pseudomarkers(gmi$gmap, step=1)
+    #pr &lt;- calc_genoprob(gmi, gmi$gmap, error_prob=0.002)
+    pr.new &lt;- pr[i,]
+
+    # infer genotypes, as those with maximal marginal probability
+    m &lt;- maxmarg(pr.new, minprob = 0.3)
+
+    # guess phase
+    ph &lt;- guess_phase(gmi, m)
+
+    # plot phased genotypes
+    plot_onegeno(ph, gmi$gmap, main = paste0(mouse.id,&quot; (batch date: &quot;, batch,&quot;) [genoprobs]&quot;),  shift=TRUE)
+}</code></pre>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_13_C5&quot;
+[1] &quot;13&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_1863_F1&quot;
+[1] &quot;1863&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_1908_E4&quot;
+[1] &quot;1908&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2080_E5&quot;
+[1] &quot;2080&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2131_F7&quot;
+[1] &quot;2131&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2228_B2&quot;
+[1] &quot;2228&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-6.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2253_B5&quot;
+[1] &quot;2253&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-7.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2276_E1&quot;
+[1] &quot;2276&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-8.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2297_G6&quot;
+[1] &quot;2297&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-9.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2303_C4&quot;
+[1] &quot;2303&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-10.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2318_G3&quot;
+[1] &quot;2318&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-11.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2338_D3&quot;
+[1] &quot;2338&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-12.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2347_B7&quot;
+[1] &quot;2347&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-13.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2389_E6&quot;
+[1] &quot;2389&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-14.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2402_F6&quot;
+[1] &quot;2402&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-15.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_2482_G2&quot;
+[1] &quot;2482&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-16.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3492_C7&quot;
+[1] &quot;3492&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-17.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3504_E7&quot;
+[1] &quot;3504&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-18.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3594_H6&quot;
+[1] &quot;3594&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-19.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3606_C1&quot;
+[1] &quot;3606&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-20.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3624_D7&quot;
+[1] &quot;3624&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-21.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3693_C2&quot;
+[1] &quot;3693&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-22.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3698_A7&quot;
+[1] &quot;3698&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-23.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_37_A4&quot;
+[1] &quot;37&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-24.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3811_D5&quot;
+[1] &quot;3811&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-25.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_3831_F5&quot;
+[1] &quot;3831&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-26.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_4714_D4&quot;
+[1] &quot;4714&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-27.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_480_B1&quot;
+[1] &quot;480&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-28.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5264_H3&quot;
+[1] &quot;5264&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-29.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5327_C6&quot;
+[1] &quot;5327&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-30.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5337_D6&quot;
+[1] &quot;5337&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-31.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5349_B3&quot;
+[1] &quot;5349&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-32.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5367_F2&quot;
+[1] &quot;5367&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-33.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5372_G5&quot;
+[1] &quot;5372&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-34.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5377_H4&quot;
+[1] &quot;5377&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-35.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5382_A2&quot;
+[1] &quot;5382&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-36.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5396_A6&quot;
+[1] &quot;5396&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-37.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5409_F4&quot;
+[1] &quot;5409&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-38.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5412_H5&quot;
+[1] &quot;5412&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-39.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5574_H2&quot;
+[1] &quot;5574&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-40.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5583_H1&quot;
+[1] &quot;5583&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-41.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5626_B6&quot;
+[1] &quot;5626&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-42.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5635_F3&quot;
+[1] &quot;5635&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-43.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5642_D1&quot;
+[1] &quot;5642&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-44.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5653_A3&quot;
+[1] &quot;5653&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-45.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_5662_G4&quot;
+[1] &quot;5662&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-46.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_589_C3&quot;
+[1] &quot;589&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-47.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_7_B4&quot;
+[1] &quot;7&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-48.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_751_E2&quot;
+[1] &quot;751&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-49.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_8354_E3&quot;
+[1] &quot;8354&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-50.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_8358_A1&quot;
+[1] &quot;8358&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-51.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_8362_G1&quot;
+[1] &quot;8362&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-52.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_844_D2&quot;
+[1] &quot;844&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-53.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;Jackson_Lab_Reinholdt_MURGIGV01_20210726_878_A5&quot;
+[1] &quot;878&quot;</code></pre>
+<p><img src="figure/0.2_haplotype_comparison_bqc_reinholdt.Rmd/phased%20plots-54.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1134,15 +858,19 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] workflowr_1.6.2
+[1] qtl2_0.22       broman_0.70-4   workflowr_1.6.2
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        rprojroot_1.3-2   digest_0.6.27     later_1.0.0      
- [5] R6_2.5.0          backports_1.2.1   git2r_0.26.1      magrittr_2.0.1   
- [9] evaluate_0.14     stringi_1.7.2     rlang_0.4.11      fs_1.4.1         
-[13] promises_1.1.0    whisker_0.4       rmarkdown_2.1     tools_3.6.2      
-[17] stringr_1.4.0     glue_1.4.2        httpuv_1.5.2      xfun_0.24        
-[21] yaml_2.2.1        compiler_3.6.2    htmltools_0.5.1.1 knitr_1.33       </code></pre>
+ [1] Rcpp_1.0.7        knitr_1.33        whisker_0.4       magrittr_2.0.1   
+ [5] bit_4.0.4         R6_2.5.0          rlang_0.4.11      fastmap_1.1.0    
+ [9] highr_0.9         blob_1.2.1        stringr_1.4.0     tools_3.6.2      
+[13] parallel_3.6.2    data.table_1.14.0 xfun_0.24         DBI_1.1.1        
+[17] git2r_0.26.1      htmltools_0.5.1.1 bit64_4.0.5       yaml_2.2.1       
+[21] digest_0.6.27     rprojroot_1.3-2   assertthat_0.2.1  later_1.0.0      
+[25] vctrs_0.3.8       promises_1.1.0    fs_1.4.1          cachem_1.0.5     
+[29] memoise_2.0.0     glue_1.4.2        evaluate_0.14     RSQLite_2.2.7    
+[33] rmarkdown_2.1     stringi_1.7.2     compiler_3.6.2    backports_1.2.1  
+[37] jsonlite_1.7.2    httpuv_1.5.2     </code></pre>
 </div>
 </div>
 
